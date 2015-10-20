@@ -11,6 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151020014915) do
+
+  create_table "pins", force: :cascade do |t|
+    t.string   "title"
+    t.string   "company"
+    t.string   "date"
+    t.integer  "difficulty"
+    t.string   "type"
+    t.string   "attire"
+    t.string   "questions"
+    t.integer  "like_count"
+    t.string   "length"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password"
+    t.string   "email"
+    t.string   "grad_class"
+    t.string   "major"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

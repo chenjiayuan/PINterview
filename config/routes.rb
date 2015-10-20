@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+  get 'pins/new'
+
+  get 'pins/edit'
+
+  get 'pins/show'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
   root to: 'static_pages#home'
 
   get '/welcome',  to: 'static_pages#welcome'
-  get 'static_pages/welcome'
-  #get 'static_pages/welcome'
   get 'static_pages/help'
 
   # The priority is based upon order of creation: first created -> highest priority.
