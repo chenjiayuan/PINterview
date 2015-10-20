@@ -40,7 +40,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'minitest-reporters'
   gem 'mini_backtrace'
-  gem 'guard-minitest'
+  #gem 'guard' # NOTE: this is necessary in newer versions
+  #gem 'guard-minitest'
 end
 
 group :production do
