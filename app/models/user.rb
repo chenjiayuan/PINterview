@@ -13,15 +13,19 @@
 #
 
 class User < ActiveRecord::Base
-	attr_accessible :username, :password, :email, :grad_class, :major
+  def user_params
+      params.require(:user).permit(:username, :password, :email, :grad_class, :major)
+  end
 
-	before_save { |user| user.email = email.downcase }
-	validates :name, presence: true, length: { maximum: 50 }
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[oracle]+\.[a-z]+\z/i
-	validates :email, presence:   true,
-                    format:     { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+  #Implement validate in Iteration 2
 
-  validates :grad_class, presence: true, length: { maximum: 100 }
-  validates :major, presence: true, length: { maximum: 100 }
+	# before_save { |user| user.email = email.downcase }
+	# validates :name, presence: true, length: { maximum: 50 }
+	# VALID_EMAIL_REGEX = /\A[\w+\-.]+@[oracle]+\.[a-z]+\z/i
+	# validates :email, presence:   true,
+ #                    format:     { with: VALID_EMAIL_REGEX },
+ #                    uniqueness: { case_sensitive: false }
+
+ #  validates :grad_class, presence: true, length: { maximum: 100 }
+ #  validates :major, presence: true, length: { maximum: 100 }
 end

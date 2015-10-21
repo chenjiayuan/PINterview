@@ -18,6 +18,8 @@
 #
 
 class Pin < ActiveRecord::Base
-	attr_accessible :title, :company, :date, :difficulty, :type, :attire, :questions, :like_count,
-				    :length, :description
+  def user_params
+      params.require(:pin).permit(:title, :company, :date, :difficulty, :type, 
+        :attire, :questions, :like_count, :length, :description)
+  end
 end
