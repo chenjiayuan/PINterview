@@ -5,12 +5,7 @@ Rails.application.routes.draw do
 
   get 'pins/show'
 
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/edit'
-
+  resources :users
   root to: 'static_pages#home'
 
   get '/welcome',  to: 'static_pages#welcome'
