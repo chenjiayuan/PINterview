@@ -1,6 +1,7 @@
 class PinsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  # POST 'pins/new' - takes data from post method, creates a pin from data, then adds to DB
   def new
   	@pin = Pin.new(params.require(:pin).permit(:title, :company, :date, :difficulty, :type, :attire, :questions, :like_count, :length, :description)) 
   	@pin.save
@@ -16,12 +17,13 @@ class PinsController < ApplicationController
 	  }
 	end	
 
-
   end
 
+  # POST 'pins/edit/:id' - edits pin matching id from post method URI and data
   def edit
   end
 
+  # GET 'pins' - gets all pins from DB
   def index
   	@pin = Pin.all
   	@total = {status: 1, pins: @pin}
@@ -36,6 +38,7 @@ class PinsController < ApplicationController
 
   end
 
+  # GET 'pins/show' - gets pin matching id from get method URI
   def show
   	@pin = Pin.find_by_id(params[:id])
   	@total = {status: 1, pin: @pin}
@@ -50,6 +53,7 @@ class PinsController < ApplicationController
 
   end
 
+  # DELETE 'pins/delete/:id' - deletes pin matching id from delete method URI
   def destroy
   	@pin = Pin.find_by_id(params[:id]).destroy
 

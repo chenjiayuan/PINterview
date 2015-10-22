@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   post 'pins/edit/:id', to: 'pins#update'
 
-  get 'pins/', to: 'pins#index'
+  get 'pins', to: 'pins#index'
 
   get 'pins/show', to: 'pins#show'
 
