@@ -14,6 +14,43 @@
 	font-size: 13px;
 }
 
+.pin {
+  background-color: antiquewhite;
+}
+
+.count{
+  float: right;
+}
+
+#pin-container{
+  padding: 10px;
+}
+
+#title-container div{
+  display: inline;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 125%;
+}
+
+#question-row div {
+  display: inline;
+}
+
+.interview-info{
+  border-bottom: 1px solid black;
+}
+
+.interview-info div {
+    display: inline;
+}
+
+.like-row div {
+    display:inline;
+}
+
 button:hover{
 	cursor: pointer;
 }

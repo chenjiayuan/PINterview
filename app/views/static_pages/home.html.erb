@@ -2,6 +2,47 @@
 <%= javascript_include_tag "static_pages.coffee" %>
 
 <h1>PINterview</h1>
-<p>Let others know about your interview experience!</p>
+<body>
+  <p>Let others know about your interview experience!</p>
+  <article class="pin">
+    <div id="pin-container">
+        <div id="title-container">
+            <div class="title">Test Post 1</div>
+            <div class="company">EvilCorp</div>
+        </div>
+        <div class="interview-info">
+          <div>Date Interviewed: </div>
+          <div class="date">May 21, 2015</div>
+          <div>| Type of Interview: </div>
+          <div class="type">Technical</div>
+          <div>| Attire</div>
+          <div class="attire">Casual</div>
+        </div>
+        <div class="story-col">
+          <div id="question-row">
+            <div>Question: </div>
+            <div class="question">Reverse an array of ints in place</div>
+          </div>
+          <div id="story-row">
+            <div class="story">I decided to use an iterative method, store the first int in a temporary variable, replace the
+              first index with the last, then place the first int from the temp variable into the last index, and so on...
+            </div>
+          </div>
+        </div>
+        <div class="like-row">
+          <button class="like">Like</button>
+          <div class="count">840</div>
+        </div>
+      <div class="timestamp">Posted at 1:03pm May 22, 2015</div>
+
+    </div>
+  </article>
+    <!--<div class="pin pin-2">-->
+
+    <!--</div>-->
+    <!--<div class="pin pin-3">-->
+    <!--</div>-->
+</body>
+
 <button id = "create-button">Create New Pin</button>
 <!-- <p>This is the "dashboard" where we display all pins and search function</p> -->
