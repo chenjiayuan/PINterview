@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'pins/new'
+  post 'pins/new', to: 'pins#create'
 
-  get 'pins/edit'
+  post 'pins/edit/:id', to: 'pins#update'
 
-  get 'pins/show'
+  get 'pins/', to: 'pins#index'
+
+  get 'pins/show', to: 'pins#show'
+
+  delete 'pins/delete/:id', to: 'pins#destroy'
 
   resources :users
   root to: 'static_pages#home'
