@@ -31,28 +31,27 @@ describe User do
     FactoryGirl.build(:user, email: "ki.ey.kouch@berkeley.edu", grad_class: "").should_not be_valid
   end
 
-  it "invalid empty grad_class" do    
+  it "invalid empty major" do    
     FactoryGirl.build(:user, email: "ki.ey.kouch@berkeley.edu", major: "").should_not be_valid
   end
 
-  it "invalid lenght username 40" do 
-  	str = "a" * 40 
+  it "invalid lenght for username 32 char" do 
+  	str = "a" * 33 
     FactoryGirl.build(:user, email: "ki.ey.kouch@berkeley.edu", username: str).should_not be_valid
   end
 
-  it "invalid lenght password 40" do 
+  it "invalid lenght for password 40 char" do 
   	str = "a" * 40 
     FactoryGirl.build(:user, email: "ki.ey.kouch@berkeley.edu", password: str).should_not be_valid
   end
 
-  it "invalid lenght grad_class 40" do    
+  it "invalid lenght for grad_class 40 char" do    
     FactoryGirl.build(:user, email: "ki.ey.kouch@berkeley.edu", grad_class: "a" * 40).should_not be_valid
   end
 
-  it "invalid lenght major 40" do    
+  it "invalid lenght for major 40 char" do    
     FactoryGirl.build(:user, email: "ki.ey.kouch@berkeley.edu", major: "a" * 40).should_not be_valid
   end
-
 
 
 end

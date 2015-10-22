@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :pin do |f|
-    f.title {Faker::Internet.title}
+    f.title {Faker::Commerce.product_name}
     f.company {Faker::Company.name}
     f.date  {Faker::Number.number(10)}
     f.difficulty {Faker::Number.number(1)}

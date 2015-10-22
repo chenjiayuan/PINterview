@@ -47,6 +47,7 @@ group :development, :test do
   #gem 'guard-minitest'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'coffee-script-source', '1.8.0'
 end
 
 group :test do  

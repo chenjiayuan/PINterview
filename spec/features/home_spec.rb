@@ -10,7 +10,7 @@ feature "visiting the home page" do
       {:get => "/widgets" }.should_not be_routable
     end
 
-    it "attemp not routing" do
+    it "routign to welcome" do
       {:get => "/welcome"}.should route_to(:controller => "static_pages", :action => "welcome")
     end
 
