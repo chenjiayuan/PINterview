@@ -2,7 +2,7 @@ class PinsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # POST 'pins/new' - takes data from post method, creates a pin from data, then adds to DB
-  def new
+  def create
   	@pin = Pin.new(params.require(:pin).permit(:title, :company, :date, :difficulty, :type, :attire, :questions, :like_count, :length, :description)) 
   	@pin.save
 

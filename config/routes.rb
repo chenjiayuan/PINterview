@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pins/new', to:'pins#new'
+
   post 'pins/new', to: 'pins#create'
 
   post 'pins/edit/:id', to: 'pins#update'
