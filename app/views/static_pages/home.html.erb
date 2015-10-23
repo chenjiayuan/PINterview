@@ -1,114 +1,51 @@
-
-<!-- 
-<h1>PINterview</h1>
-<body>
-  <p>Let others know about your interview experience!</p>
-  <article class="pin">
-    <div id="pin-container">
-        <div id="title-container">
-            <div class="title">Test Post 1</div>
-            <div class="company">EvilCorp</div>
-        </div>
-        <div class="interview-info">
-          <div>Date Interviewed: </div>
-          <div class="date">May 21, 2015</div>
-          <div>| Type of Interview: </div>
-          <div class="type">Technical</div>
-          <div>| Attire</div>
-          <div class="attire">Casual</div>
-        </div>
-        <div class="story-col">
-          <div id="question-row">
-            <div>Question: </div>
-            <div class="question">Reverse an array of ints in place</div>
-          </div>
-          <div id="story-row">
-            <div class="story">I decided to use an iterative method, store the first int in a temporary variable, replace the
-              first index with the last, then place the first int from the temp variable into the last index, and so on...
-            </div>
-          </div>
-        </div>
-        <div class="like-row">
-          <button class="like">Like</button>
-          <div class="count">840</div>
-        </div>
-      <div class="timestamp">Posted at 1:03pm May 22, 2015</div>
-
-    </div>
-  </article>
-    
-</body>
-
-<button id = "create-button">Create New Pin</button> -->
-
-
 <html>
 <head>
-        <title>PINterview</title> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <%= stylesheet_link_tag "home" %>
-        
-        <link rel="icon" type="image/png" href="<%= asset_path( 'favicon.png' ) %>">
-        <!--
-        <link rel="stylesheet" type="text/css" href="styles/main.css"> -->
-
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-        <%= javascript_include_tag "jquery.min.js" %>
-        <%= javascript_include_tag "home.js" %>
-        <!--
-        <script src="scripts/jquery.min.js"></script> -->
-        <!--
-        <script type="text/javascript" src="scripts/smiles.js"></script>-->
-
-        <script type="text/javascript">
-            // This is a jQuery convention to say that once all the files
-            // load, the function Smile.start() should run.
-            // This function is defined in the smiles.js
-            $(function() {
-                Pin.start();
-            });
-        </script>
-        
+  <title>PINterview</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="<%= asset_path( 'favicon.png' ) %>">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "home.js" %>
+  <script type="text/javascript">
+      $(function() {
+          Pin.start();
+      });
+  </script> 
 </head>
+
 <body>
-    <header class="mainheader">
-        
-        <img src="<%= asset_path( 'logo.png' ) %>">
+  <header class="mainheader">
+    <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+    <h1>PINTERVIEW</h1>    
+    <div class="create">
+        <a class="my-button" href="pins/new">Create New Pin</a>
+    </div>
+  </header>
 
-        <div class="helper"> ...WITH RAILS!</div>
-
-        <div class="create">
-            <a class="my-button" href="pins/new">Create New Pin</a>
-
-        </div>
-    </header>
-
-    <!-- <section class="mainbody smiles"> -->
+    <!-- <section class="mainbody pins"> -->
     <section class="mainbody pins">
-        <!-- FINISH ME: create 3 smile posts -->
-        <!-- <article class="smile"> -->
         <article class="pin">
           <div id="title-container">
             <div class="title">Test Post 1</div>
             <div class="company">EvilCorp</div>
           </div>
-          
+          <br>
           <div class="interview-info">
-            <div>Date Interviewed: </div>
+            <div><b>Date Interviewed:</b></div>
             <div class="date">May 21, 2015</div>
-            <div>| Type of Interview: </div>
+            <div>| <b>Type of Interview: </b></div>
             <div class="type">Technical</div>
-            <div>| Attire</div>
+            <div>| <b>Attire</b></div>
             <div class="attire">Casual</div>
-            <div>| Difficulty</div>
+            <div>| <b>Difficulty</b></div>
             <div class="difficulty">Hard</div>
-            <div>| Length</div>
+            <div>| <b>Length</b></div>
             <div class="length">1 hour</div>
           </div>
-          
+          <hr>
           <div class="story-col">
             <div class="question-row">
-              <div>Question: </div>
+              <div><b>Question: </b></div>
               <div class="questions">Reverse an array of ints in place</div>
             </div>
             <div class="story-row">
@@ -132,4 +69,3 @@
      </section>
 </body>
 </html>
-
