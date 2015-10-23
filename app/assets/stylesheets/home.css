@@ -46,18 +46,6 @@ button:hover{
 	box-shadow: 2px 2px 1px grey;
 }
 
-.create-button{
-	width: 150px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-radius: 7px;
-	background-color: black;
-	text-align: center;
-	color: white;
-	font-family: 'arial';
-	font-size: 13px;
-}
-
 .pins{
 	text-align: center;
 }
@@ -153,4 +141,55 @@ button:hover{
 	#logo{
 		width: 28px;
 	}
+}
+
+/* --- Create a Pin ---*/
+#new-header{
+	width: 100%;
+	background-color: #3B3D55;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+
+form{
+	width: 140px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: arial;
+}
+
+.wrapper{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.wrapper-1{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.create-button{
+	width: 150px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 7px;
+	background-color: #3B3D55;
+	text-align: center;
+	color: white;
+	font-family: 'arial';
+	font-size: 13px;
+}
+
+.cancel-button{
+	width: 150px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 7px;
+	background-color: #3B3D55;
+	text-align: center;
+	color: white;
+	font-family: 'arial';
+	font-size: 13px;
 }

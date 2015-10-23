@@ -52,8 +52,12 @@ var New = (function() {
 
 			makePostRequest("/pins/new", pin, onSuccess, onFailure);
 
-			
+		});
+	}
 
+	var attachCancelButton = function(e) {
+		$('.wrapper-1').on('click', '.cancel-button', function(e) {
+			location.replace("/");
 		});
 	}
 
@@ -61,6 +65,7 @@ var New = (function() {
 	var start = function() {
 		create = $(".newform");
 		attachCreateButton();
+		attachCancelButton();
 	}
 
 	return {

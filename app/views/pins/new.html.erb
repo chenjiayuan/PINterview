@@ -1,54 +1,60 @@
-<%= javascript_include_tag "jquery.min.js" %>
-<%= javascript_include_tag "new.js" %>
-<!--
-<script src="scripts/jquery.min.js"></script> -->
-<!--
-<script type="text/javascript" src="scripts/smiles.js"></script>-->
+<html>
+<head>
+  <title>PINterview - New Pin</title>   
+  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "new.js" %>
+  <script type="text/javascript">
+      // This is a jQuery convention to say that once all the files
+      // load, the function Smile.start() should run.
+      // This function is defined in the smiles.js
+      $(function() {
+          New.start();
+      });
+  </script>
+</head>
+<body>
+  <div id ="new-header">
+    <h1>Create New Pin</h1>
+  </div>
+  <form class = "newform">
+    Title:
+    <input type="text" class="title-input" name="title">
+    <br><br>
+    Company:<br>
+    <input type="text" class="company-input" name="company">
+    <br><br>
+    Date:<br>
+    <input type="text" class="date-input" name="date">  
+    <br><br>
+    Difficulty:<br>
+    <input type="text" class="difficulty-input" name="difficulty">   
+    <br><br>
+    <!-- Type:<br> -->
+    <!-- <input type="text" name="type">  --> 
+    <!-- <div>chill out about type for now</div> -->
+    <!-- <br> -->
+    Attire:<br>
+    <input type="text" class="attire-input" name="attire"> 
+    <br><br>
+    Questions:<br>
+    <input type="text" class="questions-input" name="questions">
+    <br><br>
+    <!-- Like Count:<br> -->
+    <!-- <input type="text" class="like_count-input" name="like_count"> --> 
+    <!-- <br> -->
+    Length:<br>
+    <input type="text" class="length-input" name="length"> 
+    <br><br>
+    Description:<br>
+    <input type="text" class="description-input" name="description">   
+  </form>
 
-<script type="text/javascript">
-    // This is a jQuery convention to say that once all the files
-    // load, the function Smile.start() should run.
-    // This function is defined in the smiles.js
-    $(function() {
-        New.start();
-    });
-</script>
+  <div class = 'wrapper'>
+    <button class = "create-button">Create New Pin</button>
+  </div>
+  <div class = 'wrapper-1'>
+    <button class = "cancel-button">Cancel</button>
+  </div>
 
-<h1>Create New Pin</h1>
-<!-- <p>Find me in app/views/pins/new.html.erb</p> -->
-<form class = "newform">
-  Title:<br>
-  <input type="text" class="title-input" name="title">
-  <br>
-  Company:<br>
-  <input type="text" class="company-input" name="company">
-  <br>
-  Date:<br>
-  <input type="text" class="date-input" name="date">  
-  <br>
-  Difficulty:<br>
-  <input type="text" class="difficulty-input" name="difficulty">   
-  <br>
-  Type:<br>
-  <!-- <input type="text" name="type">  --> 
-  <div>chill out about type for now</div>
-  <br>
-  Attire:<br>
-  <input type="text" class="attire-input" name="attire"> 
-  <br>
-  Questions:<br>
-  <input type="text" class="questions-input" name="questions">
-  <br>  
-  Like Count:<br>
-  <input type="text" class="like_count-input" name="like_count"> 
-  <br>
-  Length:<br>
-  <input type="text" class="length-input" name="length"> 
-  <br>  
-  Description:<br>
-  <input type="text" class="description-input" name="description">   
-</form>
-
-<div class = 'wrapper'>
-  <button class = "create-button">Create New Pin</button>
-</div>
+</body>
+</html>
