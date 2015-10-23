@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def show
     @user = User.find(params[:id])
   end
@@ -8,12 +9,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)    # Not the final implementation!
-    if @user.save
-      #flash[:success] = "Welcome to PINterview!"
-      redirect_to :root
-    else
-      render 'new'
+    @user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation, :grad_class, :major))
+    @user.save
+
+    @user = User.last
+    @total = {status: 1, user: @user}
+    respond_to do |format|
+      format.html{
+        render json: @total
+      }
+      format.json{
+        render json: @total
+      }
     end
   end
 
