@@ -193,3 +193,30 @@ form{
 	font-family: 'arial';
 	font-size: 13px;
 }
+
+/* --- Welcome Page --- */
+
+#login-container {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    font-family: 'arial';
+}
+
+#login-container div {
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+#login-button {
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    background-color: #3B3D55;
+    text-align: center;
+    color: white;
+    font-family: 'arial';
+    font-size: 13px;
+}
