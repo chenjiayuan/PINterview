@@ -30,15 +30,15 @@ var New = (function() {
 
 			e.preventDefault();
 			var pin = {};
-			pin.title = create.find(".title-input").val()
-			pin.company = create.find(".company-input").val()
-			pin.date = create.find(".date-input").val()
-			pin.difficulty = create.find(".difficulty-input").val()
-			pin.attire = create.find(".attire-input").val()
-			pin.questions = create.find(".questions-input").val()
-			pin.like_count = create.find(".like_count-input").val()
-			pin.length = create.find(".length-input").val()
-			pin.description = create.find(".description-input").val()
+			pin.title = create.find(".title-input").val();
+			pin.company = create.find(".company-input").val();
+			pin.date = create.find(".date-input").val();
+			pin.difficulty = create.find(".difficulty-input").val();
+			pin.attire = create.find(".attire-input").val();
+			pin.questions = create.find(".questions-input").val();
+			pin.like_count = 0;
+			pin.length = create.find(".length-input").val();
+			pin.description = create.find(".description-input").val();
 
 			console.log(pin);
 
