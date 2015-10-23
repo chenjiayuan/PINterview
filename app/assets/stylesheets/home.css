@@ -73,6 +73,7 @@ button:hover{
   	border-radius: 5px;
 	box-shadow: 2px 2px 1px grey;
 	font-family: arial;
+  	padding-top: 10px;
 }
 
 .count{
@@ -89,7 +90,7 @@ button:hover{
 
 .title{
   font-weight: bold;
-  font-size: 125%;
+  font-size: 20px;
   padding-bottom: 10px;
 }
 
@@ -130,7 +131,6 @@ button:hover{
 	    column-count: 3;
 	}	
 }
-
 
 @media screen and (max-width: 800px) {
 	h1{
