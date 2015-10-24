@@ -17,7 +17,7 @@
     <h1>Create New Pin</h1>
   </div>
   <form class = "newform">
-    Title:
+    Position:
     <input type="text" class="title-input" name="title">
     <br><br>
     Company:<br>
@@ -27,14 +27,27 @@
     <input type="text" class="date-input" name="date">  
     <br><br>
     Difficulty:<br>
-    <input type="text" class="difficulty-input" name="difficulty">   
+    
+    <select class="difficulty-input" name="difficulty">           
+                    <option value= "Very Easy">Very Easy</option>
+                    <option value= "Easy">Easy</option>
+                    <option value= "Normal">Normal</option>
+                    <option value= "Hard">Hard</option>
+                    <option value= "Very Hard">Very Hard</option>
+    </select> 
+​
     <br><br>
     <!-- Type:<br> -->
     <!-- <input type="text" name="type">  --> 
     <!-- <div>chill out about type for now</div> -->
     <!-- <br> -->
     Attire:<br>
-    <input type="text" class="attire-input" name="attire"> 
+    
+    <select class="attire-input" name="attire">           
+                    <option value= "Yes">Yes</option>
+                    <option value= "No">No</option>                    
+    </select> 
+​
     <br><br>
     Questions:<br>
     <input type="text" class="questions-input" name="questions">
@@ -43,18 +56,25 @@
     <!-- <input type="text" class="like_count-input" name="like_count"> --> 
     <!-- <br> -->
     Length:<br>
-    <input type="text" class="length-input" name="length"> 
+    
+    <select class="length-input" name="length">           
+                    <option value= "0.5 Hour">0.5 Hour</option>
+                    <option value= "1.0 Hour">1.0 Hour</option>   
+                    <option value= "1.5 Hour">1.5 Hour</option>   
+                    <option value= "2.0 Hour">2.0 Hour</option>   
+                    <option value= "2.0+ Hour">More</option>                    
+    </select> 
     <br><br>
-    Description:<br>
+    Solution:<br>
     <input type="text" class="description-input" name="description">   
   </form>
-
+​
   <div class = 'wrapper'>
     <button class = "create-button">Create New Pin</button>
   </div>
   <div class = 'wrapper-1'>
     <button class = "cancel-button">Cancel</button>
   </div>
-
+​
 </body>
 </html>
