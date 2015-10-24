@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>PINterview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="<%= asset_path( 'favicon.png' ) %>">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<header class="mainheader">
+  <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+  <h1>PINTERVIEW</h1>
+  <div class="create">
+    <a class="my-button" href="users/new">Sign Up</a>
+  </div>
+</header>
+
+<body>
+
+    <div id="login-container">
+      <div>Already have an account?</div>
+      <form id="login-form">
+        Username:<br>
+        <input type="text" class="username-input" name="username">
+        <br><br>
+        Password:<br>
+        <input type="password" class="password-input" name="password">
+        <br><br>
+      </form>
+
+      <button id="login-button">Login</button>
+    </div>
+
+</body>
+
+</html>

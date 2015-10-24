@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>PINterview</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="<%= asset_path( 'favicon.png' ) %>">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "home.js" %>
+  <script type="text/javascript">
+      $(function() {
+          Pin.start();
+      });
+  </script> 
+</head>
+
+<body>
+  <header class="mainheader">
+    <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+    <h1>PINTERVIEW</h1>    
+    <div class="create">
+        <a class="my-button" href="pins/new">Create New Pin</a>
+    </div>
+  </header>
+
+    <!-- <section class="mainbody pins"> -->
+    <section class="mainbody pins">
+        <article class="pin">
+          <div id="title-container">
+            <div class="title">Test Post 1</div>
+            <div class="company">EvilCorp</div>
+          </div>
+          <br>
+          <div class="interview-info">
+            <div><b>Date Interviewed:</b></div>
+            <div class="date">May 21, 2015</div>
+            <div>| <b>Type of Interview: </b></div>
+            <div class="type">Technical</div>
+            <div>| <b>Attire</b></div>
+            <div class="attire">Casual</div>
+            <div>| <b>Difficulty</b></div>
+            <div class="difficulty">Hard</div>
+            <div>| <b>Length</b></div>
+            <div class="length">1 hour</div>
+          </div>
+          <hr>
+          <div class="story-col">
+            <div class="question-row">
+              <div><b>Question: </b></div>
+              <div class="questions">Reverse an array of ints in place</div>
+            </div>
+            <div class="story-row">
+              <div class="description">I decided to use an iterative method, store the first int in a temporary variable, replace the
+                first index with the last, then place the first int from the temp variable into the last index, and so on...
+              </div>
+            </div>
+          </div>
+          
+          <div class="like-row">
+            <button class="like">Like</button>
+            <div class="like_count">840</div>
+          </div>
+          
+          <div class="timestamp">
+            Posted at 1:03pm May 22, 2015
+          </div>
+             
+        </article>
+                
+     </section>
+</body>
+</html>

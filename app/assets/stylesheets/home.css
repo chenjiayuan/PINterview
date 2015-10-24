@@ -1,0 +1,256 @@
+/* --- Home ---*/
+body{
+	margin: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+h1{
+	font-family: arial;
+	font-size: 100px;
+	display: inline;
+	color: white;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+.mainheader{
+	width: 100%;
+	background-color: #3B3D55;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+
+#logo{
+	width: 55px;
+	display: inline;
+	margin-right: 15px;
+}
+
+.my-button{
+	background-color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-radius: 7px;
+	font-family: arial;
+	font-size: 13px;
+	box-shadow: 2px 2px 1px grey;
+}
+
+.pins{
+	text-align: center;
+}
+
+.pin {
+	display: inline-block;
+  	text-align: center;	
+	width: 350px;
+  	margin-bottom: 30px;
+  	margin-left: 5px;
+  	margin-right: 5px;
+  	background-color: #F2F2F2;  	
+  	border-radius: 5px;
+	box-shadow: 2px 2px 1px grey;
+	font-family: arial;
+  	padding-top: 10px;
+}
+
+.count{
+  float: right;
+}
+
+#pin-container{
+  padding: 10px;
+}
+
+#title-container div{
+  display: inline;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+#question-row div {
+  display: inline;
+}
+
+.interview-info{
+	font-size: 12px;
+  	margin-bottom: 10px;
+  	margin-left: 10px;
+  	margin-right: 10px;
+}
+
+.interview-info div {
+    display: inline;
+}
+
+.story-col{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.like-row div {
+    display:inline;
+}
+
+.timestamp{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 12px;
+}
+
+@media screen and (max-width: 100%) {
+	.pin{
+	    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+	    -moz-column-count: 3; /* Firefox */
+	    column-count: 3;
+	}	
+}
+
+@media screen and (max-width: 800px) {
+	h1{
+		font-size: 80px;
+	}	
+	#logo{
+		width: 45px;
+	}
+	.pin{
+	    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+	    -moz-column-count: 2; /* Firefox */
+	    column-count: 2;
+	}	
+}
+
+@media screen and (max-width: 600px) {
+	h1{
+		font-size: 50px;
+	}	
+	#logo{
+		width: 28px;
+	}
+}
+
+/* --- Create a Pin ---*/
+#new-header{
+	width: 100%;
+	background-color: #3B3D55;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+
+form{
+	width: 140px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: arial;
+}
+
+.wrapper{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.wrapper-1{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.create-button{
+	width: 150px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 7px;
+	background-color: #3B3D55;
+	text-align: center;
+	color: white;
+	font-family: 'arial';
+	font-size: 13px;
+}
+
+.cancel-button{
+	width: 150px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 7px;
+	background-color: #3B3D55;
+	text-align: center;
+	color: white;
+	font-family: 'arial';
+	font-size: 13px;
+}
+
+/* --- Welcome Page --- */
+
+#login-container {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    font-family: 'arial';
+}
+
+#login-container div {
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.wrapper-user{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.wrapper-user-1{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.create-user-button{
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    background-color: #3B3D55;
+    text-align: center;
+    color: white;
+    font-family: 'arial';
+    font-size: 13px;
+}
+
+.cancel-user-button{
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    background-color: #3B3D55;
+    text-align: center;
+    color: white;
+    font-family: 'arial';
+    font-size: 13px;
+}
+
+#login-button {
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    background-color: #3B3D55;
+    text-align: center;
+    color: white;
+    font-family: 'arial';
+    font-size: 13px;
+}
