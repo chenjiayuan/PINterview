@@ -1,2 +1,51 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<html>
+<head>
+  <title>PINterview - New Pin</title>
+  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "newuser.js" %>
+  <script type="text/javascript">
+      // This is a jQuery convention to say that once all the files
+      // load, the function Smile.start() should run.
+      // This function is defined in the smiles.js
+      $(function() {
+          Newuser.start();
+      });
+  </script>
+</head>
+<body>
+<div id ="new-header">
+  <h1>Register New User</h1>
+</div>
+
+<form class = "newform">
+  Username:
+  <input type="text" class="username-input" name="username">
+  <br><br>
+  Berkeley Email:<br>
+  <input type="text" class="email-input" name="email">
+  <br><br>
+  Password:<br>
+  <input type="password" class="password-input" name="password">
+  <br><br>
+  Password Confirmation:<br>
+  <input type="password" class="password-confirmation-input" name="password-confirmation">
+  <br><br>
+  What year do you graduate?: <!-- This should be a drop down menu with specific options-->
+  <br>
+  <input type="text" class="grad-class-input" name="grad-class">
+  <br><br>
+  Major:<br>
+  <input type="text" class="major-input" name="major">
+  <br><br>
+</form>
+
+<div class = 'wrapper-user'>
+  <button class = "create-user-button">Register</button>
+</div>
+
+<div class = 'wrapper-user-1'>
+  <button onclick="window.location='/welcome'" class = "cancel-user-button">Cancel</button>
+</div>
+
+</body>
+</html>
