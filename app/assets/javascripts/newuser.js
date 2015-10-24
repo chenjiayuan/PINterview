@@ -1,7 +1,7 @@
 /**
  * Created by wchoulos on 10/23/15.
  */
-var New = (function() {
+var Newuser = (function() {
 
     var apiUrl = "";
 
@@ -31,7 +31,7 @@ var New = (function() {
     };
 
     var attachCreateButton = function(e) {
-        $('.wrapper').on('click', '.create-button', function(e) {
+        $('.wrapper-user').on('click', '.create-user-button', function(e) {
 
             e.preventDefault();
             var newUser = {};
@@ -58,7 +58,7 @@ var New = (function() {
     }
 
     var attachCancelButton = function(e) {
-        $('.wrapper-1').on('click', '.cancel-button', function(e) {
+        $('.wrapper-user-1').on('click', '.cancel-user-button', function(e) {
             location.replace("/welcome");
         });
     }

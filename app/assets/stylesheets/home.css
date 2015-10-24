@@ -209,6 +209,40 @@ form{
     padding-bottom: 5px;
 }
 
+.wrapper-user{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.wrapper-user-1{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.create-user-button{
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    background-color: #3B3D55;
+    text-align: center;
+    color: white;
+    font-family: 'arial';
+    font-size: 13px;
+}
+
+.cancel-user-button{
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    background-color: #3B3D55;
+    text-align: center;
+    color: white;
+    font-family: 'arial';
+    font-size: 13px;
+}
+
 #login-button {
     width: 150px;
     padding-top: 5px;
