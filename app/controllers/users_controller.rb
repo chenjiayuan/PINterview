@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation, :grad_class, :major))
+    @user = User.new(user_params)
     @user.save
 
     @user = User.last

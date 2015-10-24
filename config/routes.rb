@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   delete 'pins/delete/:id', to: 'pins#destroy'
 
   resources :users
+  match '/signup',  to: 'users#new', via: 'get'
+  post 'users/new', to: 'users#create'
+
   root to: 'static_pages#home'
 
   get '/welcome',  to: 'static_pages#welcome'

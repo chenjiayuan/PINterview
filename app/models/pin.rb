@@ -18,7 +18,7 @@
 #
 
 class Pin < ActiveRecord::Base
-  def user_params
+  def pin_params
       params.require(:pin).permit(:title, :company, :date, :difficulty, :type, 
         :attire, :questions, :like_count, :length, :description)
   end
