@@ -28,3 +28,4 @@ class User < ActiveRecord::Base
   # validates :grad_class, presence: true, length: { maximum: 100 }
   # validates :major, presence: true, length: { maximum: 100 }
 end
+
