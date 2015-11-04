@@ -13,6 +13,7 @@ gem 'fog', '1.26.0'
 gem 'will_paginate', '3.0.7'
 gem 'bcrypt', '~> 3.1.8'
 gem 'devise'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

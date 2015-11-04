@@ -3,16 +3,16 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
 #  username        :string
 #  email           :string
 #  password_digest :string
-#  grad_class      :string
 #  major           :string
+#  grad_class      :string
 #
 
 class User < ActiveRecord::Base
+  has_many :pins, dependent: :destroy
+
   has_secure_password
   before_save :downcase_email
   validates :username, presence: true, length: { maximum: 50 }
