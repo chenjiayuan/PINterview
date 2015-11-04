@@ -17,7 +17,7 @@
       <a class="my-button" href="pins/new">Create New Pin</a>
   </div>
   <ul> 
-    <a class="my-button" href=""><%= current_user.username %></a>
+    <a class="my-button" href=""><%= link_to "My Profile", current_user%></a>
     <a class="my-button"><%= link_to "Log out", logout_path, method: "delete" %></a>
   </ul> 
 <% else %> 

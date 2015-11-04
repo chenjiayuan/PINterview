@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user, only: [:show, :edit]
+
   def new
     @user = User.new
   end
@@ -13,6 +15,10 @@ class UsersController < ApplicationController
     end 
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+  
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :grad_class, :major)

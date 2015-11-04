@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_secure_password
   before_save :downcase_email
   validates :username, presence: true, length: { maximum: 50 }
+  validates :password, presence: true, length: { minimum: 6 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@berkeley+\.edu+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
