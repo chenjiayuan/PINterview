@@ -1,24 +1,7 @@
-Rails.application.routes.draw do
-
+Rails.application.routes.draw do  
+  root :to => 'static_pages#home' 
   get 'pins/new', to:'pins#new'
-
-  post 'pins/new', to: 'pins#create'
-
-  post 'pins/edit/:id', to: 'pins#update'
-
-  get 'pins', to: 'pins#index'
-
-  get 'pins/show', to: 'pins#show'
-
-  delete 'pins/delete/:id', to: 'pins#destroy'
-  
-  resources :users
-  match '/signup',  to: 'users#new', via: 'get'
-  post 'users/new', to: 'users#create'
-
-  root to: 'static_pages#home'
-
-  get '/welcome',  to: 'static_pages#welcome'
-  get 'static_pages/help'
-  
+  #post 'pins' => 'pins#create'
+  match 'static_pages#home',  to: 'static_pages#home', via: 'get'
+  resources :pins  
 end
