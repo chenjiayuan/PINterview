@@ -1,80 +1,20 @@
-<html>
-<head>
-  <title>PINterview - New Pin</title>   
-  <%= javascript_include_tag "jquery.min.js" %>
-  <%= javascript_include_tag "new.js" %>
-  <script type="text/javascript">
-      // This is a jQuery convention to say that once all the files
-      // load, the function Smile.start() should run.
-      // This function is defined in the smiles.js
-      $(function() {
-          New.start();
-      });
-  </script>
-</head>
-<body>
-  <div id ="new-header">
-    <h1>Create New Pin</h1>
+<div class="create">
+  <div class="container">  
+  <h2>Create New Pin</h2>
+   <div class="form"> 
+
+    <%= form_for(@pin) do |f| %>    
+       <%= f.text_field :position,:placeholder => "Position" %><br> 
+       <%= f.text_field :company, :placeholder => "Company" %><br> 
+       <%= f.text_field :date, :placeholder => "Interview Date" %><br> 
+       <%= f.text_field :difficulty,:placeholder => "How's Difficult" %><br> 
+       <%= f.text_field :type_interview, :placeholder => "What kind of Interview?" %><br> 
+       <%= f.text_field :attire, :placeholder => "Does it Require Attire?" %><br> 
+       <%= f.text_field :questions, :placeholder => "Discuss Technical Questions" %><br> 
+       <%= f.text_field :length, :placeholder => "How Long is the interiew?" %><br> 
+       <%= f.text_field :description, :placeholder => "Solution if you have any" %><br> 
+       <%= f.submit "Create Now", class: "btn-submit" %>       
+    <% end %>    
   </div>
-  <form class = "newform">
-    Position:
-    <input type="text" class="title-input" name="title">
-    <br><br>
-    Company:<br>
-    <input type="text" class="company-input" name="company">
-    <br><br>
-    Date:<br>
-    <input type="text" class="date-input" name="date">  
-    <br><br>
-    Difficulty:<br>
-    
-    <select class="difficulty-input" name="difficulty">           
-                    <option value= "Very Easy">Very Easy</option>
-                    <option value= "Easy">Easy</option>
-                    <option value= "Normal">Normal</option>
-                    <option value= "Hard">Hard</option>
-                    <option value= "Very Hard">Very Hard</option>
-    </select> 
-​
-    <br><br>
-    <!-- Type:<br> -->
-    <!-- <input type="text" name="type">  --> 
-    <!-- <div>chill out about type for now</div> -->
-    <!-- <br> -->
-    Attire:<br>
-    
-    <select class="attire-input" name="attire">           
-                    <option value= "Yes">Yes</option>
-                    <option value= "No">No</option>                    
-    </select> 
-​
-    <br><br>
-    Questions:<br>
-    <input type="text" class="questions-input" name="questions">
-    <br><br>
-    <!-- Like Count:<br> -->
-    <!-- <input type="text" class="like_count-input" name="like_count"> --> 
-    <!-- <br> -->
-    Length:<br>
-    
-    <select class="length-input" name="length">           
-                    <option value= "0.5 Hour">0.5 Hour</option>
-                    <option value= "1.0 Hour">1.0 Hour</option>   
-                    <option value= "1.5 Hour">1.5 Hour</option>   
-                    <option value= "2.0 Hour">2.0 Hour</option>   
-                    <option value= "2.0+ Hour">More</option>                    
-    </select> 
-    <br><br>
-    Solution:<br>
-    <input type="text" class="description-input" name="description">   
-  </form>
-​
-  <div class = 'wrapper'>
-    <button class = "create-button">Create New Pin</button>
   </div>
-  <div class = 'wrapper-1'>
-    <button class = "cancel-button">Cancel</button>
-  </div>
-​
-</body>
-</html>
+</div>
