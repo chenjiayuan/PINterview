@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PINterview</title>
+  <title>Welcome to Pinterview</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header class="mainheader">
+    <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+    <h1>PINTERVIEW</h1>    
+    <div class="create"> 
+        <a class="my-button" href="/">Home</a>       
+        <a class="my-button" href="pins/new">Create New Pin</a>
+    </div>
+  </header>
 <%= yield %>
-
 </body>
 </html>
