@@ -3,13 +3,11 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  username        :string
-#  password_digest :string
-#  email           :string
-#  grad_class      :string
-#  major           :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  username        :string
+#  email           :string
+#  password_digest :string
 #
 
 require 'test_helper'
