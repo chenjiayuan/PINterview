@@ -8,6 +8,8 @@
 #  username        :string
 #  email           :string
 #  password_digest :string
+#  grad_class      :string
+#  major           :string
 #
 
 require 'faker'

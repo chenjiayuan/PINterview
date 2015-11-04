@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104052143) do
+ActiveRecord::Schema.define(version: 20151104222335) do
 
   create_table "pins", force: :cascade do |t|
     t.string   "position"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20151104052143) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "grad_class"
+    t.string   "major"
   end
 
 end

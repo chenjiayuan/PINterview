@@ -8,6 +8,8 @@
 #  username        :string
 #  email           :string
 #  password_digest :string
+#  grad_class      :string
+#  major           :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

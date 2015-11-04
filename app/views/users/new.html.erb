@@ -1,8 +1,6 @@
 <html>
 <head>
   <title>PINterview - New Pin</title>
-  <!%= javascript_include_tag "jquery.min.js" %>
-  <!%= javascript_include_tag "newuser.js" %>
   <script type="text/javascript">
       // This is a jQuery convention to say that once all the files
       // load, the function Smile.start() should run.
@@ -18,9 +16,16 @@
 </div>
 
 <%= form_for(@user) do |f| %>
-      <%= f.text_field :username, :placeholder => "First name" %>
+      <%= f.label :Name %>
+      <%= f.text_field :username, :placeholder => "name" %>
+      <%= f.label :BerkeleyEmail %>
       <%= f.email_field :email, :placeholder => "Email" %>
+      <%= f.label :Password %>
       <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.label :Class %>
+      <%= f.select :grad_class, ['2016', '2017', '2018', '2019', '2020', 'later']%>
+      <%= f.label :Major %>
+      <%= f.select :major, ['EECS', 'CS', 'CEE', 'IEOR', 'MSE', 'ME', 'NE', 'Math', 'Stat', 'Others']%>
       <%= f.submit "Create an account", class: "btn-submit" %>
     <% end %>
 
@@ -29,7 +34,7 @@
 </div> -->
 
 <div class = 'wrapper-user-1'>
-  <button onclick="window.location='/welcome'" class = "cancel-user-button">Cancel</button>
+  <a class="my-button" href="login">Cancel</a>
 </div>
 
 </body>
