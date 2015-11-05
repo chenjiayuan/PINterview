@@ -14,6 +14,10 @@ class PinsController < ApplicationController
     	end
   	end 
 
+    def show
+      @pin = Pin.find(params[:id])
+    end
+
   	private
   	def pin_params
       params.require(:pin).permit(:position, :company, :date, :difficulty, :type_interview, 
