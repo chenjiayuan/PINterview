@@ -11,33 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021211624) do
+ActiveRecord::Schema.define(version: 20151104232612) do
 
   create_table "pins", force: :cascade do |t|
-    t.string   "title"
-    t.string   "company"
-    t.string   "date"
-    t.integer  "difficulty"
-    t.string   "type"
-    t.string   "attire"
-    t.string   "questions"
-    t.integer  "like_count"
-    t.string   "length"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string  "position"
+    t.string  "company"
+    t.string  "date"
+    t.string  "difficulty"
+    t.string  "type_interview"
+    t.string  "attire"
+    t.string  "questions"
+    t.integer "like_count"
+    t.string  "length"
+    t.string  "description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.string   "email"
-    t.string   "grad_class"
-    t.string   "major"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.string "major"
+    t.string "grad_class"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

@@ -1,0 +1,21 @@
+<body class = "login">	
+	<div class="mainheader">
+	  <a href ="/">
+	    <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+	    <div id ="pinterview">PINTERVIEW</div>
+	  </a>
+	</div>
+
+	<div id = "sign-in">SIGN IN</div>
+	<hr id ="line">
+	<%= form_for(:session, url: login_path) do |f| %>
+		<%= f.email_field :email, :placeholder => "Berkeley Email", :class => "email-login"  %>
+		<%= f.password_field :password, :placeholder => "Password", :class => "password-login" %>
+		<%= f.submit "Continue", :class => "btn-submit" %>
+	<% end %>
+
+	<div id = "sign-in-wrapper">
+		<a class="my-button" href="signup">Don't have an account?</a>
+		<a class="my-button-1" href="">Forgot Password?</a>
+	</div>
+</body>

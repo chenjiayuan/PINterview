@@ -1,37 +1,31 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  def show
-    @user = User.find(params[:id])
-  end
-
+  before_action :require_user, only: [:show, :edit]
+  before_action :not_require_user, only: [:new]
   def new
     @user = User.new
   end
 
-  def create
-    @user = User.new(user_params)
-    @user.save
-
-    @user = User.last
-    @total = {status: 1, user: @user}
-    respond_to do |format|
-      format.html{
-        render json: @total
-      }
-      format.json{
-        render json: @total
-      }
-    end
+  def create 
+    @user = User.new(user_params) 
+    if @user.save 
+      session[:user_id] = @user.id 
+      redirect_to '/' 
+    else 
+      redirect_to '/signup' 
+    end 
   end
 
-  def edit
+  def show    
+    if current_user.id == Integer(params[:id])
+    @user = User.find(params[:id])
+    @pins = Pin.where(:user_id => @user.id)
+  else
+    redirect_to '/' 
   end
-
-  def destory
   end
-
+  
+  private
   def user_params
-    params.require(:user).permit(:username, :email, :password,
-                                 :password_confirmation, :grad_class, :major)
+    params.require(:user).permit(:username, :email, :password, :grad_class, :major)
   end
 end

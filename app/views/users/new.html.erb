@@ -1,8 +1,6 @@
 <html>
 <head>
   <title>PINterview - New Pin</title>
-  <%= javascript_include_tag "jquery.min.js" %>
-  <%= javascript_include_tag "newuser.js" %>
   <script type="text/javascript">
       // This is a jQuery convention to say that once all the files
       // load, the function Smile.start() should run.
@@ -12,40 +10,32 @@
       });
   </script>
 </head>
-<body>
-<div id ="new-header">
-  <h1>Register New User</h1>
-</div>
+<body class = "login">
+  <div class="mainheader">
+    <a href ="/">
+      <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+      <div id ="pinterview">PINTERVIEW</div>
+    </a>
+  </div>
 
-<form class = "newform">
-  Username:
-  <input type="text" class="username-input" name="username">
-  <br><br>
-  Berkeley Email:<br>
-  <input type="text" class="email-input" name="email">
-  <br><br>
-  Password:<br>
-  <input type="password" class="password-input" name="password">
-  <br><br>
-  Password Confirmation:<br>
-  <input type="password" class="password-confirmation-input" name="password-confirmation">
-  <br><br>
-  What year do you graduate?: <!-- This should be a drop down menu with specific options-->
-  <br>
-  <input type="text" class="grad-class-input" name="grad-class">
-  <br><br>
-  Major:<br>
-  <input type="text" class="major-input" name="major">
-  <br><br>
-</form>
+  <div id = "sign-up">SIGN UP</div>
+  <hr id ="line">
+  <div class = "signup-form">
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :username, :placeholder => "Full Name" %>
+      <%= f.email_field :email, :placeholder => "Berkeley Email" %>
+      <%= f.password_field :password, :placeholder => "Password (At Least 6 Characters)" %>
+      <%= f.label :Class, :class => "graduating-class" %>
+      <%= f.select :grad_class, ['2016', '2017', '2018', '2019', '2020', 'Later']%>
+      <%= f.label :Major, :class => "major" %>
+      <%= f.select :major, ['EECS', 'CS', 'CEE', 'IEOR', 'MSE', 'ME', 'NE', 'Math', 'Stat', 'Other']%>
+      <%= f.submit "Create an account", class: "btn-submit" %>
+    <% end %>
+  </div>
 
-<div class = 'wrapper-user'>
-  <button class = "create-user-button">Register</button>
-</div>
-
-<div class = 'wrapper-user-1'>
-  <button onclick="window.location='/welcome'" class = "cancel-user-button">Cancel</button>
-</div>
+  <div class = 'wrapper-user-1'>
+    <a class="my-button" href="login">Cancel</a>
+  </div>
 
 </body>
 </html>

@@ -1,0 +1,233 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*--- Login View ---*/
+a{
+	text-decoration: none;
+	color: black;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+ body.login{
+	margin: 0px;
+	background-image: url(/assets/Background.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.mainheader{
+	margin-top: 50px;
+	text-align: center;
+}
+
+#logo{
+	display: inline;
+	width: 38px;
+	margin-right: 10px;
+}
+
+#pinterview{
+	display: inline;
+	color: white;
+	font-family: arial;
+	font-size: 60px;
+}
+
+#sign-in{
+	margin-top: 80px;
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	color: white;
+}
+
+#line{
+	margin-top: 10px;
+	margin-bottom: 40px;
+	width: 350px;
+}
+
+input[type=text], 
+input[type=email], 
+input[type=password]{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-style: none;
+	width: 350px;
+	height: 30px;
+	background-color: rgba(255, 255, 255, 0.2);
+	text-indent: 10px;
+	font-size: 14px;
+	color: white;
+	opacity: .8;
+} 
+
+.btn-submit{
+	border-style: none;	
+	border-radius: 0px;	
+	font-family: Arial;	
+	color: #ffffff;		
+	font-size: 14px;	
+	text-decoration: none;	
+	background: #F47F7F;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 350px;
+	display: block;		
+	margin-top: 30px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn-submit:hover{
+	cursor: pointer;
+}
+
+#sign-in-wrapper{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.my-button{
+	font-family: arial;
+	font-size: 13px;
+	color: white;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.my-button-1{
+	font-family: arial;
+	font-size: 13px;
+	color: white;
+	padding-left: 100px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+/*--- Signup View ---*/
+#sign-up{
+	margin-top: 80px;
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	color: white;
+}
+
+.wrapper-user-1{ 
+   margin-bottom: 30px; 
+   text-align: center; 
+}
+
+.graduating-class{
+	font-family: arial;
+	font-size: 13px;
+	color: white;
+	text-align: center;
+}
+
+.major{
+	font-family: arial;
+	font-size: 13px;
+	color: white;	
+	padding-left: 20px;
+}
+
+.signup-form form select {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background:rgba(255,255,255,0.8);
+  border: 0 none;
+  border-radius: 10px;
+  box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.signup-form{
+	text-align: center;
+}
+
+/* --- Welcome Page --- */
+
+/*#login-container { 
+   width: 50%; 
+   margin-left: 25%; 
+   text-align: center; 
+   font-family: 'arial'; 
+}
+
+#login-container div { 
+   font-size: 30px; 
+   font-weight: bold; 
+   padding-bottom: 5px; 
+}
+
+.wrapper-user{ 
+   margin-top: 20px; 
+   text-align: center; 
+}
+
+.create-user-button{ 
+   width: 150px; 
+   padding-top: 5px; 
+   padding-bottom: 5px; 
+   border-radius: 7px; 
+   background-color: #3B3D55; 
+   text-align: center; 
+   color: white; 
+   font-family: 'arial'; 
+   font-size: 13px; 
+}
+
+.cancel-user-button{ 
+   width: 150px; 
+   padding-top: 5px; 
+   padding-bottom: 5px; 
+   border-radius: 7px; 
+   background-color: #3B3D55; 
+   text-align: center; 
+   color: white; 
+   font-family: 'arial'; 
+   font-size: 13px; 
+}
+
+#login-button { 
+   width: 150px; 
+   padding-top: 5px; 
+   padding-bottom: 5px; 
+   border-radius: 7px; 
+   background-color: #3B3D55; 
+   text-align: center; 
+   color: white; 
+   font-family: 'arial'; 
+   font-size: 13px; 
+}*/
+
+
+

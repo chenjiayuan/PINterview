@@ -1,24 +1,5 @@
 /* --- Home ---*/
-body{
-	margin: 0px;
-}
-
-a{
-	text-decoration: none;
-	color: black;
-}
-
-h1{
-	font-family: arial;
-	font-size: 100px;
-	display: inline;
-	color: white;
-}
-
-button:hover{
-	cursor: pointer;
-}
-
+/*
 .mainheader{
 	width: 100%;
 	background-color: #3B3D55;
@@ -26,25 +7,7 @@ button:hover{
 	padding-top: 10px;
 	padding-bottom: 20px;
 	margin-bottom: 50px;
-}
-
-#logo{
-	width: 55px;
-	display: inline;
-	margin-right: 15px;
-}
-
-.my-button{
-	background-color: white;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-right: 10px;
-	padding-left: 10px;
-	border-radius: 7px;
-	font-family: arial;
-	font-size: 13px;
-	box-shadow: 2px 2px 1px grey;
-}
+}*/
 
 .pins{
 	text-align: center;
@@ -112,53 +75,15 @@ button:hover{
 	font-size: 12px;
 }
 
-@media screen and (max-width: 100%) {
-	.pin{
-	    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-	    -moz-column-count: 3; /* Firefox */
-	    column-count: 3;
-	}	
-}
-
-@media screen and (max-width: 800px) {
-	h1{
-		font-size: 80px;
-	}	
-	#logo{
-		width: 45px;
-	}
-	.pin{
-	    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-	    -moz-column-count: 2; /* Firefox */
-	    column-count: 2;
-	}	
-}
-
-@media screen and (max-width: 600px) {
-	h1{
-		font-size: 50px;
-	}	
-	#logo{
-		width: 28px;
-	}
-}
-
 /* --- Create a Pin ---*/
-#new-header{
+/*#new-header{
 	width: 100%;
 	background-color: #3B3D55;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	margin-bottom: 50px;
-}
-
-form{
-	width: 140px;
-	margin-left: auto;
-	margin-right: auto;
-	font-family: arial;
-}
+}*/
 
 .wrapper{
 	margin-top: 20px;

@@ -4,12 +4,10 @@
 #
 #  id              :integer          not null, primary key
 #  username        :string
-#  password_digest :string
 #  email           :string
-#  grad_class      :string
+#  password_digest :string
 #  major           :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  grad_class      :string
 #
 
 require 'test_helper'

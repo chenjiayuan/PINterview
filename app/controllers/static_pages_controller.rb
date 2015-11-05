@@ -1,10 +1,7 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
+	before_action :require_user, only: [:home]
 
-  def welcome
-  end
-
-  def help
-  end
+	def home
+		@pins = Pin.all
+	end
 end
