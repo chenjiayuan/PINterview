@@ -10,29 +10,32 @@
       });
   </script>
 </head>
-<body>
+<body class = "login">
+  <div class="mainheader">
+    <a href ="/">
+      <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+      <div id ="pinterview">PINTERVIEW</div>
+    </a>
+  </div>
 
-<%= form_for(@user) do |f| %>
-      <%= f.label :Name %>
-      <%= f.text_field :username, :placeholder => "Name" %>
-      <%= f.label "Berkeley Email" %>
-      <%= f.email_field :email, :placeholder => "Email" %>
-      <%= f.label :Password %>
-      <%= f.password_field :password, :placeholder => "Password" %>
-      <%= f.label :Class %>
-      <%= f.select :grad_class, ['2016', '2017', '2018', '2019', '2020', 'later']%>
-      <%= f.label :Major %>
-      <%= f.select :major, ['EECS', 'CS', 'CEE', 'IEOR', 'MSE', 'ME', 'NE', 'Math', 'Stat', 'Others']%>
+  <div id = "sign-up">SIGN UP</div>
+  <hr id ="line">
+  <div class = "signup-form">
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :username, :placeholder => "Full Name" %>
+      <%= f.email_field :email, :placeholder => "Berkeley Email" %>
+      <%= f.password_field :password, :placeholder => "Password (At Least 6 Characters)" %>
+      <%= f.label :Class, :class => "graduating-class" %>
+      <%= f.select :grad_class, ['2016', '2017', '2018', '2019', '2020', 'Later']%>
+      <%= f.label :Major, :class => "major" %>
+      <%= f.select :major, ['EECS', 'CS', 'CEE', 'IEOR', 'MSE', 'ME', 'NE', 'Math', 'Stat', 'Other']%>
       <%= f.submit "Create an account", class: "btn-submit" %>
     <% end %>
+  </div>
 
-<!-- <div class = 'wrapper-user'>
-  <button class = "create-user-button">Register</button>
-</div> -->
-
-<div class = 'wrapper-user-1'>
-  <a class="my-button" href="login">Cancel</a>
-</div>
+  <div class = 'wrapper-user-1'>
+    <a class="my-button" href="login">Cancel</a>
+  </div>
 
 </body>
 </html>

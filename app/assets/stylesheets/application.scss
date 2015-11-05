@@ -14,7 +14,7 @@
  *= require_self
  */
 
-/*--- Login Page ---*/
+/*--- Login View ---*/
 a{
 	text-decoration: none;
 	color: black;
@@ -24,7 +24,7 @@ button:hover{
 	cursor: pointer;
 }
 
- body{
+ body.login{
 	margin: 0px;
 	background-image: url(/assets/Background.png);
 	background-repeat: no-repeat;
@@ -97,7 +97,7 @@ input[type=password]{
 	padding-bottom: 10px;
 	width: 350px;
 	display: block;		
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
@@ -131,9 +131,51 @@ input[type=password]{
 	margin-right: auto;	
 }
 
+/*--- Signup View ---*/
+#sign-up{
+	margin-top: 80px;
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	color: white;
+}
+
+.wrapper-user-1{ 
+   margin-bottom: 30px; 
+   text-align: center; 
+}
+
+.graduating-class{
+	font-family: arial;
+	font-size: 13px;
+	color: white;
+	text-align: center;
+}
+
+.major{
+	font-family: arial;
+	font-size: 13px;
+	color: white;	
+	padding-left: 20px;
+}
+
+.signup-form form select {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background:rgba(255,255,255,0.8);
+  border: 0 none;
+  border-radius: 10px;
+  box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.signup-form{
+	text-align: center;
+}
+
 /* --- Welcome Page --- */
 
-#login-container { 
+/*#login-container { 
    width: 50%; 
    margin-left: 25%; 
    text-align: center; 
@@ -148,11 +190,6 @@ input[type=password]{
 
 .wrapper-user{ 
    margin-top: 20px; 
-   text-align: center; 
-}
-
-.wrapper-user-1{ 
-   margin-bottom: 30px; 
    text-align: center; 
 }
 
@@ -190,7 +227,7 @@ input[type=password]{
    color: white; 
    font-family: 'arial'; 
    font-size: 13px; 
-}
+}*/
 
 
 
