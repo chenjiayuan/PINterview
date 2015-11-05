@@ -16,7 +16,7 @@
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 /* This SCSS file is used for the login view (static_pages/welcome.html.erb)
-and signup view (users/new.html.erb) */
+and signup view (users/new.html.erb)*/
 
 /*--- Login View ---*/
 a{
@@ -28,7 +28,7 @@ button:hover{
 	cursor: pointer;
 }
 
- body.login{
+body.login{
 	margin: 0px;
 	background-image: url(/assets/Background.png);
 	background-repeat: no-repeat;

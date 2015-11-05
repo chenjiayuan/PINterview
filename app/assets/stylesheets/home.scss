@@ -1,3 +1,12 @@
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* This SCSS file is used for the dashboard view (static_pages/home.html.erb) */
+
+/* --- Dashboard --- */
+body.dashboard-body{
+  margin: 0px;
+  background-color: grey;
+}
+
 /* --- Home ---*/
 /*
 .mainheader{
@@ -178,4 +187,4 @@
     color: white;
     font-family: 'arial';
     font-size: 13px;
-}*/
+}
