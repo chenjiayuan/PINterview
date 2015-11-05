@@ -9,3 +9,11 @@
       <h3 class= "story-col question-row questions"> Question: <%= @pin.questions %></h3>
       <h3 class= "story-col story-row description"> <%= @pin.description %></h3>
 </div>
+
+<% if current_user == @pin.user%>
+ <p>
+    <%= link_to 'Edit', edit_pin_path(@pin) %>
+    <%= link_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+<% end %>
+

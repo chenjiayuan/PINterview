@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-	before_action :require_user, only: [:new, :show]
+	before_action :require_user, only: [:new, :show, :edit, :destroy]
   def new
     	@pin = Pin.new
   	end
@@ -17,6 +17,14 @@ class PinsController < ApplicationController
 
     def show
       @pin = Pin.find(params[:id])
+    end
+
+    def edit
+      
+    end
+
+    def destroy
+      
     end
 
   	private
