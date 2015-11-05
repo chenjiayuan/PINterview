@@ -11,7 +11,7 @@ class PinsController < ApplicationController
     if @pin.save    	
       	redirect_to "/"
     else
-      	redirect_to "/pins/new"
+      	redirect_to "new_pin"
     	end
   	end 
 
