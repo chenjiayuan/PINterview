@@ -1,7 +1,8 @@
 <%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label "Berkeley Email" %>
-  <%= f.email_field :email, :placeholder => "Email" %>
-  <%= f.label "Password" %>
-  <%= f.password_field :password, :placeholder => "Password" %>
-  <%= f.submit "Log in", class: "btn-submit" %>
+	<%= f.email_field :email, :placeholder => "Berkeley Email", :class => "email-login"  %>
+	<%= f.password_field :password, :placeholder => "Password", :class => "password-login" %>
+  <%= f.submit "Continue", :class => "btn-submit" %>
 <% end %>
+
+ <a class="my-button" href="signup">Don't have an account?</a>
+ <a class="my-button-1" href="">Forgot Password?</a>

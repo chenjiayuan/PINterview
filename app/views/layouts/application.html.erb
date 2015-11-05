@@ -6,27 +6,28 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<header class="mainheader">
-    <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
-    <h1>PINTERVIEW</h1>
 
-<% if current_user %>
-  <div class="create"> 
-      <a class="my-button"><%= link_to "Home", root_path %></a>       
-      <a class="my-button"><%= link_to "New Pin", new_pin_path %></a>
+<body>
+  <div class="mainheader">
+      <a href ="/">
+        <img id = "logo" src="<%= asset_path( 'logo.png' ) %>">
+        <div id ="pinterview">PINTERVIEW</div>
+      </a>
   </div>
-  <ul> 
-    <a class="my-button"><%= link_to "My Profile", current_user %></a>
-    <a class="my-button"><%= link_to "Log out", logout_path, method: "delete" %></a>
-  </ul> 
-<% else %> 
-  <ul> 
-    <a class="my-button" href="login">Login</a>
-    <a class="my-button" href="signup">Signup</a>
-  </ul> 
-<% end %>
-  </header>
+
+  <div id = "sign-in">SIGN IN</dvi>
+  <hr id ="line">
+
+  <% if current_user %>
+    <div class="create"> 
+        <a class="my-button"><%= link_to "Home", root_path %></a>       
+        <a class="my-button"><%= link_to "New Pin", new_pin_path %></a>
+    </div>
+    <ul> 
+      <a class="my-button"><%= link_to "My Profile", current_user %></a>
+      <a class="my-button"><%= link_to "Log out", logout_path, method: "delete" %></a>
+    </ul> 
+  <% end %>
 <%= yield %>
 </body>
 </html>
