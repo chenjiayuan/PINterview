@@ -14,18 +14,17 @@
 ActiveRecord::Schema.define(version: 20151104232612) do
 
   create_table "pins", force: :cascade do |t|
-    t.string   "position"
-    t.string   "company"
-    t.string   "date"
-    t.string   "difficulty"
-    t.string   "type_interview"
-    t.string   "attire"
-    t.string   "questions"
-    t.integer  "like_count"
-    t.string   "length"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "position"
+    t.string  "company"
+    t.string  "date"
+    t.string  "difficulty"
+    t.string  "type_interview"
+    t.string  "attire"
+    t.string  "questions"
+    t.integer "like_count"
+    t.string  "length"
+    t.string  "description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -13,11 +13,11 @@
 
 <% if current_user %>
   <div class="create"> 
-      <a class="my-button" href="/">Home</a>       
-      <a class="my-button" href="pins/new">Create New Pin</a>
+      <a class="my-button"><%= link_to "Home", root_path %></a>       
+      <a class="my-button"><%= link_to "New Pin", new_pin_path %></a>
   </div>
   <ul> 
-    <a class="my-button" href=""><%= link_to "My Profile", current_user%></a>
+    <a class="my-button"><%= link_to "My Profile", current_user %></a>
     <a class="my-button"><%= link_to "Log out", logout_path, method: "delete" %></a>
   </ul> 
 <% else %> 
