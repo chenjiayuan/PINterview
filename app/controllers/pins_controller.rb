@@ -16,7 +16,11 @@ class PinsController < ApplicationController
   	end 
 
     def show
-      @pin = Pin.find(params[:id])
+      if current_user.id == params[:id]
+        @pin = Pin.find(params[:id])
+      else
+        @pin = nil
+      end
     end
 
     def edit

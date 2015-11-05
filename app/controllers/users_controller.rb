@@ -15,9 +15,13 @@ class UsersController < ApplicationController
     end 
   end
 
-  def show
+  def show    
+    if current_user.id == Integer(params[:id])
     @user = User.find(params[:id])
     @pins = Pin.where(:user_id => @user.id)
+  else
+    redirect_to '/' 
+  end
   end
   
   private
