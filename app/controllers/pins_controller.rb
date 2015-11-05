@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-	before_action :require_user, only: [:new, :show, :edit, :destroy]
+	before_action :require_user, only: [:new, :create, :show, :edit, :destroy]
   def new
     	@pin = Pin.new
   	end
@@ -16,7 +16,11 @@ class PinsController < ApplicationController
   	end 
 
     def show
-      @pin = Pin.find(params[:id])      
+      if current_user.id == params[:id]
+        @pin = Pin.find(params[:id])
+      else
+        redirect_to "/"
+      end    
     end
 
     def edit
