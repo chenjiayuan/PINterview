@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+	before_action :not_require_user, only: [:new]
+
 	def create
 	  @user = User.find_by_email(params[:session][:email])
 	  if @user && @user.authenticate(params[:session][:password])
