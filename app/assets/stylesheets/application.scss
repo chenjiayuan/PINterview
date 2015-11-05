@@ -96,20 +96,30 @@ input[type=password]{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 350px;
+	display: block;		
 	margin-top: 20px;
 	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .btn-submit:hover{
 	cursor: pointer;
 }
 
+#sign-in-wrapper{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .my-button{
 	font-family: arial;
 	font-size: 13px;
 	color: white;
-	margin-left: 0px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .my-button-1{
@@ -117,6 +127,8 @@ input[type=password]{
 	font-size: 13px;
 	color: white;
 	padding-left: 100px;
+	margin-left: auto;
+	margin-right: auto;	
 }
 
 /* --- Welcome Page --- */

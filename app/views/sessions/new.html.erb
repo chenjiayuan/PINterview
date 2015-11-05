@@ -1,8 +1,12 @@
+<div id = "sign-in">SIGN IN</div>
+<hr id ="line">
 <%= form_for(:session, url: login_path) do |f| %>
 	<%= f.email_field :email, :placeholder => "Berkeley Email", :class => "email-login"  %>
 	<%= f.password_field :password, :placeholder => "Password", :class => "password-login" %>
-  <%= f.submit "Continue", :class => "btn-submit" %>
+	<%= f.submit "Continue", :class => "btn-submit" %>
 <% end %>
 
- <a class="my-button" href="signup">Don't have an account?</a>
- <a class="my-button-1" href="">Forgot Password?</a>
+<div id = "sign-in-wrapper">
+	<a class="my-button" href="signup">Don't have an account?</a>
+	<a class="my-button-1" href="">Forgot Password?</a>
+</div>
