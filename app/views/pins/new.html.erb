@@ -1,30 +1,36 @@
-<div class="create">
-  <div class="container">  
-  <h2>Create New Pin</h2>
-   <div class="form"> 
+<htmL>
+<head>
+</head>
+<body>
+  <div class="create">
+    <div class="container">  
+    <h2>Create New Pin</h2>
+     <div class="form"> 
 
-    <%= form_for(@pin) do |f| %>    
-       <%= f.text_field :position, :placeholder => "Position" %><br>
-       <%= f.text_field :company, :placeholder => "Company" %><br>
-       <%= f.text_field :date, :placeholder => "Interview Date" %><br>       
+      <%= form_for(@pin) do |f| %>    
+         <%= f.text_field :position, :placeholder => "Position" %><br>
+         <%= f.text_field :company, :placeholder => "Company" %><br>
+         <%= f.text_field :date, :placeholder => "Interview Date" %><br>       
 
-       <%= f.label :Difficulty %><br>
-       <%= f.select :difficulty, ['Very Easy', 'Easy', "Alright", "Hard", "Very Hard"]%><br>      
+         <%= f.label :Difficulty %><br>
+         <%= f.select :difficulty, ['Very Easy', 'Easy', "Alright", "Hard", "Very Hard"]%><br>      
 
-       <%= f.label :Type %><br>
-       <%= f.select :type_interview, ['Onsite', 'Offsite', "Phone", "Behavior", "OCR"]%><br>
+         <%= f.label :Type %><br>
+         <%= f.select :type_interview, ['Onsite', 'Offsite', "Phone", "Behavior", "OCR"]%><br>
 
-       <%= f.label :Attire %><br>
-       <%= f.select :attire, ['Yes', 'No']%><br>
+         <%= f.label :Attire %><br>
+         <%= f.select :attire, ['Yes', 'No']%><br>
 
-       <%= f.text_field :questions, :placeholder => "Discuss Technical Questions" %><br>
-       
-       <%= f.label :Length %>
-       <%= f.select :length, ["Less than 30 Minutes", '30 Minutes', '1 Hour', "1 Hour 30 Minutes", "More than 2 Hour"]%>
-       
-       <%= f.text_field :description, :placeholder => "Solution if you have any" %><br>
-       <%= f.submit "Create Now", class: "btn-submit" %>
-    <% end %>    
+         <%= f.text_field :questions, :placeholder => "Discuss Technical Questions" %><br>
+         
+         <%= f.label :Length %>
+         <%= f.select :length, ["Less than 30 Minutes", '30 Minutes', '1 Hour', "1 Hour 30 Minutes", "More than 2 Hour"]%>
+         
+         <%= f.text_field :description, :placeholder => "Solution if you have any" %><br>
+         <%= f.submit "Create Now", class: "btn-submit" %>
+      <% end %>    
+    </div>
+    </div>
   </div>
-  </div>
-</div>
+</body>
+</html>
