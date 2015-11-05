@@ -4,16 +4,28 @@
    <div class="form"> 
 
     <%= form_for(@pin) do |f| %>    
-       <%= f.text_field :position,:placeholder => "Position" %><br> 
-       <%= f.text_field :company, :placeholder => "Company" %><br> 
-       <%= f.text_field :date, :placeholder => "Interview Date" %><br> 
-       <%= f.text_field :difficulty,:placeholder => "How's Difficult" %><br> 
-       <%= f.text_field :type_interview, :placeholder => "What kind of Interview?" %><br> 
-       <%= f.text_field :attire, :placeholder => "Does it Require Attire?" %><br> 
-       <%= f.text_field :questions, :placeholder => "Discuss Technical Questions" %><br> 
-       <%= f.text_field :length, :placeholder => "How Long is the interiew?" %><br> 
-       <%= f.text_field :description, :placeholder => "Solution if you have any" %><br> 
-       <%= f.submit "Create Now", class: "btn-submit" %>       
+       <%= f.text_field :position,:placeholder => "Position" %><br>
+       <%= f.text_field :company, :placeholder => "Company" %><br>
+       <%= f.text_field :date, :placeholder => "Interview Date" %><br>       
+
+       <%= f.label :Difficulty %>
+       <%= f.select :difficulty, ['Very Easy', 'Easy', "Alright", "Hard", "Very Hard"]%>
+
+       <%= f.text_field :type_interview, :placeholder => "What kind of Interview?" %><br>
+
+       <%= f.label :Type %>
+       <%= f.select :type_interview, ['Onsite', 'Offsite', "Phone", "Behavior", "OCR"]%>
+
+       <%= f.label :Attire %>
+       <%= f.select :attire, ['Yes', 'No']%>
+
+       <%= f.text_field :questions, :placeholder => "Discuss Technical Questions" %><br>
+       <%= f.text_field :length, :placeholder => "How Long is the interiew?" %><br>
+       <%= f.label :Length %>
+       <%= f.select :length, ["Less than 30 Minutes", '30 Minutes', '1 Hour', "1 Hour 30 Minutes", "More than 2 Hour"]%>
+       
+       <%= f.text_field :description, :placeholder => "Solution if you have any" %><br>
+       <%= f.submit "Create Now", class: "btn-submit" %>
     <% end %>    
   </div>
   </div>
