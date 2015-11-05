@@ -1,12 +1,7 @@
 <div class="mainbody">
   <div class="pins">  
-    <% @pins.each do |pin| %>
-    <div class="pin">      
-      <h3 class= "title-container title"><%= pin.position %></h3>
-      <h3 class= "title-container company"><%= pin.company %></h3>      
-      <%= link_to "Detail", pin_path(pin) %>
-    </div>
-    <% end %>
+
+    <%= render "layouts/more_pins" %>
 
   </div>
 </div>
