@@ -11,7 +11,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :pins, dependent: :destroy
+  has_many :pins
 
   has_secure_password
   before_save :downcase_email

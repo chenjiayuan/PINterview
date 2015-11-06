@@ -17,7 +17,7 @@
 #
 
 class Pin < ActiveRecord::Base
-  belongs_to :user
+  	belongs_to :user
 
     validates :position, presence: true, length: {maximum: 40}    
     validates :company, presence: true, length: {maximum: 40}

@@ -11,7 +11,7 @@ class CreatePins < ActiveRecord::Migration
       t.integer :like_count
       t.string :length
       t.string :description 
-      #t.integer :user_id
+      t.integer :user_id
     end
   end
 end
