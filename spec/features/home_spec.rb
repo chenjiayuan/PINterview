@@ -59,6 +59,17 @@ feature "All Features Test" do
     expect(page).to have_content("Welcome to Profile Page")
   end
 
+  scenario "Login and then click home page button" do
+    user = FactoryGirl.create(:user, email: "ki.ey.kouch@berkeley.edu")
+    visit "/login"
+    fill_in "email", :with => user.email
+    fill_in "password", :with => user.password
+    click_button "Continue"    
+    click_button "Home"
+    expect(current_path).to eq root_path
+    expect(page).to have_content("Welcome to Pinterview")
+  end
+
   scenario "create new pin after login" do
     user = FactoryGirl.create(:user, email: "ki.ey.kouch@berkeley.edu")
     visit "/login"
@@ -82,6 +93,31 @@ feature "All Features Test" do
     
     expect(current_path).to eq root_path
     expect(user.pins).to eq 1
+  end
+
+  scenario "valid login and logout" do
+    user = FactoryGirl.create(:user, email: "ki.ey.kouch@berkeley.edu")
+    visit "/login"
+    fill_in "email", :with => user.email
+    fill_in "password", :with => user.password
+    click_button "Continue"
+    expect(page).to have_content("Welcome to Pinterview")
+
+    click_button 'Log out'
+    expect(current_path).to eq root_path
+  end
+
+  scenario "Display individual pin" do
+    user = FactoryGirl.create(:user, email: "ki.ey.kouch@berkeley.edu")
+    pin = FactoryGirl.create(:pin)
+    visit "/login"
+    fill_in "email", :with => user.email
+    fill_in "password", :with => user.password
+    click_button "Continue"
+
+    visit 'pins/1'    
+    expect(current_path).to eq pins_show_path  
+    expect(page).to eq have_content(pin.position)  
   end
 
 	private
