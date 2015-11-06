@@ -11,16 +11,13 @@ class PinsController < ApplicationController
     if @pin.save    	
       	redirect_to "/"
     else
-      	redirect_to "/pins/new"
-    	end
+        flash[:error] = @pin.errors.full_messages.to_sentence 
+      	redirect_to "new_pin"
+    end
   	end 
 
     def show
-      if current_user.id == params[:id]
-        @pin = Pin.find(params[:id])
-      else
-        redirect_to "/"
-      end    
+      @pin = Pin.find(params[:id]) 
     end
 
     def edit

@@ -22,6 +22,12 @@
   <hr id ="line">
   <div class = "signup-form">
     <%= form_for(@user) do |f| %>
+
+
+    <div class = "error_message">
+          <%= flash[:error] %>
+    </div>
+
       <%= f.text_field :username, :placeholder => "Full Name" %>
       <%= f.email_field :email, :placeholder => "Berkeley Email" %>
       <%= f.password_field :password, :placeholder => "Password (At Least 6 Characters)" %>

@@ -7,6 +7,11 @@ class SessionsController < ApplicationController
 	    session[:user_id] = @user.id
 	    redirect_to '/'
 	  else
+	  	if @user
+	  	flash[:error] = @user.errors.full_messages.to_sentence 
+		else
+		flash[:error] = @user.authenticate(params[:session][:password]).errors.full_messages.to_sentence 	
+		end
 	    redirect_to 'login'
 	  end
 	end

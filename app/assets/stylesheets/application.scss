@@ -14,6 +14,10 @@
  *= require_self
  */
 
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* This SCSS file is used for the login view (static_pages/welcome.html.erb)
+and signup view (users/new.html.erb)*/
+
 /*--- Login View ---*/
 a{
 	text-decoration: none;
@@ -24,7 +28,7 @@ button:hover{
 	cursor: pointer;
 }
 
- body.login{
+body.login{
 	margin: 0px;
 	background-image: url(/assets/Background.png);
 	background-repeat: no-repeat;
@@ -111,6 +115,7 @@ input[type=password]{
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 20px;
 }
 
 .my-button{
@@ -172,62 +177,3 @@ input[type=password]{
 .signup-form{
 	text-align: center;
 }
-
-/* --- Welcome Page --- */
-
-/*#login-container { 
-   width: 50%; 
-   margin-left: 25%; 
-   text-align: center; 
-   font-family: 'arial'; 
-}
-
-#login-container div { 
-   font-size: 30px; 
-   font-weight: bold; 
-   padding-bottom: 5px; 
-}
-
-.wrapper-user{ 
-   margin-top: 20px; 
-   text-align: center; 
-}
-
-.create-user-button{ 
-   width: 150px; 
-   padding-top: 5px; 
-   padding-bottom: 5px; 
-   border-radius: 7px; 
-   background-color: #3B3D55; 
-   text-align: center; 
-   color: white; 
-   font-family: 'arial'; 
-   font-size: 13px; 
-}
-
-.cancel-user-button{ 
-   width: 150px; 
-   padding-top: 5px; 
-   padding-bottom: 5px; 
-   border-radius: 7px; 
-   background-color: #3B3D55; 
-   text-align: center; 
-   color: white; 
-   font-family: 'arial'; 
-   font-size: 13px; 
-}
-
-#login-button { 
-   width: 150px; 
-   padding-top: 5px; 
-   padding-bottom: 5px; 
-   border-radius: 7px; 
-   background-color: #3B3D55; 
-   text-align: center; 
-   color: white; 
-   font-family: 'arial'; 
-   font-size: 13px; 
-}*/
-
-
-
