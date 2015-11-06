@@ -26,6 +26,7 @@ group :development, :test do
   gem 'annotate'
   gem 'faker', '1.4.2'
   gem 'coffee-script-source', '1.8.0'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :test do  

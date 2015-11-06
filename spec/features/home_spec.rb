@@ -6,11 +6,11 @@ feature "visiting the home page" do
 		expect(page).to have_title "Welcome to PINterview"
 	end
 
-	scenario "check if can u access new user link from home" do         
-      visit root_path
-      visit users_new_path  
-      expect(page).to have_title "Create New User"
-    end
+	scenario("check if can u access new user link from home") do
+    visit root_path
+    visit users_new_path
+    expect(page).to have_title "Create New User"
+  end
 
     scenario "check if can u access new pin link from home" do         
       visit root_path
