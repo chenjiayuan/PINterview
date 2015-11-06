@@ -11,8 +11,9 @@ class PinsController < ApplicationController
     if @pin.save    	
       	redirect_to "/"
     else
+        flash[:error] = @pin.errors.full_messages.to_sentence 
       	redirect_to "new_pin"
-    	end
+    end
   	end 
 
     def show
