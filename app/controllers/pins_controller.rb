@@ -6,8 +6,8 @@ class PinsController < ApplicationController
   
   	def create
 	    @pin = Pin.new(pin_params)
-	    @pin.like_count = 0
-      @pin.user_id = current_user.id if current_user
+	    @pin.like_count = 0      
+      current_user.pins << @pin
     if @pin.save    	
       	redirect_to "/"
     else
