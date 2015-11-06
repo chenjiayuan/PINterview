@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "visiting the home page" do
-	scenario "check welcome text does it contains welcome" do
-		visit root_path
-		expect(page).to have_title "Login"
-	end
+feature "All Features Test" do
+	scenario "check if it direct to new login page for hardlink to new pin path" do
+    visit pins_new_path  
+    expect(current_path).to eq sessions_new_path
+  end
 
 	scenario("check if can u access new user link from home") do
     visit root_path
@@ -46,11 +46,6 @@ feature "visiting the home page" do
     fill_in "password", :with => user.password
     click_button "Continue"
     expect(page).to have_content("Welcome to Pinterview")
-  end
-
-  scenario "check if it direct to new login page for hardlink to new pin path" do
-    visit pins_new_path  
-    expect(current_path).to eq sessions_new_path
   end
 
   scenario "Login and then click profile page button" do
