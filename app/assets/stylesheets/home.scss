@@ -4,7 +4,16 @@
 /* --- Dashboard --- */
 body.dashboard-body{
   margin: 0px;
-  background-color: grey;
+  background-image: url(/assets/Background.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.dashboard-navigation{
+  background-color: black;
+  width: 100%;
 }
 
 /* --- Home ---*/
