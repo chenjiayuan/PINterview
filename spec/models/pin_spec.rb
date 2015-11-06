@@ -1,30 +1,13 @@
-# == Schema Information
-#
-# Table name: pins
-#
-#  id             :integer          not null, primary key
-#  position       :string
-#  company        :string
-#  date           :string
-#  difficulty     :string
-#  type_interview :string
-#  attire         :string
-#  questions      :string
-#  like_count     :integer
-#  length         :string
-#  description    :string
-#  user_id        :integer
-#
-
 require 'spec_helper'
 
-describe Pin do
+describe "Pin" do
+
   it "create valid pin" do    
-    FactoryGirl.create(:pin).should be_valid
+    expect(FactoryGirl.create(:pin)).to be_valid
   end  
 
   it "empty title" do    
-    FactoryGirl.build(:pin, title: "" ).should_not be_valid
+    FactoryGirl.build(:pin, position: "" ).should_not be_valid
   end
 
   it "empty company" do    
@@ -35,20 +18,16 @@ describe Pin do
     FactoryGirl.build(:pin, date: "" ).should_not be_valid
   end
 
-  it "negative difficulty" do    
-    FactoryGirl.build(:pin, difficulty: -1 ).should_not be_valid
+  it "empty difficulty string" do    
+    FactoryGirl.build(:pin, difficulty: "" ).should_not be_valid
   end
   
-  it "beyond 5 difficulty" do    
-    FactoryGirl.build(:pin, difficulty: 5 ).should_not be_valid
-  end
-
-  it "empty type" do    
-    FactoryGirl.build(:pin, type: "" ).should_not be_valid
+  it "empty type interview" do    
+    FactoryGirl.build(:pin, type_interview: "" ).should_not be_valid
   end
 
   it "empty attire" do    
-    FactoryGirl.build(:pin, attire: "" ).should_not be_valid
+   FactoryGirl.build(:pin, attire: "" ).should_not be_valid
   end
 
   it "empty questions" do    
@@ -60,32 +39,45 @@ describe Pin do
     user.like_count should == 0
   end
 
-  it "length 40 title" do    
-    FactoryGirl.build(:pin, title: "a"*40 ).should_not be_valid
+  it "length 41 title" do    
+    FactoryGirl.build(:pin, position: "a"*41 ).should_not be_valid
   end
 
-  it "company 40 title" do    
-    FactoryGirl.build(:pin, company: "a"*40 ).should_not be_valid
+  it "company 41 title" do    
+    FactoryGirl.build(:pin, company: "a"*41 ).should_not be_valid
   end
 
   it "length 40 date" do    
-    FactoryGirl.build(:pin, date: "a"*40 ).should_not be_valid
+    FactoryGirl.build(:pin, date: "a"*41 ).should_not be_valid
   end
   
-  it "length 40 type" do    
-    FactoryGirl.build(:pin, type: "a"*40 ).should_not be_valid
+  it "length 10 type interview" do    
+    FactoryGirl.build(:pin, type_interview: "a"*41 ).should_not be_valid
   end
 
   it "length 40 attire" do    
-    FactoryGirl.build(:pin, attire: "a"*40 ).should_not be_valid
+    FactoryGirl.build(:pin, attire: "a"*30 ).should_not be_valid
   end
 
-  it "length 120 questions" do    
-    FactoryGirl.build(:pin, questions: "a"*120 ).should_not be_valid
+  it "length 241 questions" do    
+    FactoryGirl.build(:pin, questions: "a"*241 ).should_not be_valid
   end
 
-  it "length 240 questions" do    
-    FactoryGirl.build(:pin, description: "a"*240 ).should_not be_valid
+  it "length 321 questions" do    
+    FactoryGirl.build(:pin, description: "a"*321 ).should_not be_valid
   end
+
+  it "difficulty lenght to much 31" do    
+    FactoryGirl.build(:pin, difficulty: "a"*31 ).should_not be_valid
+  end
+
+  it "valid pin without description" do    
+    FactoryGirl.build(:pin, description: "" ).should be_valid
+  end  
+
+  it "invalid pin without description and position" do    
+    FactoryGirl.build(:pin, position: "", description: "" ).should_not be_valid
+  end 
 
 end
+
