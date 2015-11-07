@@ -21,7 +21,20 @@ class PinsController < ApplicationController
     end
 
     def edit
-      
+      @pin = Pin.find(params[:id])
+    end
+
+    def update
+      @pin = Pin.find(params[:id])
+
+      if @pin.update_attributes(pin_params)
+        redirect_to @pin
+
+      else
+        flash[:error] = @pin.errors.full_messages.to_sentence 
+        redirect_to @pin
+      end
+
     end
 
     def destroy

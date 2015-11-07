@@ -1,2 +1,31 @@
-<h1>Pins#edit</h1>
-<p>Find me in app/views/pins/edit.html.erb</p>
+<%= stylesheet_link_tag "static_pages" %>
+<h2>Edit Pin</h2>
+      <div class="form">
+        <%= form_for(@pin) do |f| %>  
+
+         <div class = "error_message">
+          <%= flash[:error] %>
+         </div>
+
+          <%= f.text_field :position, :placeholder => "Position" %><br>
+          <%= f.text_field :company, :placeholder => "Company" %><br>
+          <%= f.text_field :date, :placeholder => "Interview Date" %><br>      
+
+          <%= f.label :Difficulty %><br>
+          <%= f.select :difficulty, ['Very Easy', 'Easy', "Alright", "Hard", "Very Hard"]%><br>      
+
+          <%= f.label :Type %><br>
+          <%= f.select :type_interview, ['Onsite', 'Offsite', "Phone", "Behavior", "OCR"]%><br>
+
+          <%= f.label :Attire %><br>
+          <%= f.select :attire, ['Yes', 'No']%><br>
+
+          <%= f.text_field :questions, :placeholder => "Discuss Technical Questions" %><br>
+          
+          <%= f.label :Length %>
+          <%= f.select :length, ["Less than 30 Minutes", '30 Minutes', '1 Hour', "1 Hour 30 Minutes", "More than 2 Hour"]%>
+          
+          <%= f.text_field :description, :placeholder => "Solution if you have any" %><br>
+          <%= f.submit "Submit edit", class: "btn-submit" %>
+        <% end %>    
+      </div>

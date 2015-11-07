@@ -2,23 +2,39 @@
 // They will automatically be included in application.css. 
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.login {
+  margin: 0px;
+}
 
 .pins{ 
     text-align: center; 
 }
 
+.pins a:visited {
+  color: black;
+}
+
+.pins a {
+  color: black;
+}
+
 .pin { 
-    display: inline-block; 
-     text-align: center;     
-    width: 350px; 
-     margin-bottom: 30px; 
-     margin-left: 5px; 
-     margin-right: 5px; 
-     background-color: #F2F2F2;       
-     border-radius: 5px; 
-    box-shadow: 2px 2px 1px grey; 
-    font-family: arial; 
-     padding-top: 10px; 
+  display: inline-block;
+  text-align: center;
+  width: 350px;
+  margin-bottom: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #F2F2F2;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px grey;
+  font-family: arial;
+  padding-top: 10px;
+}
+
+body > div.mainbody > div > a:nth-child(1).pin a:visited {
+  color: black;
+  background-color: green;
 }
 
 .count{ 
@@ -69,3 +85,88 @@
     font-size: 12px; 
 }
 
+.main-page-header {
+  width: 100%;
+  height: 50px;
+  background-color: #3B3D55;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#header-buttons > .my-button {
+  vertical-align: middle;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+  border-radius: 7px;
+  background-color: #F2F2F2;
+  box-shadow: 1px 1px .5px white;
+  text-align: center;
+  color: Black;
+  font-family: 'arial';
+  font-size: 13px;
+}
+
+#header-buttons {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 15px
+}
+
+#logo-container {
+  float:left;
+  display: inline-block;
+}
+
+#activity-logo {
+  padding-left: 10px;
+  width: 38px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+#activity-pinterview {
+  color: white;
+  font-family: arial;
+  font-size: 60px;
+  display: inline-block;
+}
+
+/* --- New Pin style --- */
+
+
+.create {
+  text-align: center;
+}
+
+#pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background:rgba(255,255,255,0.8);
+  border: 0 none;
+  border-radius: 10px;
+  box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+#pin_position, #pin_company, #pin_date {
+  height: 30px;
+  width: 350px;
+}
+
+#pin_description, #pin_questions {
+  height: 70px;
+  width: 350px;
+  resize: both;
+}
+
+.btn-submit {
+  margin-bottom: 100px;
+}
