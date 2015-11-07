@@ -15,13 +15,14 @@ feature "All Features Test" do
   scenario "create valid new user" do 
     user = FactoryGirl.build_stubbed(:user, email: "ki.ey.kouch@berkeley.edu")    
     visit "/signup"     
-    fill_in "username", with: user.username
-    fill_in "password", with: user.password
-    fill_in "email", with: user.email
-    fill_in "grad_class", with: user.grad_class
-    fill_in "major", with: user.major
-    click_button "Create an account"     
-    expect(page).to have_content "Welcome to Pinterview"
+    fill_in "user_username", with: user.username
+    fill_in "user_password", with: user.password
+    fill_in "user_email", with: user.email
+    #fill_in "user_grad_class", with: user.grad_class
+    #fill_in "user_major", with: user.major
+    click_button "Create an account"
+    expect(current_path).to eq root_path    
+    #expect(page).to have_content ""
   end
 
   scenario "invalid email new user" do
