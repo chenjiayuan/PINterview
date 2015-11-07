@@ -92,7 +92,7 @@ feature "All Features Test" do
     click_button "Create Now"     
     
     expect(current_path).to eq root_path
-    expect(user.pins).to eq 1
+    expect(user.pins.count).to eq 1
   end
 
   scenario "valid login and logout" do
@@ -108,12 +108,24 @@ feature "All Features Test" do
   end
 
   scenario "Display individual pin" do
-    user = FactoryGirl.create(:user, email: "ki.ey.kouch@berkeley.edu")
-    pin = FactoryGirl.create(:pin)
+    user = FactoryGirl.create(:user, email: "ki.ey.kouch@berkeley.edu")    
     visit "/login"
     fill_in "email", :with => user.email
     fill_in "password", :with => user.password
     click_button "Continue"
+
+    visit pins_new_path
+    pin = FactoryGirl.build_stubbed(:pin)
+    fill_in "position", with: pin.position
+    fill_in "company", with: pin.company
+    fill_in "date", with: pin.date
+    fill_in "difficulty", with: pin.difficulty
+    fill_in "type_interview", with: pin.type_interview
+    fill_in "attire", with: pin.attire
+    fill_in "questions", with: pin.questions
+    fill_in "length", with: pin.length
+    fill_in "description", with: pin.description
+    click_button "Create Now" 
 
     visit 'pins/1'    
     expect(current_path).to eq pins_show_path  
