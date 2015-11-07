@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-	before_action :require_user, only: [:new, :create, :show, :edit, :destroy]
+	before_action :require_user, only: [:new, :create, :show, :edit, :destroy, :update]
   def new
     	@pin = Pin.new
   	end
