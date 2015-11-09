@@ -19,3 +19,8 @@
 </p>
 <% end %>
 
+<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-heart"></span>
+  <p> Click Me to Like this PIN (Front-End Can Change this button loke and this display position, remember, a user can like only one time) </p>
+  <%= @pin.get_upvotes.size %>
+<% end %>

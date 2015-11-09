@@ -17,6 +17,7 @@
 #
 
 class Pin < ActiveRecord::Base
+    acts_as_votable
   	belongs_to :user
   	before_save :set_default_like
 

@@ -44,6 +44,12 @@ class PinsController < ApplicationController
       @pin = Pin.find_by_id(params[:id]).destroy
     end
 
+    def upvote
+      @pin = Pin.find_by_id(params[:id])
+      @pin.upvote_by current_user
+      redirect_to :back
+    end
+
   	private
   	def pin_params
       params.require(:pin).permit(:position, :company, :date, :difficulty, :type_interview, 
