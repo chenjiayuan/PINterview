@@ -1,11 +1,12 @@
 class PinsController < ApplicationController
-	before_action :require_user, only: [:new, :create, :show, :edit, :destroy, :update]
+	before_action :require_user, only: [:index, :new, :create, :show, :edit, :destroy, :update]
   
   def index
-    @search = Pin.search(params[:q])
-    @pins = @search.result 
+    @search = Pin.ransack(params[:q])
+    @pins = @search.result.page(params[:page]).to_a.uniq
+    @search.build_condition
   end
-  
+
   def new
     	@pin = Pin.new
   	end

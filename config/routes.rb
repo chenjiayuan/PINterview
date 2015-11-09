@@ -1,5 +1,5 @@
 Rails.application.routes.draw do  
-  root :to => 'static_pages#home' 
+  root :to => 'pins#index' 
   
   get 'pins/new', to:'pins#new'
   get '/pins/:id' => 'pins#show', as: :pin

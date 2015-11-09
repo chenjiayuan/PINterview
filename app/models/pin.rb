@@ -34,4 +34,10 @@ class Pin < ActiveRecord::Base
     def set_default_like
     	self.like_count = 0
   	end
+
+    UNRANSACKABLE_ATTRIBUTES = ["id", "date", "account_id", "attire", "like_count", "length", "user_id"]
+
+    def self.ransackable_attributes auth_object = nil
+        (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys
+    end
 end
