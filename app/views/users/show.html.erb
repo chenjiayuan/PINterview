@@ -3,6 +3,8 @@ Name: <%= @user.username %><br>
 Email: <%= @user.email %><br>
 Class: <%= @user.grad_class %><br>
 Major: <%= @user.major %><br>
+My Avatar: <%= image_tag(@user.avatar) %>
+<p> Please fix avatar side </p>
 
 <h2>Pins I created</h2>
 <div class="mainbody">
@@ -13,4 +15,4 @@ Major: <%= @user.major %><br>
   </div>
 </div>
 
-<h2>Pins I liked</h2>
+<h2>Pins I Marked as Useful</h2>

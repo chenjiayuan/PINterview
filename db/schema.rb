@@ -28,11 +28,15 @@ ActiveRecord::Schema.define(version: 20151109013412) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.string "major"
-    t.string "grad_class"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "major"
+    t.string   "grad_class"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "votes", force: :cascade do |t|

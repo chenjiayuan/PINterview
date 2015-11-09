@@ -29,7 +29,7 @@ class Pin < ActiveRecord::Base
     validates :attire, presence: true, length: {maximum: 30}
     validates :questions, presence: true, length: {maximum: 240}
     validates :length, presence: true, length: {maximum: 30}
-    validates :description, length: {maximum: 320}
+    validates :description, length: {maximum: 320} 
 
     def set_default_like
     	self.like_count = 0

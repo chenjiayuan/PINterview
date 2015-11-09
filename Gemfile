@@ -15,6 +15,9 @@ gem 'bcrypt', '~> 3.1.8'
 gem 'devise'
 gem 'acts_as_votable'
 
+gem 'ruby_identicon'
+gem "paperclip"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
