@@ -15,3 +15,16 @@
         <%= f.submit "Search", class: "btn-submit" %>
       </div>
 <% end %>
+
+<h2> Filter </h2>
+    <div class="column">
+        <div class="filter-label red">
+          <%= sort_link @search, :create_at, "Most Recent" %>
+        </div>
+        <div class="filter-label dark-golden-rod">
+          <%= sort_link @search, :like_count, "Most Popular" %>
+        </div>
+        <div class="filter-label dark-slate-gray">
+          <%= sort_link @search, :difficulty, "Difficulty" %>
+        </div>
+    </div>

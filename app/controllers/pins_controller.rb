@@ -5,6 +5,7 @@ class PinsController < ApplicationController
     @search = Pin.ransack(params[:q])
     @pins = @search.result.page(params[:page]).to_a.uniq
     @search.build_condition
+    @search.build_sort
   end
 
   def new
