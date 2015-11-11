@@ -3,9 +3,9 @@ class PinsController < ApplicationController
   
   def index
     @search = Pin.ransack(params[:q])
-    @pins = @search.result.page(params[:page]).to_a.uniq.reverse
+    @pins = @search.result.paginate(:page => params[:page], :per_page => 20) 
     @search.build_condition
-    @search.build_sort
+    @search.build_sort     
   end
 
   def new
@@ -25,6 +25,7 @@ class PinsController < ApplicationController
 
     def show
       @pin = Pin.find(params[:id]) 
+      @recommend = Pin.find(params[:id]) 
     end
 
     def edit
