@@ -24,6 +24,11 @@
   <%= @pin.get_upvotes.size %>
 <% end %>
 
+<%= link_to dislike_pin_path(@pin), method: :put, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-heart"></span>
+  <p> Click Me to Dislike this PIN</p> <br>  
+<% end %>
+
 <% if Pin.count > 1 %>   
     <h5> Recommend Pin </h5>
     <%= link_to(@random_pin) do %>

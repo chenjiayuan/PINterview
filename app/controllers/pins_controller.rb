@@ -58,7 +58,14 @@ class PinsController < ApplicationController
     def upvote
       @pin = Pin.find_by_id(params[:id])
       @pin.upvote_by current_user 
-      @pin.update_attribute(:like_count, @pin.get_upvotes.size)
+      updatelike
+      redirect_to :back
+    end
+
+    def downvote
+      @pin = Pin.find_by_id(params[:id])
+      @pin.downvote_by current_user 
+      updatelike
       redirect_to :back
     end
 
@@ -67,4 +74,8 @@ class PinsController < ApplicationController
       params.require(:pin).permit(:position, :company, :date, :difficulty, :type_interview, 
         :attire, :questions, :like_count, :length, :description, :user_id)
   	end 
+
+    def updatelike
+      @pin.update_attribute(:like_count, @pin.get_upvotes.size - @pin.get_downvotes.size)
+    end
 end
