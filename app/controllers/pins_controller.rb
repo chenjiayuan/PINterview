@@ -24,8 +24,10 @@ class PinsController < ApplicationController
   	end 
 
     def show
-      @pin = Pin.find(params[:id]) 
-      @recommend = Pin.find(params[:id]) 
+      @pin = Pin.find(params[:id])
+      if Pin.count > 1 
+        @random_pin = Pin.where.not(id: params[:id]).order("RANDOM()").first
+      end
     end
 
     def edit

@@ -20,6 +20,16 @@
 
 <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
   <span class="glyphicon glyphicon-heart"></span>
-  <p> Click Me to Like this PIN (Front-End Can Change this button loke and this display position, remember, a user can like only one time) </p>
+  <p> Click Me to Like this PIN (Front-End Can Change this button loke and this display position, remember, a user can like only one time) </p> <br>
   <%= @pin.get_upvotes.size %>
+<% end %>
+
+<% if Pin.count > 1 %>   
+    <h5> Recommend Pin </h5>
+    <%= link_to(@random_pin) do %>
+        <div class="pin" syle="border:1px">
+          <h3 class= "title-container title"><%= @random_pin.position %></h3>
+          <h3 class= "title-container company"><%= @random_pin.company %></h3>
+        </div>
+    <% end %>
 <% end %>
