@@ -1,3 +1,8 @@
+<script>
+$(document).ready(function() {
+    $(".datepicker").pickadate();    
+});
+</script>
 <div class="form">
         <%= form_for(@pin) do |f| %>  
 
@@ -7,7 +12,7 @@
 
           <%= f.text_field :position, :placeholder => "Position" %><br>
           <%= f.text_field :company, :placeholder => "Company" %><br>
-          <%= f.text_field :date, :placeholder => "Interview Date" %><br>      
+          <%= f.text_field :date, class: "datepicker", placeholder: "Interview Date" %><br>   
 
           <%= f.label :Difficulty %><br>
           <%= f.select :difficulty, ['Very Easy', 'Easy', "Alright", "Hard", "Very Hard"]%><br>      
