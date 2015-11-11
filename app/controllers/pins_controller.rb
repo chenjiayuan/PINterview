@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-	before_action :require_user, only: [:index, :new, :create, :show, :edit, :destroy, :update]
+	before_action :require_user, only: [:index, :new, :create, :show, :edit, :destroy, :update, :upvote]
   
   def index
     @search = Pin.ransack(params[:q])
