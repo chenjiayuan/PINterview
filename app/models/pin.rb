@@ -19,7 +19,6 @@
 class Pin < ActiveRecord::Base
     acts_as_votable
   	belongs_to :user
-  	before_save :set_default_like
 
     validates :position, presence: true, length: {maximum: 40}    
     validates :company, presence: true, length: {maximum: 40}
@@ -31,11 +30,7 @@ class Pin < ActiveRecord::Base
     validates :length, presence: true, length: {maximum: 30}
     validates :description, length: {maximum: 320} 
 
-    def set_default_like
-    	self.like_count = 0
-  	end
-
-    UNRANSACKABLE_ATTRIBUTES = ["id", "date", "account_id", "attire", "like_count", "length", "user_id"]
+    UNRANSACKABLE_ATTRIBUTES = ["date", "account_id", "attire", "length", "user_id"]
 
     def self.ransackable_attributes auth_object = nil
         (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys

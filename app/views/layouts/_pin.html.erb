@@ -9,11 +9,12 @@
       <h3 class= "interview-info type"> Difficulty <%= @pin.difficulty %></h3>
       <h3 class= "interview-info length"> Length <%= @pin.length %></h3>
       <h3 class= "story-col question-row questions"> Question: <%= @pin.questions %></h3>
-      <h3 class= "story-col story-row description"> <%= @pin.description %></h3>
+      <h3 class= "story-col story-row description"> <%= @pin.description %></h3>      
 </div>
 
 <% if current_user == @pin.user%>
  <p>
+    This is my Pin
     <%= link_to 'Edit', edit_pin_path(@pin) %>
     <%= link_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

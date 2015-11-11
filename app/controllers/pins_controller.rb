@@ -3,7 +3,7 @@ class PinsController < ApplicationController
   
   def index
     @search = Pin.ransack(params[:q])
-    @pins = @search.result.page(params[:page]).to_a.uniq
+    @pins = @search.result.page(params[:page]).to_a.uniq.reverse
     @search.build_condition
     @search.build_sort
   end
@@ -54,7 +54,8 @@ class PinsController < ApplicationController
 
     def upvote
       @pin = Pin.find_by_id(params[:id])
-      @pin.upvote_by current_user
+      @pin.upvote_by current_user 
+      @pin.update_attribute(:like_count, @pin.get_upvotes.size)
       redirect_to :back
     end
 

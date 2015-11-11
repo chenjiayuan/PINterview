@@ -16,15 +16,11 @@
       </div>
 <% end %>
 
-<h2> Filter </h2>
-    <div class="column">
-        <div class="filter-label red">
-          <%= sort_link @search, :create_at, "Most Recent" %>
-        </div>
-        <div class="filter-label dark-golden-rod">
-          <%= sort_link @search, :like_count, "Most Popular" %>
-        </div>
-        <div class="filter-label dark-slate-gray">
-          <%= sort_link @search, :difficulty, "Difficulty" %>
-        </div>
-    </div>
+<h4 class="column">Filter</h4>
+<div class="row right padm">
+    <%= sort_link @search, :like_count, "Most Popular" %> 
+    <%= sort_link @search, :id, "Most Recent" %> 
+    <%= sort_link @search, :difficulty, "Difficulty Level" %> 
+    <%= sort_link @search, :position, "Job Tittle" %>
+    <%= sort_link @search, :company, "Company Name" %>
+</div>

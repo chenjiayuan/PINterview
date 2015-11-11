@@ -3,6 +3,7 @@ Name: <%= @user.username %><br>
 Email: <%= @user.email %><br>
 Class: <%= @user.grad_class %><br>
 Major: <%= @user.major %><br>
+I Pinned Pins: <%= @user.pins.count %><br>
 My Avatar: <%= image_tag(@user.avatar) %>
 <p> Please fix avatar side </p>
 

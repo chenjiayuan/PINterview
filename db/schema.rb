@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20151109013412) do
     t.string  "type_interview"
     t.string  "attire"
     t.string  "questions"
-    t.integer "like_count"
+    t.integer "like_count",     default: 0
     t.string  "length"
     t.string  "description"
     t.integer "user_id"
