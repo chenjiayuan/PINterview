@@ -21,7 +21,7 @@ class Pin < ActiveRecord::Base
 
   	belongs_to :user
     has_many :favorite_pins
-    has_many :favorited_by, through: :pins, source: :user
+    has_many :favorited_by, through: :favorite_pins, source: :user
 
     validates :position, presence: true, length: {maximum: 40}    
     validates :company, presence: true, length: {maximum: 40}

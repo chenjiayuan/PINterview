@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   resources :pins do
     member do
        put "like", to: "pins#upvote" 
-       put "dislike", to: "pins#downvote"     
+       put "dislike", to: "pins#downvote"
     end
+  end
+  resources :pins do
+    put :favorite, on: :member
   end
 end

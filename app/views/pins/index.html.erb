@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="pins">  
-			<%= render "layouts/more_pins" %>
+			<%= render "layouts/more_pins", object: @pins %>
 		</div>
 	</div>
 	<%= will_paginate @pins %>

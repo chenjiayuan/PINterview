@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_user, only: [:show, :edit]
   before_action :not_require_user, only: [:new]
+
   def new
     @user = User.new
   end
@@ -20,7 +21,9 @@ class UsersController < ApplicationController
     if current_user.id == Integer(params[:id])
       @user = User.find(params[:id])
       #@pins = Pin.where(:user_id => @user.id)
+      #you can join the table as well, so up to front end decide
       @pins = @user.pins
+      @favorite = @user.favorites
     else
       redirect_to '/' 
     end

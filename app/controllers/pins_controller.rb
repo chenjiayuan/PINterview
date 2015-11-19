@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-	before_action :require_user, only: [:index, :new, :create, :show, :edit, :destroy, :update, :upvote]
+	before_action :require_user, only: [:index, :new, :create, :show, :edit, :destroy, :update, :upvote, :favorite]
   
   def index
     @search = Pin.ransack(params[:q])
@@ -25,6 +25,7 @@ class PinsController < ApplicationController
 
     def show
       @pin = Pin.find(params[:id])
+      #@is_favorite = Pin.get_favorite(params[:id])
       if Pin.count > 1 
         @random_pin = Pin.where.not(id: params[:id]).order("RANDOM()").first
       end
@@ -68,6 +69,22 @@ class PinsController < ApplicationController
       updatelike
       redirect_to :back
     end
+
+    def favorite
+    type = params[:type] # See posts/show
+    @pin = Pin.find(params[:id])
+    if type == "Mark" # If user selects 'favorite' on post
+      current_user.favorites << @pin
+      redirect_to :back, notice: "You mark #{@pin.id}"
+
+    elsif type == "Unmark" # Else user selects 'unfavorite' on post
+      current_user.favorites.delete(@pin)
+      redirect_to :back, notice: "Unmark #{@pin.id}"
+
+    else # Type missing, nothing happens
+      redirect_to :back, notice: "Nothing happened."
+    end
+  end
 
   	private
   	def pin_params
