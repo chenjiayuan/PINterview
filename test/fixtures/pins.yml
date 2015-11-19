@@ -10,7 +10,7 @@
 #  type_interview :string
 #  attire         :string
 #  questions      :string
-#  like_count     :integer
+#  like_count     :integer          default(0)
 #  length         :string
 #  description    :string
 #  user_id        :integer

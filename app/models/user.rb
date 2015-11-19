@@ -2,16 +2,22 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string
-#  email           :string
-#  password_digest :string
-#  major           :string
-#  grad_class      :string
+#  id                  :integer          not null, primary key
+#  username            :string
+#  email               :string
+#  password_digest     :string
+#  major               :string
+#  grad_class          :string
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
   has_many :pins
+  has_many :favorite_pins
+  has_many :favorites, through: :favorite_pins, source: :pin
 
   has_secure_password
   before_save :downcase_email

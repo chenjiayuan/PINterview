@@ -10,7 +10,7 @@
 #  type_interview :string
 #  attire         :string
 #  questions      :string
-#  like_count     :integer
+#  like_count     :integer          default(0)
 #  length         :string
 #  description    :string
 #  user_id        :integer
@@ -18,7 +18,10 @@
 
 class Pin < ActiveRecord::Base
     acts_as_votable
+
   	belongs_to :user
+    has_many :favorite_pins
+    has_many :favorited_by, through: :pins, source: :user
 
     validates :position, presence: true, length: {maximum: 40}    
     validates :company, presence: true, length: {maximum: 40}
