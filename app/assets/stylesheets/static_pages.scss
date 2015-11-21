@@ -8,6 +8,7 @@
 
 .login {
   margin: 0px;
+  background-color: #E4E4E4;
 }
 
 .pins{ 
@@ -39,6 +40,11 @@
 body > div.mainbody > div > a:nth-child(1).pin a:visited {
   color: black;
   background-color: green;
+}
+
+.spacer{
+    width: 100%;
+    height: 80px;
 }
 
 .count{ 
@@ -91,47 +97,50 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 
 .main-page-header {
   width: 100%;
-  height: 50px;
+  height: 30px;
   background-color: #3B3D55;
   padding-top: 10px;
   padding-bottom: 20px;
   margin-bottom: 25px;
   display: inline-block;
   vertical-align: middle;
+  position: fixed;
 }
 
 #header-buttons > .my-button {
-  vertical-align: middle;
   text-decoration: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-right: 10px;
-  border-radius: 7px;
-  background-color: #F2F2F2;
-  box-shadow: 1px 1px .5px white;
+  margin-right: 3px;
   text-align: center;
-  color: Black;
+  color: white;
   font-family: 'arial';
-  font-size: 13px;
+  font-size: 11px;
+  border: 1px solid transparent;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+#header-buttons > .my-button:hover {
+  border: 1px solid white;
 }
 
 #header-buttons {
   float: right;
   display: inline-block;
-  vertical-align: middle;
-  margin-top: 15px
+  margin-top: 9px;
+  padding-right: 20px;
 }
 
 #logo-container {
   float:left;
   display: inline-block;
+  margin-top: -18px;
 }
 
 #activity-logo {
   padding-left: 10px;
-  width: 38px;
+  width: 20px;
   margin-right: 10px;
   display: inline-block;
 }
@@ -139,8 +148,10 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 #activity-pinterview {
   color: white;
   font-family: arial;
-  font-size: 60px;
+  font-size: 34px;
   display: inline-block;
+  margin-left: -5px;
+  margin-top: 8%;
 }
 
 /* --- New Pin style --- */
