@@ -16,6 +16,7 @@
       <div id="header-buttons">
         <%= link_to "Home", root_path, html_options = {:class => "my-button"} %>
         <%= link_to "New Pin", new_pin_path, html_options = {:class => "my-button"} %>
+        <%= link_to "Companies", companies_path, html_options = {:class => "my-button"} %>
         <%= link_to "My Profile", current_user, html_options = {:class => "my-button"} %>
         <%= link_to "Log out", logout_path, method: "delete", class: "my-button" %>
       </div>      
