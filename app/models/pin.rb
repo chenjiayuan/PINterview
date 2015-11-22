@@ -27,6 +27,7 @@ class Pin < ActiveRecord::Base
     validates :company, presence: true, length: {maximum: 40}
     validates :date, presence: true, length: { maximum: 40}
     validates :difficulty, length: {maximum: 30}
+    validates :position_type, length: {maximum: 30}
     validates :type_interview, presence: true, length: {maximum: 30}
     validates :attire, presence: true, length: {maximum: 30}
     validates :questions, presence: true, length: {maximum: 240}

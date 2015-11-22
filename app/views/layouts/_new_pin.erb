@@ -16,13 +16,17 @@ $(document).ready(function() {
 
           <%= f.text_field :position, :placeholder => "Position" %><br>
           <%= f.text_field :company, :placeholder => "Company" %><br>
+
+          <%= f.label :Type %><br>
+          <%= f.select :position_type, ['Fulltime', 'PartTime', "Internship"]%><br>
+
           <%= f.text_field :date, class: "datepicker", placeholder: "Interview Date" %><br>   
 
           <%= f.label :Difficulty %><br>
           <%= f.select :difficulty, ['Very Easy', 'Easy', "Alright", "Hard", "Very Hard"]%><br>      
 
-          <%= f.label :Type %><br>
-          <%= f.select :type_interview, ['Onsite', 'Offsite', "Phone", "Behavior", "OCR"]%><br>
+          <%= f.label :Interview_Type %><br>
+          <%= f.select :type_interview, ['Onsite', 'Oncampus', "Phone"]%><br>
 
           <%= f.label :Received_an_Offer, :placeholder => "Receive an Offer" %><br>
           <%= f.select :attire, ['Yes', 'No', 'Unknown']%><br>

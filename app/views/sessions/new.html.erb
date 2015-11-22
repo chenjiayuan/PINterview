@@ -13,6 +13,9 @@
 	<div id = "sign-in">SIGN IN</div>
 	<hr id ="line">
 	<%= form_for(:session, url: login_path) do |f| %>
+		<div class = "error_message">
+	          <%= flash[:error] %>
+	    </div>
 		<%= f.email_field :email, :placeholder => "Berkeley Email", :class => "email-login"  %>
 		<%= f.password_field :password, :placeholder => "Password", :class => "password-login" %>
 		<%= f.submit "Continue", :class => "btn-submit" %>

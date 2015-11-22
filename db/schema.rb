@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151119075253) do
     t.string  "length"
     t.string  "description"
     t.integer "user_id"
+    t.string  "position_type"
   end
 
   create_table "users", force: :cascade do |t|
