@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 	    redirect_to '/', notice: 'Session was successfully created.'
 	  else	  	
         flash[:error] = @user.errors.full_messages.to_sentence 
--		redirect_to 'login'
+		redirect_to 'login'
 	  end
 	end
 
