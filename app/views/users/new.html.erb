@@ -23,9 +23,18 @@
   <div class = "signup-form">
     <%= form_for(@user) do |f| %>
 
-    <div class = "error_message">
-          <%= flash[:error] %>
-    </div>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-danger">
+            The form contains <%= pluralize(@user.errors.count, "error") %>.
+          </div>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
       <%= f.text_field :username, :placeholder => "Full Name" %>
       <%= f.email_field :email, :placeholder => "Berkeley Email" %>

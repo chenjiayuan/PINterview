@@ -24,8 +24,8 @@ $(document).ready(function() {
           <%= f.label :Type %><br>
           <%= f.select :type_interview, ['Onsite', 'Offsite', "Phone", "Behavior", "OCR"]%><br>
 
-          <%= f.label :Attire %><br>
-          <%= f.select :attire, ['Yes', 'No']%><br>
+          <%= f.label :Received_an_Offer, :placeholder => "Receive an Offer" %><br>
+          <%= f.select :attire, ['Yes', 'No', 'Unknown']%><br>
 
           <%= f.text_field :questions, :placeholder => "Discuss Technical Questions" %><br>
           
