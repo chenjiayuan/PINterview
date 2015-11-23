@@ -15,7 +15,7 @@ $(document).ready(function() {
           <%= f.text_field :position, :placeholder => "Position" %><br>
           <%= f.text_field :company, :placeholder => "Company" %><br>
 
-          <%= f.label :Type %>
+          <%= f.label :Type, :class => "Type" %>
           <%= f.select :position_type, ['full-time', 'part-time', "internship"]%><br>
 
           <%= f.text_field :date, class: "datepicker", placeholder: "Interview Date" %><br>   
