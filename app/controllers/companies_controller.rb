@@ -3,11 +3,33 @@ class CompaniesController < ApplicationController
   
   def show
 	@pin = Pin.all
+	@not_populated = ""
+
+	if @pin.count == 0
+		@not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
+	end
+
   end
 
   def update
-  	@company = get_company(params[:category_id])
-  	@questions = Pin.where(company: params[:category_id])
+
+  	@not_populated = ""
+
+  	if params[:category_id] !=nil
+      @company = get_company(params[:category_id])
+      @questions = Pin.where(company: params[:category_id])
+      @company_name = @company['name']
+
+      # EDGE CASE - Yahoo!
+      if @company_name =='Yahoo!'
+      	@company_name = 'Yahoo'
+      end
+
+    else
+      @pin = Pin.all
+      @not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
+      render "show"
+  	end  	
   end
 
 
@@ -15,6 +37,11 @@ class CompaniesController < ApplicationController
   def get_company(name)
     require 'csv'
     company = Hash.new
+
+	# EDGE CASE - Yahoo!
+    if name == 'Yahoo'
+      name = 'Yahoo!'
+    end
 
     company['name'] = name
     company['crunchbase'] = "" 
