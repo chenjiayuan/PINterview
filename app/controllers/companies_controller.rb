@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
 
   def update
   	@company = get_company(params[:category_id])
-  	@questions = Pin.where(company: params[:category_id]).pluck(:description)
+  	@questions = Pin.where(company: params[:category_id])
   end
 
 

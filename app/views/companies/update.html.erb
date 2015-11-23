@@ -24,9 +24,15 @@
 
 <div>
 	<% @questions.each do |question| -%>
-	    <p>
-	        <%= question %>
-	    </p>
+		<div>
+
+			<%= question.description %>
+
+			<%= link_to "Go to this PIN", question  %>
+			
+			<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
+
+		<div>
 	<% end -%>
 </div>
 
