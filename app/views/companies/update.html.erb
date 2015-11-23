@@ -8,7 +8,7 @@
 
 <div> <%= @company['name'] %> </div>
 
-<div> Company Website </div>
+<div> Company Links </div>
 <a href=<%= @company['url'] %>><%= @company['url'] %></a>
 <a href = <%= @company['facebook'] %> > Find this company on Facebook </a>
 <a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
@@ -19,5 +19,16 @@
 
 <div> Description </div>
 <div> <%= @company['description'] %> </div>
+
+<div> Company Interview Questions </div>
+
+<div>
+	<% @questions.each do |question| -%>
+	    <p>
+	        <%= question %>
+	    </p>
+	<% end -%>
+</div>
+
 
 

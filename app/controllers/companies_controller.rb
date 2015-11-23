@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
 
   def update
   	@company = get_company(params[:category_id])
+  	@questions = Pin.where(company: params[:category_id]).pluck(:description)
   end
 
 
@@ -14,6 +15,15 @@ class CompaniesController < ApplicationController
   def get_company(name)
     require 'csv'
     company = Hash.new
+
+    company['name'] = name
+    company['crunchbase'] = "" 
+    company['url'] = ""
+    company['facebook'] = ""
+    company['linkedin'] = ""
+    company['city'] = "Unknown"
+    company['state'] = "Unknown"
+    company['description'] = "We currently have no information about this company's online presence"
  
     CSV.foreach(File.join(Rails.root, 'app','csv','organizations.csv')) do |row|
       if row[0].downcase == name.downcase
@@ -25,16 +35,7 @@ class CompaniesController < ApplicationController
         company['city'] = row[5]
         company['state'] = row[6]
         company['description'] = row[7]
-
-       else
-       	company['name'] = name
-        company['crunchbase'] = "" 
-        company['url'] = ""
-        company['facebook'] = ""
-        company['linkedin'] = ""
-        company['city'] = ""
-        company['state'] = ""
-        company['description'] = ""
+       	
       end
     end
 
@@ -42,3 +43,4 @@ class CompaniesController < ApplicationController
   end
 
 end
+
