@@ -1,8 +1,10 @@
 <% object.each do |pin| %>
     <%= link_to(pin) do %>
-        <div class="pin">
-          <h3 class= "title-container"><%= pin.position %></h3>
-          <h3 class= "company-container"><%= pin.company %></h3>
+        <div class="pin" syle="border:1px">
+          <%= image_tag "https://logo.clearbit.com/#{pin.company.downcase}.com" %>
+          <h3 class= "title-container"><%= pin.company %></h3>
+          <h3 class= "title-container "><%= pin.position%> / <%=pin.position_type%></h3>
+          like count: <%= pin.like_count %>
         </div>
     <% end %>
 <% end %>
