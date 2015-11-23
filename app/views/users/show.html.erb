@@ -2,22 +2,20 @@
 <div class = "profile-wrapper">
 	<%= image_tag @user.avatar, :class => "avatar" %>
 	<div class = "profile-name"><%= @user.username %></div><br>
-	<div class = "profile-email"><%= @user.email %></div><br>
+	<div class = "profile-email"><%= @user.email %></div>
 	<div class = "profile-major"><%= @user.major %></div> | 
 	<div class = "profile-grad"><%= @user.grad_class %></div><br>
 </div>
-<!-- 
-I Pinned Pins: <%= @user.pins.count %><br>
-I Pinned Helpful Pins: <%= @user.favorites.count %><br> -->
+
 <div class = "my-pins1">
-	<div class = "pin-header">My Created Pins</div>
+	<div class = "pin-header">Pins I Created</div>
 	<div class="pin-display">  
  		<%= render "layouts/more_pins", object: @pins %>
 	</div>
 </div>
 <br>
 <div class = "my-pins2">
-	<div class = "pin-header">My Useful Pins</div>
+	<div class = "pin-header">Pins i Marked as Useful</div>
 	<div class = "pin-display">
 		<%= render "layouts/more_pins", object: @favorite %>
 	</div>

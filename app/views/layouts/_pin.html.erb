@@ -32,16 +32,3 @@
 <%= @pin.get_upvotes.size %>
 <%= button_to "like pin", like_pin_path(@pin), method: :put %>
 <%= button_to "unlike pin", dislike_pin_path(@pin), method: :put %>
-
-
-<!-- may not do this
-<% if Pin.count > 1 %>   
-    <h5> Recommend Pin </h5>
-    <%= link_to(@random_pin) do %>
-        <div class="pin" syle="border:1px">
-          <h3 class= "title-container title"><%= @random_pin.position %></h3>
-          <h3 class= "title-container company"><%= @random_pin.company %></h3>
-        </div>
-    <% end %>
-<% end %>
-//-->
