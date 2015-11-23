@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/pins/:id' => 'pins#show', as: :pin
 
   get '/companies', to:'companies#show'
+  post '/companies', to: 'companies#update'
 
   match 'static_pages#home',  to: 'static_pages#home', via: 'get'
   

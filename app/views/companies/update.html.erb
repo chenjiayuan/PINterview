@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "static_pages" %>
+
+<div>
+	<%= link_to "Return to Companies", companies_path, html_options = {:class => "insert_class_here_JIHERN"} %>
+</div>
+
+<div> <%= image_tag "https://logo.clearbit.com/#{@company['name'].downcase}.com" %> </div>
+
+<div> <%= @company['name'] %> </div>
+
+<div> Company Website </div>
+<a href=<%= @company['url'] %>><%= @company['url'] %></a>
+<a href = <%= @company['facebook'] %> > Find this company on Facebook </a>
+<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
+
+<div> Location (maybe use google maps here?) </div>
+<div> <%= @company['city'] %> </div>
+<div> <%= @company['state'] %> </div>
+
+<div> Description </div>
+<div> <%= @company['description'] %> </div>
+
+

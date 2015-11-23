@@ -1,4 +1,10 @@
 <%= stylesheet_link_tag "static_pages" %>
 <h2>Companies</h2>
-<%= select_tag "category_id", options_from_collection_for_select(@pin, "id", "company") %>
+
+<%= form_tag("/companies", method: "post") do %>
+ 
+  <%= select_tag "category_id", options_from_collection_for_select(@pin.select(:company).uniq, "company", "company") %>
+  <%= submit_tag("Search") %>
+
+<% end %>
 
