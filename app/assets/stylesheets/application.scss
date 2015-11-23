@@ -28,9 +28,10 @@ button:hover{
 	cursor: pointer;
 }
 
+
 body.login{
 	margin: 0px;
-	background-image: url(asset-path('Background.png'));
+	background-image: url(asset-path('Background.jpg'));
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -176,4 +177,12 @@ input[type=password]{
 
 .signup-form{
 	text-align: center;
+}
+
+.error_message{
+	text-align: center;
+	font-family: arial;
+	font-size: 18px;
+	color: #F86469;
+	margin-bottom: 10px;
 }

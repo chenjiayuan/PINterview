@@ -11,7 +11,8 @@ class CreatePins < ActiveRecord::Migration
       t.integer :like_count, :default => 0
       t.string :length
       t.string :description 
-      t.integer :user_id      
+      t.integer :user_id 
+      t.string :position_type     
     end
   end
 end

@@ -3,74 +3,72 @@ class PinsController < ApplicationController
   
   def index
     @search = Pin.ransack(params[:q])
-    @pins = @search.result.paginate(:page => params[:page], :per_page => 20) 
+    @search.sorts = 'id desc' if @search.sorts.empty?
+    @pins = @search.result.paginate(:page => params[:page], :per_page => 20)
     @search.build_condition
-    @search.build_sort     
+    @search.build_sort
   end
 
   def new
-    	@pin = Pin.new
-  	end
+  	@pin = Pin.new
+  end
   
-  	def create
-	    @pin = Pin.new(pin_params)	     
-      current_user.pins << @pin
+	def create
+    @pin = Pin.new(pin_params)
+    current_user.pins << @pin
     if @pin.save    	
-      	redirect_to "/"
+      	redirect_to @pin
     else
-        flash[:error] = @pin.errors.full_messages.to_sentence 
+        flash[:error] = "what"
       	redirect_to "new_pin"
     end
-  	end 
+	end 
 
-    def show
-      @pin = Pin.find(params[:id])
-      #@is_favorite = Pin.get_favorite(params[:id])
-      if Pin.count > 1 
-        @random_pin = Pin.where.not(id: params[:id]).order("RANDOM()").first
-      end
+  def show
+    @pin = Pin.find(params[:id])
+    if Pin.count > 1 
+      @random_pin = Pin.where.not(id: params[:id]).order("RANDOM()").first
     end
+  end
 
-    def edit
+  def edit
     @pin = Pin.find(params[:id])
     if current_user.id != @pin.user_id     
       redirect_to '/' 
     end
+  end
 
+  def update
+    @pin = Pin.find(params[:id])
+    if @pin.update_attributes(pin_params)
+      redirect_to @pin
+    else
+      flash[:error] = @pin.errors.full_messages.to_sentence 
+      redirect_to @pin
     end
 
-    def update
-      @pin = Pin.find(params[:id])
+  end
 
-      if @pin.update_attributes(pin_params)
-        redirect_to @pin
+  def destroy
+    @pin = Pin.find_by_id(params[:id]).destroy
+    redirect_to '/'
+  end
 
-      else
-        flash[:error] = @pin.errors.full_messages.to_sentence 
-        redirect_to @pin
-      end
+  def upvote
+    @pin = Pin.find_by_id(params[:id])
+    @pin.upvote_by current_user 
+    updatelike
+    redirect_to :back
+  end
 
-    end
+  def downvote
+    @pin = Pin.find_by_id(params[:id])
+    @pin.downvote_by current_user 
+    updatelike
+    redirect_to :back
+  end
 
-    def destroy
-      @pin = Pin.find_by_id(params[:id]).destroy
-    end
-
-    def upvote
-      @pin = Pin.find_by_id(params[:id])
-      @pin.upvote_by current_user 
-      updatelike
-      redirect_to :back
-    end
-
-    def downvote
-      @pin = Pin.find_by_id(params[:id])
-      @pin.downvote_by current_user 
-      updatelike
-      redirect_to :back
-    end
-
-    def favorite
+  def favorite
     type = params[:type] # See posts/show
     @pin = Pin.find(params[:id])
     if type == "Mark" # If user selects 'favorite' on post
@@ -83,16 +81,17 @@ class PinsController < ApplicationController
 
     else # Type missing, nothing happens
       redirect_to :back, notice: "Nothing happened."
-    end
   end
 
-  	private
-  	def pin_params
-      params.require(:pin).permit(:position, :company, :date, :difficulty, :type_interview, 
-        :attire, :questions, :like_count, :length, :description, :user_id)
-  	end 
+end
 
-    def updatelike
-      @pin.update_attribute(:like_count, @pin.get_upvotes.size - @pin.get_downvotes.size)
-    end
+private
+	def pin_params
+    params.require(:pin).permit(:position, :company, :date, :difficulty, :type_interview, 
+      :attire, :questions, :like_count, :length, :description, :user_id, :position_type)
+	end 
+
+  def updatelike
+    @pin.update_attribute(:like_count, @pin.get_upvotes.size - @pin.get_downvotes.size)
+  end
 end
