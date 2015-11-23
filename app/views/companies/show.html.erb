@@ -1,11 +1,4 @@
 <%= stylesheet_link_tag "static_pages" %>
-
-
 <h2>Companies</h2>
-<div class="mainbody">
-  <div class="pins">  
+<%= select_tag "category_id", options_from_collection_for_select(@pin, "id", "company") %>
 
-    <%= render "layouts/more_pins", object: @pins %>
-
-  </div>
-</div>
