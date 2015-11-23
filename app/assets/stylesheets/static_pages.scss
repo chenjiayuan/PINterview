@@ -72,14 +72,13 @@
 
 .search-wrapper{
   margin-left: 40px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .pin { 
   display: inline-block;
-  text-align: center;
-  width: 280px;
-  height: 130px;
+  width: 180px;
+  height: 300px;
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: 5px;
@@ -90,16 +89,55 @@
   padding-top: 10px;
 }
 
+.company-logo{
+  margin-top: 8px;
+  width: 140px;
+  height: 130px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.create-pin{
+  float: right;
+  text-align: center;
+  display: inline-block;
+  font-family: arial;
+  font-size: 12px;
+  text-decoration: none;
+  background-color: #f37e7e;
+  color: white;
+  margin-right: 10%;
+  margin-top: 2px;
+  border: 1px solid #f37e7e;
+  padding-left: 25.5px;
+  padding-right: 25.5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;  
+}
+
+a{
+  text-decoration: none;
+}
+
 .pin .title-container{
+  margin-top: 3px;
   font-family: arial;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .pin .company-container{
+  margin-top: -6px;
   font-family: arial;
   font-weight: lighter;
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.pin .company-like{
+  margin-top: -6px;
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 12px;
 }
 
 body > div.mainbody > div > a:nth-child(1).pin a:visited {

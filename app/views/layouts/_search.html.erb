@@ -29,6 +29,7 @@ $(document).ready(function() {
       <%= sort_link @search, :position, "Job Tittle" %>
       <%= sort_link @search, :company, "Company Name" %>
       <div class = "Advanced-Search">Advanced Search</div> 
+      <%= link_to "Create Pin", new_pin_path, html_options = {:class => "create-pin"} %>      
   </div>   
 
   <div class = "advanced-search-wrapper">
