@@ -312,11 +312,18 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   text-align: center;
 }
 
-
-
-#pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {
+.create-label{
   margin-top: 5px;
   margin-bottom: 5px;
+  font-family: 'arial';
+  font-size: 14px;
+
+}
+
+#pin_position_type, #pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;  
   background:rgba(255,255,255,0.8);
   border: 0 none;
   border-radius: 10px;
@@ -328,7 +335,8 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   height: 30px;
   width: 350px;
   padding-left: 10px;
-  margin-bottom: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 #pin_description, #pin_questions {
@@ -336,6 +344,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   width: 350px;
   resize: both;
   margin-bottom: 5px;
+  padding-left: 10px;  
 }
 
 .btn-submit {
