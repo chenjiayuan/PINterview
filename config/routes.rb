@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'pins/new', to:'pins#new'
   get '/pins/:id' => 'pins#show', as: :pin
 
+  post '/pins/:id/edit' => 'pins#edit'
+
   get '/companies', to:'companies#show'
   post '/companies', to: 'companies#update'
 
