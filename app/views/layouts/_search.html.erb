@@ -22,10 +22,9 @@ $(document).ready(function() {
 </script>
 
 <div class = "search-wrapper">
-  <div class="filter">Filters</div>
   <div class="row">
-      <%= sort_link @search, :like_count, "Most Popular" %> 
       <%= sort_link @search, :id, "Most Recent" %> 
+      <%= sort_link @search, :like_count, "Most Popular" %> 
       <%= sort_link @search, :difficulty, "Difficulty Level" %> 
       <%= sort_link @search, :position, "Job Tittle" %>
       <%= sort_link @search, :company, "Company Name" %>

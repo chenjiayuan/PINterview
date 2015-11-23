@@ -14,6 +14,7 @@
 #  length         :string
 #  description    :string
 #  user_id        :integer
+#  position_type  :string
 #
 
 require 'faker'

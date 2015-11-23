@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id 
       redirect_to '/' 
     else 
-      flash[:error] = @user.errors.full_messages.to_sentence
+      flash[:error] = "Invalid Credential"
+
       redirect_to '/signup', notice: 'New user failed to create.'
     end 
   end
