@@ -28,6 +28,7 @@ button:hover{
 	cursor: pointer;
 }
 
+
 body.login{
 	margin: 0px;
 	background-image: url(asset-path('Background.jpg'));
@@ -182,5 +183,6 @@ input[type=password]{
 	text-align: center;
 	font-family: arial;
 	font-size: 18px;
-	color: black;
+	color: #F86469;
+	margin-bottom: 10px;
 }
