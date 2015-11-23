@@ -1,25 +1,24 @@
 <%= stylesheet_link_tag "static_pages" %>
-Name: <%= @user.username %><br>
-Email: <%= @user.email %><br>
-Class: <%= @user.grad_class %><br>
-Major: <%= @user.major %><br>
-I Pinned Pins: <%= @user.pins.count %><br>
-I Pinned Helpful Pins: <%= @user.favorites.count %><br>
-My Avatar: <%= image_tag(@user.avatar) %>
-<p> Please fix avatar side </p>
-
-<h2>Pins I created</h2>
-<div class="mainbody">
-  <div class="pins">  
-
-    <%= render "layouts/more_pins", object: @pins %>
-
-  </div>
+<div class = "profile-wrapper">
+	<%= image_tag @user.avatar, :class => "avatar" %>
+	<div class = "profile-name"><%= @user.username %></div><br>
+	<div class = "profile-email"><%= @user.email %></div><br>
+	<div class = "profile-major"><%= @user.major %></div> | 
+	<div class = "profile-grad"><%= @user.grad_class %></div><br>
 </div>
-
-<h2>Pins I Marked as Useful</h2>
-<div class="pins">  
-
-    <%= render "layouts/more_pins", object: @favorite %>
-
-  </div>
+<!-- 
+I Pinned Pins: <%= @user.pins.count %><br>
+I Pinned Helpful Pins: <%= @user.favorites.count %><br> -->
+<div class = "my-pins1">
+	<div class = "pin-header">My Created Pins</div>
+	<div class="pin-display">  
+ 		<%= render "layouts/more_pins", object: @pins %>
+	</div>
+</div>
+<br>
+<div class = "my-pins2">
+	<div class = "pin-header">My Useful Pins</div>
+	<div class = "pin-display">
+		<%= render "layouts/more_pins", object: @favorite %>
+	</div>
+</div>
