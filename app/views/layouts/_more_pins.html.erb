@@ -1,8 +1,8 @@
 <% object.each do |pin| %>
     <%= link_to(pin) do %>
-        <div class="pin" syle="border:1px">
-          <h3 class= "title-container title"><%= pin.position %></h3>
-          <h3 class= "title-container company"><%= pin.company %></h3>
+        <div class="pin">
+          <h3 class= "title-container"><%= pin.position %></h3>
+          <h3 class= "company-container"><%= pin.company %></h3>
         </div>
     <% end %>
 <% end %>

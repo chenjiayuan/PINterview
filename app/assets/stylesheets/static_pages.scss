@@ -8,6 +8,7 @@
 
 .login {
   margin: 0px;
+  background-color: #F5F3F3;
 }
 
 .pins{ 
@@ -29,11 +30,13 @@
 }
 
 .sort_link{
+  display: inline-block;
   font-family: arial;
   font-size: 12px;
   text-decoration: none;
   color: black;
   margin: -2.5px;
+  margin-top: 2px;
   border: 1px solid black;
   padding-left: 25px;
   padding-right: 25px;
@@ -47,7 +50,6 @@
   font-family: arial;
   font-size: 12px;
   text-decoration: none;
-  background-color: white;
   color: black;
   margin: -2.5px;
   border: 1px solid black;
@@ -75,15 +77,29 @@
 .pin { 
   display: inline-block;
   text-align: center;
-  width: 350px;
+  width: 280px;
+  height: 130px;
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: #F2F2F2;
+  background-color: white;
   border-radius: 5px;
-  box-shadow: 2px 2px 1px grey;
+  box-shadow: 2px 2px 1px #D4D4D4;
   font-family: arial;
   padding-top: 10px;
+}
+
+.pin .title-container{
+  font-family: arial;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #ED686C;
+}
+
+.pin .company-container{
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 15px;
 }
 
 body > div.mainbody > div > a:nth-child(1).pin a:visited {
