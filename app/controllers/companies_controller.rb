@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
 	@pin = Pin.all
     @calendar = [] 
     @pin.each do |p|
-    @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay": "1"})
+    @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay" => "1"})
     end
     respond_to do |format|
       format.html
