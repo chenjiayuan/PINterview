@@ -164,7 +164,8 @@ class CompaniesController < ApplicationController
   	most_common_positions = []
   	all_positions = Pin.where(company: company).pluck(:position)
   	freq = all_positions.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
-  	most_common_positions = all_positions.sort_by{ |v| freq[v] }.first(5)
+
+  	most_common_positions = all_positions.uniq.sort_by{ |v| freq[v] }.reverse.first(5)
   	return most_common_positions
   end
 
