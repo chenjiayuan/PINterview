@@ -36,15 +36,7 @@ $(document).ready(function() {
       center: 'title',
       right: 'month,agendaWeek,agendaDay'
     },
-    events: 
-    window.location.href + '.json'
-    // [
-    // {
-    //       title: 'Click for Google',
-    //       url: 'http://google.com/',
-    //       start: '2015-11-23'
-    // }
-    // ]
+    events: window.location.href + '.json'
   });
   
 });

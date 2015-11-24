@@ -21,23 +21,19 @@ class UsersController < ApplicationController
   def show    
     if current_user.id == Integer(params[:id])
       @user = User.find(params[:id])
-      #@pins = Pin.where(:user_id => @user.id)
-      #you can join the table as well, so up to front end decide
       @pins = @user.pins
       @favorite = @user.favorites
+      @calendar = [] 
+      @pins.each do |p|
+        @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay": "1"})
+      end
+      respond_to do |format|
+        format.html
+        format.json { render json:@calendar.to_json }
+      end
     else
       redirect_to '/' 
     end
-    @data = [{ "title" => "New shift", "start" => "2015-11-19"},{ "title" => "New shift", "start" => "2015-11-19"}]
-    respond_to do |format|
-      format.html
-      format.json { render json:@data.to_json }
-    end
-  end
-  
-  def testme  
-      @user = { "title" => "New shift", "start" => "2015-11-19"}
-      render json: @user.to_json
   end
 
   private

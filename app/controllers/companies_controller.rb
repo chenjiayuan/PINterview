@@ -3,6 +3,14 @@ class CompaniesController < ApplicationController
   
   def show
 	@pin = Pin.all
+    @calendar = [] 
+    @pin.each do |p|
+    @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay": "1"})
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json:@calendar.to_json }
+    end
   end
 
   def update
