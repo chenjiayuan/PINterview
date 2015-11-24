@@ -76,10 +76,11 @@
   margin-bottom: 80px;
 }
 
-.pin { 
+.pin {
   display: inline-block;
   width: 180px;
-  height: 300px;
+  max-height: 300px;
+  height: 260px;
   margin-top: 8px;
   margin-bottom: 8px;
   margin-left: 5px;
@@ -89,6 +90,38 @@
   box-shadow: 2px 2px 1px #D4D4D4;
   font-family: arial;
   padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.individual-backdrop{
+ position: fixed;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ background-color: black;
+ opacity:.6;
+ z-index: -1;
+}
+
+.individual-pin{
+  z-index: 1;
+  font-family: 'arial';
+  width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.individual-logo{
+  width: 150px;
+  border-radius: 10px;
+}
+
+.title-container-company{
+  font-size: 40px;
 }
 
 .company-logo{
@@ -170,7 +203,7 @@ a{
 }
 
 .pin .company-container{
-  margin-top: -6px;
+  margin-top: 0px;
   font-family: arial;
   font-weight: lighter;
   font-size: 14px;
@@ -255,14 +288,13 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 
 #header-buttons > .my-button {
   text-decoration: none;
-  margin-right: 3px;
   text-align: center;
   color: white;
   font-family: 'arial';
-  font-size: 11px;
+  font-size: 10%;
   border: 1px solid transparent;
-  padding-left: 11px;
-  padding-right: 11px;
+  padding-left: 8px;
+  padding-right: 8px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
@@ -274,8 +306,8 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 #header-buttons {
   float: right;
   display: inline-block;
-  margin-top: 9px;
-  padding-right: 20px;
+  margin-top: 11px;
+  padding-right: 14px;
 }
 
 #logo-container {
@@ -286,7 +318,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 
 #activity-logo {
   padding-left: 10px;
-  width: 20px;
+  width: 14px;
   margin-right: 10px;
   display: inline-block;
 }
@@ -294,10 +326,10 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 #activity-pinterview {
   color: white;
   font-family: arial;
-  font-size: 34px;
+  font-size: 26px;
   display: inline-block;
   margin-left: -5px;
-  margin-top: 8%;
+  margin-top: 12%;
 }
 
 /* --- New Pin style --- */
@@ -317,7 +349,15 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   margin-bottom: 5px;
   font-family: 'arial';
   font-size: 14px;
+}
 
+select{
+  cursor:pointer;
+}
+
+select option{
+  font-size: 'arial';
+  font-size: 100px;
 }
 
 #pin_position_type, #pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/pins/:id/edit' => 'pins#edit'
 
   get '/companies', to:'companies#show'
+  get '/companies', to: 'companies#update'
   post '/companies', to: 'companies#update'
 
   match 'static_pages#home',  to: 'static_pages#home', via: 'get'
@@ -27,4 +28,5 @@ Rails.application.routes.draw do
   resources :pins do
     put :favorite, on: :member
   end
+  resources :pins, only: [:index, :show]
 end

@@ -1,9 +1,14 @@
-<% object.each do |pin| %>
-    <%= link_to(pin) do %>
-        <div class="pin">
-          <%= image_tag "https://logo.clearbit.com/#{pin.company.downcase}.com", :class => "company-logo" %>
-          <h3 class= "title-container"><%= pin.company %></h3>
-          <h3 class= "company-container "><%= pin.position%><br><%=pin.position_type%><br><br><br><h3 class = "company-like"><%= pin.like_count %> Like(s)</h3></h3>
-        </div>
-    <% end %>
+<% object.each do |pin| %>  
+   <div class="pin">
+    	<%= link_to(pin) do %>
+      		<%= image_tag "https://logo.clearbit.com/#{pin.company.downcase}.com", :class => "company-logo" %>
+      		<h3 class= "title-container"><%= pin.company %></h3>
+      		<h3 class= "company-container "><%= pin.position%><br><%=pin.position_type%><br></h3> 
+		<% end %>
+			<% if current_user.favorites.exists?(id: pin.id) %>
+			    <%= button_to "- Unmark Useful", favorite_pin_path(pin, type: "Unmark"), method: :put %>
+			<% else %>
+			    <%= button_to "+ Useful", favorite_pin_path(pin, type: "Mark"), method: :put %>
+			<% end %>
+    </div>
 <% end %>

@@ -2,7 +2,7 @@
 /* This SCSS file is used for the dashboard view (static_pages/home.html.erb) */
 
 /* --- Dashboard --- */
-body.dashboard-body{
+/*body.dashboard-body{
   margin: 0px;
   background-image: url(asset-path('Background.png'));
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@ body.dashboard-body{
 .dashboard-navigation{
   background-color: black;
   width: 100%;
-}
+}*/
 
 /* --- Home ---*/
 /*
@@ -101,7 +101,7 @@ body.dashboard-body{
 	padding-top: 10px;
 	padding-bottom: 20px;
 	margin-bottom: 50px;
-}*/
+}
 
 .wrapper{
 	margin-top: 20px;
@@ -135,11 +135,11 @@ body.dashboard-body{
 	color: white;
 	font-family: 'arial';
 	font-size: 13px;
-}
+}*/
 
 /* --- Welcome Page --- */
 
-#login-container {
+/*#login-container {
     width: 50%;
     margin-left: 25%;
     text-align: center;
@@ -196,4 +196,4 @@ body.dashboard-body{
     color: white;
     font-family: 'arial';
     font-size: 13px;
-}
+}*/

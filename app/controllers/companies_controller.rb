@@ -3,12 +3,21 @@ class CompaniesController < ApplicationController
   
   def show
 	@pin = Pin.all
+
 	@not_populated = ""
 
 	if @pin.count == 0
 		@not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
 	end
 
+    @calendar = [] 
+    @pin.each do |p|
+    @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay" => "1"})
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json:@calendar.to_json }
+    end
   end
 
   def update
