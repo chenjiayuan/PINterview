@@ -19,6 +19,7 @@ gem 'ruby_identicon'
 gem "paperclip"
 gem 'ransack'
 gem 'pickadate-rails'
+gem 'net-ssh'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -382,6 +382,7 @@ DEPENDENCIES
   mini_backtrace
   mini_magick (= 3.8.0)
   minitest-reporters
+  net-ssh
   paperclip
   pg
   pickadate-rails
@@ -400,3 +401,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   will_paginate (= 3.0.7)
+
+BUNDLED WITH
+   1.10.6
