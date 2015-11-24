@@ -17,7 +17,7 @@ companies = ['Google','Yahoo','Uber','Oracle','Amazon',
 positions = ['CEO','CFO','COO','Software Developer','Tester','Manager','Mechanician']
 
 100.times { |i|
-Pin.create(position: positions.sample, company: companies.sample, date: "11-24-2015",
+Pin.create(position: positions.sample, company: companies.sample, date: "24 November, 2015",
 	difficulty: "Easy", type_interview: "Technical", attire: "Onsite", 
 	questions: "How to make string double its size",like_count: 0, 
 	length: "30 Minutes", description: "I found the bug!", user_id: 1, position_type: "full-time")
