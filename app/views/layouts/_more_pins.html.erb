@@ -1,3 +1,4 @@
+<% object.each do |pin| %>  
    <div class="pin">
     	<%= link_to(pin) do %>
       		<%= image_tag "https://logo.clearbit.com/#{pin.company.downcase}.com", :class => "company-logo" %>
@@ -10,5 +11,4 @@
 			    <%= button_to "+ Useful", favorite_pin_path(pin, type: "Mark"), method: :put %>
 			<% end %>
     </div>
-    
 <% end %>
