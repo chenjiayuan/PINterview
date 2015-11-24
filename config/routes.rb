@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   resources :pins do
     put :favorite, on: :member
   end
+  resources :pins, only: [:index, :show]
 end
