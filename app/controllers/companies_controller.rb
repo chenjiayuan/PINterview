@@ -16,6 +16,8 @@ class CompaniesController < ApplicationController
   	@not_populated = ""
 
   	if params[:category_id] !=nil
+
+  	  # GET COMPANY INFO
       @company = get_company(params[:category_id])
       @questions = Pin.where(company: params[:category_id])
       @company_name = @company['name']
@@ -25,11 +27,17 @@ class CompaniesController < ApplicationController
       	@company_name = 'Yahoo'
       end
 
+      # GET AVERAGE INTERVIEW TIME
+  	  @length = get_average_time(params[:category_id])
+
     else
       @pin = Pin.all
       @not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
       render "show"
-  	end  	
+  	end 
+
+  	
+
   end
 
 
@@ -69,5 +77,36 @@ class CompaniesController < ApplicationController
     return company
   end
 
+  private
+  def get_average_time(company)
+
+  	list_nums = []
+  	all_lengths = Pin.where(company: company).pluck(:length)
+
+  	all_lengths.each do |a_l|
+	  if a_l == "Less Than 30 Min"
+	  	list_nums.push(15)
+	  end
+	  if a_l == "30 Min"
+	  	list_nums.push(30)
+	  end
+	  if a_l == "1 Hr"
+	  	list_nums.push(60)
+	  end
+	  if a_l == "1.5 Hrs"
+	  	list_nums.push(90)
+	  end
+	  if a_l == "2+ Hrs"
+	  	list_nums.push(180)
+	  end
+  	end
+
+  	average = list_nums.inject{ |sum, num| sum + num }.to_f / list_nums.size
+
+  	return average
+  end
+
 end
+
+
 
