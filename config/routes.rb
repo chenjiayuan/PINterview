@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get "testme", to: 'users#testme'
   resources :users
   resources :pins do
     member do

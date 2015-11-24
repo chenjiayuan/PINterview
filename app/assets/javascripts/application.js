@@ -28,20 +28,23 @@ $(document).ready(function() {
   }); 	
 });
 
-
-var event = {
-  "title": "Event 1",
-  "start": "2015-11-23",
-}
-
 $(document).ready(function() {
+
   $('#calendar').fullCalendar({
-  	header: {
-  		left: 'prev,next today',
-  		center: 'title',
-      right: 'month,agendaWeek,agendaDay',
-      defaultView: "month",
-      events: event,
-  	},
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    events: 
+    window.location.href + '.json'
+    // [
+    // {
+    //       title: 'Click for Google',
+    //       url: 'http://google.com/',
+    //       start: '2015-11-23'
+    // }
+    // ]
   });
+  
 });

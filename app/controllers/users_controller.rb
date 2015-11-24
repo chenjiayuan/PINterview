@@ -28,8 +28,18 @@ class UsersController < ApplicationController
     else
       redirect_to '/' 
     end
+    @data = [{ "title" => "New shift", "start" => "2015-11-19"},{ "title" => "New shift", "start" => "2015-11-19"}]
+    respond_to do |format|
+      format.html
+      format.json { render json:@data.to_json }
+    end
   end
   
+  def testme  
+      @user = { "title" => "New shift", "start" => "2015-11-19"}
+      render json: @user.to_json
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :grad_class, :major)
