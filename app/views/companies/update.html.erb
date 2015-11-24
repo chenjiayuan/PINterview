@@ -28,19 +28,15 @@
 
 <div> Average interview Length: </div>
 <div> 
-	<%= @length %> Minutes
+	- <%= @length %> Minutes -
 </div>
 
 <div>---</div>
 
 <div> Most common interview month: </div>
 <div> 
-	<%= @month %>
+	- <%= @month %> -
 </div>
-
-<div>---</div>
-
-<div> Most common interview day (not yet implemented)</div>
 
 <div>---</div>
 
@@ -48,11 +44,17 @@
 
 <div>---</div>
 
-<div> Percentage moved on to next round (not yet implemented)</div>
+<div> Percentage moved on to next round: </div>
+<div> 
+	- <%= @next_round %>% -
+</div>
 
 <div>---</div>
 
-<div> Percentage recieved offer (not yet implemented)</div>
+<div> Percentage recieved offer: </div>
+<div> 
+	- <%= @offers %>% -
+</div>
 
 <div>---</div>
 

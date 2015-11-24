@@ -33,17 +33,21 @@ class CompaniesController < ApplicationController
   	  # GET MOST COMMON INTERVIEW MONTH
   	  @month = get_common_month(params[:category_id])
 
+  	  # GET PERCENTAGE NEXT ROUND
+  	  @next_round = get_next_round(params[:category_id])
+
+  	  # GET PERCENTAGE OFFERS
+  	  @offers = get_offers(params[:category_id])
+
     else
       @pin = Pin.all
       @not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
       render "show"
   	end 
 
-  	
-
   end
 
-
+  # PRIVATE METHODS
   private
   def get_company(name)
     require 'csv'
@@ -107,7 +111,6 @@ class CompaniesController < ApplicationController
   	average = list_nums.inject{ |sum, num| sum + num }.to_f / list_nums.size
   	return average
   end
-  # "2 November, 2015"
 
   private
   def get_common_month(company)
@@ -119,12 +122,29 @@ class CompaniesController < ApplicationController
   		new_dates.push(new_d)
 
   	end
-
   	freq = new_dates.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
   	most_common_month = new_dates.max_by { |v| freq[v] }
-
   	return most_common_month
+  end
 
+  private
+  def get_next_round(company)
+  	all_outcomes = Pin.where(company: company).pluck(:attire)
+  	nexts = all_outcomes.count("Offer") + all_outcomes.count("Next Round")
+  	rejects = all_outcomes.count - all_outcomes.count("Unknown")
+  	percentage_next_round = (nexts/rejects) * 100
+  	
+  	return percentage_next_round
+  end
+
+  private
+  def get_offers(company)
+  	all_outcomes = Pin.where(company: company).pluck(:attire)
+  	nexts = all_outcomes.count("Offer")
+  	rejects = all_outcomes.count - all_outcomes.count("Unknown")
+  	percentage_next_round = (nexts/rejects) * 100
+  	
+  	return percentage_next_round
   end
 
 end
