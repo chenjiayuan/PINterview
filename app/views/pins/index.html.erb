@@ -1,19 +1,23 @@
 <html>
 <head>
 	<%= stylesheet_link_tag "static_pages" %>
-	<%= stylesheet_link_tag "home.scss" %> 	
 </head>
+
 <body class ="dashboard-body">
+
+    <div class="search">
+      <%= render "layouts/search" %>
+    </div>
+
 	<div class="mainbody">
-
-		<div class="search">  
-			<%= render "layouts/search" %>
-		</div>
-
-		<div class="pins">  
-			<%= render "layouts/more_pins", object: @pins %>
+		<div class="pins">
+			<%= render @pins %>
 		</div>
 	</div>
-	<%= will_paginate @pins %>
+
+    <div id="infinite-scrolling">
+      <%= will_paginate(@pins) %>
+    </div>
+
 </body>
 </html>

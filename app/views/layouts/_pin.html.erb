@@ -1,34 +1,35 @@
-<div class="pin">
-      <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase}.com" %>
-      <h3 class= "title-container company"><%= @pin.company %></h3>
-      <h3 class= "title-container title"><%= @pin.position %></h3>
-      <h3 class= "interview-info date"> Date Interviewed: <%= @pin.date %></h3>
-      <h3 class= "interview-info type"> Type of Interview: <%= @pin.type_interview %></h3>
-      <h3 class= "interview-info attire"> Offer: <%= @pin.attire %></h3>
-      <h3 class= "interview-info job-type"> Position Type: <%= @pin.position_type %></h3>
-      <h3 class= "interview-info type"> Difficulty: <%= @pin.difficulty %></h3>
-      <h3 class= "interview-info length"> Length: <%= @pin.length %></h3>
-      <h3 class= "story-col question-row questions"> Question: <%= @pin.questions %></h3>
-      <h3 class= "story-col story-row description"> <%= @pin.description %></h3>      
+<div class = "content">
+  <div class="individual-pin">
+    <% if current_user.favorites.exists?(id: @pin.id) %>
+        <%= button_to "Unmark Helpful", favorite_pin_path(@pin, type: "Unmark"), method: :put %>
+    <% else %>
+        <%= button_to "Mark Helpful",   favorite_pin_path(@pin, type: "Mark"), method: :put %>
+    <% end %>  
+    <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase}.com", :class => "individual-logo" %>
+    <div class= "title-container-company"><%= @pin.company %></div>
+    <div class= "title-container-title"><%= @pin.position %></div>
+    <div class= "interview-info-date"> Date Interviewed: <%= @pin.date %></div>
+    <div class= "interview-info-type"> Type of Interview: <%= @pin.type_interview %></div>
+    <div class= "interview-info-attire"> Offer: <%= @pin.attire %></div>
+    <div class= "interview-info-job-type"> Position Type: <%= @pin.position_type %></div>
+    <div class= "interview-info-type"> Difficulty: <%= @pin.difficulty %></div>
+    <div class= "interview-info-length"> Length: <%= @pin.length %></div>
+    <div class= "story-col-question-row-questions"> Question: <%= @pin.questions %></div>
+    <div class= "story-col-story-row-description"> <%= @pin.description %></div>      
+
+    <br>
+
+    <% if current_user == @pin.user%>
+     <p>
+        <%= button_to 'Edit', edit_pin_path(@pin) %>
+        <%= button_to 'Delete', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+    <% end %>      
+  <div class = "individual-backdrop"></div>     
 </div>
 
 
-<br>
-<% if current_user.favorites.exists?(id: @pin.id) %>
-    <%= button_to "Unmark Helpful", favorite_pin_path(@pin, type: "Unmark"), method: :put %>
-<% else %>
-    <%= button_to "Mark Helpful",   favorite_pin_path(@pin, type: "Mark"), method: :put %>
-<% end %>
-
-<% if current_user == @pin.user%>
- <p>
-    This is my Pin
-    <%= button_to 'Edit', edit_pin_path(@pin) %>
-    <%= button_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
-<% end %>
-
-
+<!-- 
 <%= @pin.get_upvotes.size %>
 <%= button_to "like pin", like_pin_path(@pin), method: :put %>
-<%= button_to "unlike pin", dislike_pin_path(@pin), method: :put %>
+<%= button_to "unlike pin", dislike_pin_path(@pin), method: :put %> -->

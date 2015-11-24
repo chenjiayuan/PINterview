@@ -1,6 +1,5 @@
-<% object.each do |pin| %>
-    
-    <div class="pin">
+<% object.each do |pin| %>  
+   <div class="pin">
     	<%= link_to(pin) do %>
       		<%= image_tag "https://logo.clearbit.com/#{pin.company.downcase}.com", :class => "company-logo" %>
       		<h3 class= "title-container"><%= pin.company %></h3>
@@ -12,5 +11,4 @@
 			    <%= button_to "+ Useful", favorite_pin_path(pin, type: "Mark"), method: :put %>
 			<% end %>
     </div>
-    
 <% end %>

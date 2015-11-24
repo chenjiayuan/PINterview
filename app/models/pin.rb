@@ -37,6 +37,8 @@ class Pin < ActiveRecord::Base
 
     UNRANSACKABLE_ATTRIBUTES = ["date", "account_id", "attire", "length", "user_id"]
 
+    self.per_page = 20
+
     def self.ransackable_attributes auth_object = nil
         (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys
     end
