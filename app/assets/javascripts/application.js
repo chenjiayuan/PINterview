@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require moment
+//= require fullcalendar
 //= require_tree .
 //= require pickadate/picker
 //= require pickadate/picker.date
@@ -20,8 +22,21 @@
 
 $(document).ready(function() {
   $('.datepicker').pickadate({
-  	selectYears: true,
-  	selectMonths: true,
-  	max: true
+	selectYears: true,
+	selectMonths: true,
+	max: true
   }); 	
+});
+
+$(document).ready(function() {
+
+  $('#calendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    events: window.location.href + '.json'
+  });
+  
 });
