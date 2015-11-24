@@ -284,6 +284,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   display: inline-block;
   vertical-align: middle;
   position: fixed;
+  z-index: 1000;
 }
 
 #header-buttons > .my-button {
@@ -291,12 +292,50 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   text-align: center;
   color: white;
   font-family: 'arial';
-  font-size: 10%;
+  font-size: 80%;
   border: 1px solid transparent;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.useful-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 10%;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+.useful-button:hover {
+  background-color: green;
+  color: white;
+}
+
+.not-useful-button {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-family: 'arial';
+  font-size: 10%;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: green;
+}
+
+.not-useful-button:hover {
+  color: black;
+  background-color: white;
 }
 
 #header-buttons > .my-button:hover {
