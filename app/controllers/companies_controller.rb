@@ -39,6 +39,9 @@ class CompaniesController < ApplicationController
   	  # GET PERCENTAGE OFFERS
   	  @offers = get_offers(params[:category_id])
 
+  	  # GET MOST COMMON POSITIONS
+  	  @common_positions = get_common_positions(params[:category_id])
+
     else
       @pin = Pin.all
       @not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
@@ -145,6 +148,15 @@ class CompaniesController < ApplicationController
   	percentage_next_round = (nexts/rejects) * 100
   	
   	return percentage_next_round
+  end
+
+  private
+  def get_common_positions(company)
+  	most_common_positions = []
+  	all_positions = Pin.where(company: company).pluck(:position)
+  	freq = all_positions.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
+  	most_common_positions = all_positions.sort_by{ |v| freq[v] }.first(5)
+  	return most_common_positions
   end
 
 end

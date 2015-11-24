@@ -26,6 +26,17 @@
 
 <div>---</div>
 
+<div> Most Common Positions Interviewed For: </div>
+<div> 
+	<% @common_positions.each do |pos| -%>
+		<div>
+			- <%= pos %> -
+		<div>
+	<% end -%>
+</div>
+
+<div>---</div>
+
 <div> Average interview Length: </div>
 <div> 
 	- <%= @length %> Minutes -
