@@ -81,11 +81,10 @@ class PinsController < ApplicationController
 
     else # Type missing, nothing happens
       redirect_to :back, notice: "Nothing happened."
+    end
   end
 
-end
-
-private
+  private
 	def pin_params
     params.require(:pin).permit(:position, :company, :date, :difficulty, :type_interview, 
       :attire, :questions, :like_count, :length, :description, :user_id, :position_type)
