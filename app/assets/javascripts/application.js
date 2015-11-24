@@ -28,12 +28,20 @@ $(document).ready(function() {
   }); 	
 });
 
+
+var event = {
+  "title": "Event 1",
+  "start": "2015-11-23",
+}
+
 $(document).ready(function() {
   $('#calendar').fullCalendar({
   	header: {
   		left: 'prev,next today',
   		center: 'title',
-  		right: 'month,agendaWeek,agendaDay'
+      right: 'month,agendaWeek,agendaDay',
+      defaultView: "month",
+      events: event,
   	},
   });
 });
