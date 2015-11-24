@@ -30,6 +30,9 @@ class CompaniesController < ApplicationController
       # GET AVERAGE INTERVIEW TIME
   	  @length = get_average_time(params[:category_id])
 
+  	  # GET MOST COMMON INTERVIEW MONTH
+  	  @month = get_common_month(params[:category_id])
+
     else
       @pin = Pin.all
       @not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
@@ -102,8 +105,26 @@ class CompaniesController < ApplicationController
   	end
 
   	average = list_nums.inject{ |sum, num| sum + num }.to_f / list_nums.size
-
   	return average
+  end
+  # "2 November, 2015"
+
+  private
+  def get_common_month(company)
+  	new_dates = []
+  	all_dates = Pin.where(company: company).pluck(:date)
+  	all_dates.each do |date|
+
+  		new_d = date.split(" ")[1].split(",")[0]
+  		new_dates.push(new_d)
+
+  	end
+
+  	freq = new_dates.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
+  	most_common_month = new_dates.max_by { |v| freq[v] }
+
+  	return most_common_month
+
   end
 
 end
