@@ -1,10 +1,21 @@
 <html>
 <head>
 	<%= stylesheet_link_tag "static_pages" %>
-	<%= stylesheet_link_tag "home.scss" %> 	
+	<!--<%= stylesheet_link_tag "home.scss" %>-->
 </head>
 <body class ="dashboard-body">
 	<div class="mainbody">
+
+		<%= search_form_for @search do |f| %> 
+			<div class= "field">
+				<%= f.label :company, "Search By Company Name" %>
+				<%= f.text_field :company_cont %>
+			</div>
+			<div class = "action">
+				<%= f.submit "Search", class: "btn-submit" %>
+			</div>
+		<% end %>
+
 		<div class="pins">  
 			<%= render "layouts/more_pins" %>
 		</div>

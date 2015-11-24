@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
 	  @user = User.find_by_email(params[:session][:email])
 	  if @user && @user.authenticate(params[:session][:password])
 	    session[:user_id] = @user.id
-	    redirect_to '/'
-	  else	  	
-	  	flash[:error] = @user.errors.full_messages.to_sentence 
-		redirect_to 'login'
+	    redirect_to '/', notice: 'Session was successfully created.'
+	  else
+        flash[:error] = 'Invalid Credential'
+		redirect_to '/login'
 	  end
 	end
 

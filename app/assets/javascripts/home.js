@@ -72,5 +72,4 @@ var Pin = (function() {
       start: start
   };
 
-
 })();

@@ -1,0 +1,96 @@
+<%= stylesheet_link_tag "static_pages" %>
+
+<div>
+	<%= link_to "Return to Companies", companies_path, html_options = {:class => "insert_class_here_JIHERN"} %>
+</div>
+
+<div>---</div>
+
+<div> <%= image_tag "https://logo.clearbit.com/#{@company_name.downcase}.com" %> </div>
+
+<div> <%= @company['name'] %> </div>
+
+<div>---</div>
+
+<div> Company Links </div>
+<a href=<%= @company['url'] %>><%= @company['url'] %></a>
+<a href = <%= @company['facebook'] %> > Find this company on Facebook </a>
+<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
+
+<div> Location (maybe use google maps here?) </div>
+<div> <%= @company['city'] %> </div>
+<div> <%= @company['state'] %> </div>
+
+<div> Description </div>
+<div> <%= @company['description'] %> </div>
+
+<div>---</div>
+
+<div> Most Common Positions Interviewed For: </div>
+<div> 
+	<% @common_positions.each do |pos| -%>
+		<div>
+			- <%= pos %> -
+		<div>
+	<% end -%>
+</div>
+
+<div>---</div>
+
+<div> Average interview Length: </div>
+<div> 
+	- <%= @length %> Minutes -
+</div>
+
+<div>---</div>
+
+<div> Most common interview month: </div>
+<div> 
+	- <%= @month %> -
+</div>
+
+<div>---</div>
+
+<div> Most common interview question type, e.g. Dynamic Programming, Probabilty, Search Algorithm, etc (not yet implemented)</div>
+
+<div>---</div>
+
+<div> Percentage moved on to next round: </div>
+<div> 
+	- <%= @next_round %>% -
+</div>
+
+<div>---</div>
+
+<div> Percentage recieved offer: </div>
+<div> 
+	- <%= @offers %>% -
+</div>
+
+<div>---</div>
+
+<div> Company Interview Questions </div>
+<div>
+	<% @questions.each do |question| -%>
+		<div>
+
+			<%= question.description %>
+
+			<%= link_to "Go to this PIN", question  %>
+
+			<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
+
+		<div>
+	<% end -%>
+</div>
+
+<br>
+<br>
+<style type="text/css" scoped>
+    #calendar
+    {
+      max-width: 1200px;
+	  margin: 0 auto;
+    }
+  </style>
+<div id='calendar'></div>

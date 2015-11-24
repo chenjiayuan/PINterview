@@ -2,8 +2,14 @@
 // They will automatically be included in application.css. 
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "pickadate/default";
+@import "pickadate/default.date";
+@import "pickadate/default.time";   
+
 .login {
   margin: 0px;
+  background-color: #F5F3F3;
+  margin-bottom: 40px;
 }
 
 .pins{ 
@@ -18,23 +24,206 @@
   color: black;
 }
 
-.pin { 
+.filter{
+  font-family: arial;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.sort_link{
   display: inline-block;
+  font-family: arial;
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  margin: -2.5px;
+  margin-top: 2px;
+  border: 1px solid black;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.Advanced-Search{
   text-align: center;
-  width: 350px;
-  margin-bottom: 30px;
+  display: inline-block;
+  font-family: arial;
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  margin: -2.5px;
+  margin-top: 2px;
+  border: 1px solid black;
+  padding-left: 25.5px;
+  padding-right: 25.5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+
+.advanced-search-wrapper{
+  position: fixed;
+}
+
+.row{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.search-wrapper{
+  margin-left: 40px;
+  margin-bottom: 80px;
+}
+
+.pin {
+  display: inline-block;
+  width: 180px;
+  max-height: 300px;
+  height: 260px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: #F2F2F2;
+  background-color: white;
   border-radius: 5px;
-  box-shadow: 2px 2px 1px grey;
+  box-shadow: 2px 2px 1px #D4D4D4;
   font-family: arial;
   padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.individual-backdrop{
+ position: fixed;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ background-color: black;
+ opacity:.6;
+ z-index: -1;
+}
+
+.individual-pin{
+  z-index: 1;
+  font-family: 'arial';
+  width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.individual-logo{
+  width: 150px;
+  border-radius: 10px;
+}
+
+.title-container-company{
+  font-size: 40px;
+}
+
+.company-logo{
+  margin-top: 8px;
+  width: 140px;
+  height: 130px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.profile-wrapper{
+  margin: 0px;
+  margin-top: -30px;
+  margin-bottom: 200px;
+  height: 90px; 
+  background-color: #D4D4D4;
+  text-align: center;
+}
+
+.avatar{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 130px;
+  background-color: white;
+  border-radius: 150px;
+}
+
+.profile-name{
+  font-size: 30px;
+  font-family: 'arial';
+}
+
+.profile-email{
+  margin-top: -20px;
+  font-size: 15px;
+  font-family: 'arial';  
+}
+
+.profile-major{
+  display: inline;
+  font-size: 12px;
+  font-family: 'arial';    
+}
+
+.profile-grad{
+  display: inline;
+  font-size: 12px;
+  font-family: 'arial';    
+}
+
+.my-pins1{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.my-pins2{
+  text-align: center;
+}
+
+.pin-header{
+  font-family: 'arial';
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.pin-display{
+
+}
+
+a{
+  text-decoration: none;
+}
+
+.pin .title-container{
+  margin-top: 3px;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.pin .company-container{
+  margin-top: 0px;
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.pin .company-like{
+  margin-top: -6px;
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 12px;
 }
 
 body > div.mainbody > div > a:nth-child(1).pin a:visited {
   color: black;
   background-color: green;
+}
+
+.spacer{
+    width: 100%;
+    height: 90px;
 }
 
 .count{ 
@@ -87,47 +276,49 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 
 .main-page-header {
   width: 100%;
-  height: 50px;
+  height: 30px;
   background-color: #3B3D55;
   padding-top: 10px;
   padding-bottom: 20px;
   margin-bottom: 25px;
   display: inline-block;
   vertical-align: middle;
+  position: fixed;
 }
 
 #header-buttons > .my-button {
-  vertical-align: middle;
   text-decoration: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-right: 10px;
-  border-radius: 7px;
-  background-color: #F2F2F2;
-  box-shadow: 1px 1px .5px white;
   text-align: center;
-  color: Black;
+  color: white;
   font-family: 'arial';
-  font-size: 13px;
+  font-size: 10%;
+  border: 1px solid transparent;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+#header-buttons > .my-button:hover {
+  border: 1px solid white;
 }
 
 #header-buttons {
   float: right;
   display: inline-block;
-  vertical-align: middle;
-  margin-top: 15px
+  margin-top: 11px;
+  padding-right: 14px;
 }
 
 #logo-container {
   float:left;
   display: inline-block;
+  margin-top: -18px;
 }
 
 #activity-logo {
   padding-left: 10px;
-  width: 38px;
+  width: 14px;
   margin-right: 10px;
   display: inline-block;
 }
@@ -135,20 +326,44 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 #activity-pinterview {
   color: white;
   font-family: arial;
-  font-size: 60px;
+  font-size: 26px;
   display: inline-block;
+  margin-left: -5px;
+  margin-top: 12%;
 }
 
 /* --- New Pin style --- */
-
+.create-header{
+  font-family: 'arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
 .create {
   text-align: center;
 }
 
-#pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {
-  margin-top: 4px;
-  margin-bottom: 4px;
+.create-label{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: 'arial';
+  font-size: 14px;
+}
+
+select{
+  cursor:pointer;
+}
+
+select option{
+  font-size: 'arial';
+  font-size: 100px;
+}
+
+#pin_position_type, #pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;  
   background:rgba(255,255,255,0.8);
   border: 0 none;
   border-radius: 10px;
@@ -159,14 +374,28 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 #pin_position, #pin_company, #pin_date {
   height: 30px;
   width: 350px;
+  padding-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 #pin_description, #pin_questions {
   height: 70px;
   width: 350px;
   resize: both;
+  margin-bottom: 5px;
+  padding-left: 10px;  
 }
 
 .btn-submit {
   margin-bottom: 100px;
+}
+
+/* --- Company Page Style --- */
+.company-header{
+  text-align: center;
+  font-family: 'arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }

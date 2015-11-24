@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag "static_pages" %>
+<h2>Companies</h2>
+
+<%= form_tag("/companies", method: "post") do %>
+ 
+  <%= select_tag "category_id", options_from_collection_for_select(@pin.select(:company).uniq, "company", "company") %>
+  <%= submit_tag("Search") %>
+
+<% end %>
+
+
+<div>---</div>
+
+<div> <%= @not_populated %> </div>
+
+<br>
+<br>
+<style type="text/css" scoped>
+    #calendar
+    {
+      max-width: 1200px;
+	  margin: 0 auto;
+    }
+  </style>
+<div id='calendar'></div>
+

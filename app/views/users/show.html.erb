@@ -1,16 +1,33 @@
 <%= stylesheet_link_tag "static_pages" %>
-Name: <%= @user.username %><br>
-Email: <%= @user.email %><br>
-Class: <%= @user.grad_class %><br>
-Major: <%= @user.major %><br>
-
-<h2>Pins I created</h2>
-<div class="mainbody">
-  <div class="pins">  
-
-    <%= render "layouts/more_pins" %>
-
-  </div>
+<div class = "profile-wrapper">
+	<%= image_tag @user.avatar, :class => "avatar" %>
+	<div class = "profile-name"><%= @user.username %></div><br>
+	<div class = "profile-email"><%= @user.email %></div>
+	<div class = "profile-major"><%= @user.major %></div> | 
+	<div class = "profile-grad"><%= @user.grad_class %></div><br>
 </div>
 
-<h2>Pins I liked</h2>
+<div class = "my-pins1">
+	<div class = "pin-header">Pins I Created</div>
+	<div class="pin-display">  
+ 		<%= render "layouts/more_pins", object: @pins %>
+	</div>
+</div>
+<br>
+<div class = "my-pins2">
+	<div class = "pin-header">Pins I Marked as Useful</div>
+	<div class = "pin-display">
+		<%= render "layouts/more_pins", object: @favorite %>
+	</div>
+</div>
+
+
+<style type="text/css" scoped>
+    #calendar
+    {
+      max-width: 1200px;
+	  margin: 0 auto;
+    }
+  </style>
+<br><br>
+<div id='calendar'></div>

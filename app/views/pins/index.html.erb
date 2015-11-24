@@ -1,0 +1,23 @@
+<html>
+<head>
+	<%= stylesheet_link_tag "static_pages" %>
+</head>
+
+<body class ="dashboard-body">
+
+    <div class="search">
+      <%= render "layouts/search" %>
+    </div>
+
+	<div class="mainbody">
+		<div class="pins">
+			<%= render @pins %>
+		</div>
+	</div>
+
+    <div id="infinite-scrolling">
+      <%= will_paginate(@pins) %>
+    </div>
+
+</body>
+</html>

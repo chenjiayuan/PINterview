@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to Pinterview</title>
-  <%= stylesheet_link_tag 'home' %>
+  <title>Pinterview</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.css' rel='stylesheet' />
+  <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/lib/moment.min.js'=></script>
+  <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 </head>
+
 <body class = "login">
   <% if current_user %>
     <div class="main-page-header">
-      <div id="logo-container">
-        <img id = "activity-logo" src="<%= asset_path( 'logo.png' ) %>">
-        <div id ="activity-pinterview">PINTERVIEW</div>
-      </div>
+      <%= link_to(root_path) do %>
+        <div id="logo-container">
+          <img id = "activity-logo" src="<%= asset_path( 'logo.png' ) %>">
+          <div id ="activity-pinterview">PINTERVIEW</div>
+        </div>
+      <% end %>
+
       <div id="header-buttons">
-        <%= link_to "Home", root_path, html_options = {:class => "my-button"} %>
-        <%= link_to "New Pin", new_pin_path, html_options = {:class => "my-button"} %>
-        <%= link_to "My Profile", current_user, html_options = {:class => "my-button"} %>
-        <%= link_to "Log out", logout_path, method: "delete", class: "my-button" %>
-      </div>
+<!--         <%= link_to "H O M E", root_path, html_options = {:class => "my-button"} %>
+ -->      
+        <%= link_to "+ P I N", new_pin_path, html_options = {:class => "my-button"} %>              
+        <%= link_to "C O M P A N I E S", companies_path, html_options = {:class => "my-button"} %>
+        <%= link_to "P R O F I L E", current_user, html_options = {:class => "my-button"} %>
+        <%= link_to "L O G O U T", logout_path, method: "delete", class: "my-button" %>
+      </div> 
     </div>
+      <div class="spacer">
+          &nbsp;
+      </div>    
   <% end %>
   <%= yield %>
 
