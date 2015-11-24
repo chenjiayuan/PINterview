@@ -291,7 +291,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   text-align: center;
   color: white;
   font-family: 'arial';
-  font-size: 10%;
+  font-size: 80%;
   border: 1px solid transparent;
   padding-left: 8px;
   padding-right: 8px;
@@ -315,6 +315,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 
 .useful-button:hover {
   background-color: green;
+  color: white;
 }
 
 .not-useful-button {
