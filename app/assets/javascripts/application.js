@@ -20,9 +20,9 @@
 
 $(document).ready(function() {
   $('.datepicker').pickadate({
-  	selectYears: true,
-  	selectMonths: true,
-  	max: true
+	selectYears: true,
+	selectMonths: true,
+	max: true
   }); 	
 });
 
@@ -37,4 +37,13 @@ $(document).ready(function() {
         });
         return $(window).scroll();
     }
-});
+
+  $('#calendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    events: window.location.href + '.json'
+  });
+  });
