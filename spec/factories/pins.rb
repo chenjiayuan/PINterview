@@ -21,14 +21,15 @@ require 'faker'
 
 FactoryGirl.define do
   factory :pin do |f|
-    f.position {Faker::Commerce.product_name}
-    f.company {Faker::Company.name}
-    f.date  {"10/20/2015"}
-    f.difficulty {"Easy"}
-    f.type_interview {Faker::Hacker.adjective}
-    f.attire "Yes"
-    f.questions {Faker::Hacker.adjective}
-    f.length  {"1 Hours"}
-    f.description {Faker::Hacker.say_something_smart}
+    position {Faker::Commerce.product_name}
+    company {"Airbnb"}
+    date  {"10/20/2015"}
+    difficulty {"1 - Easy"}
+    type_interview {"Onsite"}
+    attire "Offer"
+    questions {Faker::Hacker.adjective}
+    length  {"30 Min"}
+    description {Faker::Hacker.say_something_smart}
+    position_type {"Fulltime"}
   end
 end

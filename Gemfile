@@ -39,6 +39,7 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'capybara-screenshot', :group => :test
 end
 
 group :production do

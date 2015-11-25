@@ -18,10 +18,10 @@ require 'faker'
 
 FactoryGirl.define do
   factory :user do |f|
-    f.username {Faker::Internet.user_name}
-    f.password "123456"
-    f.email  {Faker::Internet.email}
-    f.grad_class "2016"
-    f.major {Faker::Hacker.abbreviation}
+    username {Faker::Internet.user_name}
+    password "123456"
+    email  {Faker::Internet.email}
+    grad_class "2016"
+    major "EECS"
   end
 end

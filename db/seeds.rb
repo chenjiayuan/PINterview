@@ -27,7 +27,7 @@ attirs = ['Offer','Offer','Offer','Offer','Offer','Offer', 'Rejected','Rejected'
 positions = ['Consultant','Software Developer','Tester','Product Manager', 'QA Engineer', 'UI designer']
 position_types = ['Full-time', 'Full-time', 'Full-time', 'Full-time', 'Part-time', 'Internship']
 
-1000.times { |i|
+100.times { |i|
 Pin.create(position: positions.sample, company: companies.sample, date: days.sample.to_s + ' ' + month.sample + year,
 	difficulty: difficulties.sample, type_interview: types.sample, attire: attirs.sample, 
 	questions: "How to make string double its size", like_count: 0, 

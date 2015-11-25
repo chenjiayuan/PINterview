@@ -17,9 +17,10 @@
 #  position_type  :string
 #
 
+require "rails_helper"
 require 'spec_helper'
 
-describe "Pin" do
+describe Pin do
 
   it "create valid pin" do    
     expect(FactoryGirl.create(:pin)).to be_valid
@@ -55,7 +56,7 @@ describe "Pin" do
 
   it "checking if like count is 0" do    
     user = FactoryGirl.create(:pin)
-    user.like_count should == 0
+    expect(user.like_count).to eq(0)
   end
 
   it "length 41 title" do    
@@ -74,8 +75,8 @@ describe "Pin" do
     FactoryGirl.build(:pin, type_interview: "a"*41 ).should_not be_valid
   end
 
-  it "length 40 attire" do    
-    FactoryGirl.build(:pin, attire: "a"*30 ).should_not be_valid
+  it "length 30 attire" do    
+    FactoryGirl.build(:pin, attire: "a"*31 ).should_not be_valid
   end
 
   it "length 241 questions" do    
