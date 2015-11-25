@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   
   def show
   	@pin = Pin.all
-    @random = @pin.pluck(:company).uniq.shuffle.first(5)
+    @random = @pin.pluck(:company).uniq.shuffle.first(15)
     
   	@not_populated = ""
 
@@ -26,6 +26,11 @@ class CompaniesController < ApplicationController
       # EDGE CASE - Yahoo!
       if @company_name =='Yahoo!'
       	@company_name = 'Yahoo'
+      end
+
+      # EDGE CASE - Yahoo!
+      if @company_name =='Hewlett-Packard'
+        @company_name = 'HP'
       end
 
       # GET AVERAGE INTERVIEW TIME
@@ -68,9 +73,14 @@ class CompaniesController < ApplicationController
     require 'csv'
     company = Hash.new
 
-	# EDGE CASE - Yahoo!
+	  # EDGE CASE - Yahoo!
     if name == 'Yahoo'
       name = 'Yahoo!'
+    end
+
+    # EDGE CASE - HP
+    if name == 'HP' or name == 'Hewlett Packard'
+      name = 'Hewlett-Packard'
     end
 
     company['name'] = name
