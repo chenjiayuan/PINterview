@@ -14,8 +14,7 @@
 	</div>
 
 	<div class="company-location">
-		<div> <%= @company['city'] %> </div>
-		<div> <%= @company['state'] %> </div>
+		<div> <%= @company['city'] %>, <%= @company['state'] %> </div>
 	</div>
 
 	<div class="profile-major"> 
@@ -23,84 +22,71 @@
 	</div>
 
 	<div class="company-links">
-
 		<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
 		<a href = <%= @company['facebook'] %> > Find this company on Facebook </a> |
 		<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
-
 	</div>
 
-	<div> Location (maybe use google maps here?) </div>
-	
+	<div class="company-description"> <%= @company['description'] %> </div>
 
-	<div> Description </div>
-	<div> <%= @company['description'] %> </div>
+
+
+	<div>---</div>
+
+	<div> Average interview Length: </div>
+	<div> 
+		- <%= @length %> Minutes -
+	</div>
+
+	<div>---</div>
+
+	<div> Most common interview month: </div>
+	<div> 
+		- <%= @month %> -
+	</div>
+
+	<div>---</div>
+
+	<div> Most common interview question type, e.g. Dynamic Programming, Probabilty, Search Algorithm, etc (not yet implemented)</div>
+
+	<div>---</div>
+
+	<div> Percentage moved on to next round: </div>
+	<div> 
+		- <%= @next_round %>% -
+	</div>
+
+	<div>---</div>
+
+	<div> Percentage recieved offer: </div>
+	<div> 
+		- <%= @offers %>% -
+	</div>
+
+	<div>---</div>
+
+	<div> Company Interview Questions </div>
+	<div>
+		<% @questions.each do |question| -%>
+			<div>
+
+				<%= question.description %>
+
+				<%= link_to "Go to this PIN", question  %>
+
+				<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
+
+			<div>
+		<% end -%>
+	</div>
+
+
 
 </div>
 
 
 
-
-
-<div>---</div>
-
-<div> Most Common Positions Interviewed For: </div>
-<div> 
-	<% @common_positions.each do |pos| -%>
-		<div>
-			- <%= pos %> -
-		<div>
-	<% end -%>
-</div>
-
-<div>---</div>
-
-<div> Average interview Length: </div>
-<div> 
-	- <%= @length %> Minutes -
-</div>
-
-<div>---</div>
-
-<div> Most common interview month: </div>
-<div> 
-	- <%= @month %> -
-</div>
-
-<div>---</div>
-
-<div> Most common interview question type, e.g. Dynamic Programming, Probabilty, Search Algorithm, etc (not yet implemented)</div>
-
-<div>---</div>
-
-<div> Percentage moved on to next round: </div>
-<div> 
-	- <%= @next_round %>% -
-</div>
-
-<div>---</div>
-
-<div> Percentage recieved offer: </div>
-<div> 
-	- <%= @offers %>% -
-</div>
-
-<div>---</div>
-
-<div> Company Interview Questions </div>
-<div>
-	<% @questions.each do |question| -%>
-		<div>
-
-			<%= question.description %>
-
-			<%= link_to "Go to this PIN", question  %>
-
-			<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
-
-		<div>
-	<% end -%>
-</div>
 
 <br>
+<!--<div id='calendar'></div>-->
 <div id='calendar'></div>

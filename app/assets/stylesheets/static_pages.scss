@@ -591,16 +591,29 @@ select option{
   height: 90px; 
   background-color: #D4D4D4;
   text-align: center;
+  font-family: 'arial'; 
 }
 
 .company-links{
  text-align: center;
+  font-style: italic;
+  margin: 5px;
+  font-size: 12px;
 }
 
 .company-location{
   margin: 10px;
   font-family: 'arial';
   font-size: 12px;
+}
+
+.company-description{
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  font-family: 'arial'; 
+  font-size: 14px;
 }
 
 /* --- Chen tab and calender --- */
