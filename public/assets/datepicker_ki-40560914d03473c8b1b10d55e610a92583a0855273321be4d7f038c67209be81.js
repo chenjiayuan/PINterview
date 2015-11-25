@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".datepicker").pickadate({selectYears:!0,selectMonths:!0,max:!0})});
