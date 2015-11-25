@@ -1,0 +1,1539 @@
+@charset "UTF-8";
+/* ==========================================================================
+   $BASE-PICKER
+   ========================================================================== */
+/**
+ * Note: the root picker element should *NOT* be styled more than what’s here.
+ */
+/* line 7, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker {
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.2;
+  color: #000000;
+  position: absolute;
+  z-index: 10000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**
+ * The picker input element.
+ */
+/* line 22, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__input {
+  cursor: default;
+}
+
+/**
+ * When the picker is opened, the input element is “activated”.
+ */
+/* line 28, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__input.picker__input--active {
+  border-color: #0089ec;
+}
+
+/**
+ * The holder is the only “scrollable” top-level container element.
+ */
+/* line 34, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__holder {
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*!
+ * Default mobile-first, responsive styling for pickadate.js
+ * Demo: http://amsul.github.io/pickadate.js
+ */
+/**
+ * Note: the root picker element should *NOT* be styled more than what’s here.
+ */
+/**
+ * Make the holder and frame fullscreen.
+ */
+/* line 50, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__holder,
+.picker__frame {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+/**
+ * The holder should overlay the entire screen.
+ */
+/* line 63, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__holder {
+  position: fixed;
+  transition: background 0.15s ease-out, -webkit-transform 0s 0.15s;
+  transition: background 0.15s ease-out, transform 0s 0.15s;
+  -webkit-backface-visibility: hidden;
+}
+
+/**
+ * The frame that bounds the box contents of the picker.
+ */
+/* line 72, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__frame {
+  position: absolute;
+  margin: 0 auto;
+  min-width: 256px;
+  max-width: 666px;
+  width: 100%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+
+@media (min-height: 33.875em) {
+  /* line 85, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+  .picker__frame {
+    overflow: visible;
+    top: auto;
+    bottom: -100%;
+    max-height: 80%;
+  }
+}
+@media (min-height: 40.125em) {
+  /* line 93, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+  .picker__frame {
+    margin-bottom: 7.5%;
+  }
+}
+/**
+ * The wrapper sets the stage to vertically align the box contents.
+ */
+/* line 100, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__wrap {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-height: 33.875em) {
+  /* line 106, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+  .picker__wrap {
+    display: block;
+  }
+}
+/**
+ * The box contains all the picker contents.
+ */
+/* line 113, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker__box {
+  background: #ffffff;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media (min-height: 26.5em) {
+  /* line 119, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+  .picker__box {
+    font-size: 1.25em;
+  }
+}
+@media (min-height: 33.875em) {
+  /* line 124, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+  .picker__box {
+    display: block;
+    font-size: 1.33em;
+    border: 1px solid #777777;
+    border-top-color: #898989;
+    border-bottom-width: 0;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+  }
+}
+@media (min-height: 40.125em) {
+  /* line 135, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+  .picker__box {
+    font-size: 1.5em;
+    border-bottom-width: 1px;
+    border-radius: 5px;
+  }
+}
+/**
+ * When the picker opens...
+ */
+/* line 144, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker--opened .picker__holder {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  background: transparent;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
+  zoom: 1;
+  background: rgba(0, 0, 0, 0.32);
+  transition: background 0.15s ease-out;
+}
+
+/* line 154, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+.picker--opened .picker__frame {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+@media (min-height: 33.875em) {
+  /* line 164, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.css */
+  .picker--opened .picker__frame {
+    top: auto;
+    bottom: 0;
+  }
+}
+/* ==========================================================================
+   $BASE-DATE-PICKER
+   ========================================================================== */
+/**
+ * The picker box.
+ */
+/* line 7, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__box {
+  padding: 0 1em;
+}
+
+/**
+ * The header containing the month and year stuff.
+ */
+/* line 13, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__header {
+  text-align: center;
+  position: relative;
+  margin-top: .75em;
+}
+
+/**
+ * The month and year labels.
+ */
+/* line 21, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__month,
+.picker__year {
+  font-weight: 500;
+  display: inline-block;
+  margin-left: .25em;
+  margin-right: .25em;
+}
+
+/* line 28, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__year {
+  color: #999999;
+  font-size: .8em;
+  font-style: italic;
+}
+
+/**
+ * The month and year selectors.
+ */
+/* line 36, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__select--month,
+.picker__select--year {
+  border: 1px solid #b7b7b7;
+  height: 2em;
+  padding: .5em;
+  margin-left: .25em;
+  margin-right: .25em;
+}
+
+@media (min-width: 24.5em) {
+  /* line 45, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+  .picker__select--month,
+  .picker__select--year {
+    margin-top: -0.5em;
+  }
+}
+/* line 50, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__select--month {
+  width: 35%;
+}
+
+/* line 53, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__select--year {
+  width: 22.5%;
+}
+
+/* line 56, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__select--month:focus,
+.picker__select--year:focus {
+  border-color: #0089ec;
+}
+
+/**
+ * The month navigation buttons.
+ */
+/* line 63, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__nav--prev,
+.picker__nav--next {
+  position: absolute;
+  padding: .5em 1.25em;
+  width: 1em;
+  height: 1em;
+  box-sizing: content-box;
+  top: -0.25em;
+}
+
+@media (min-width: 24.5em) {
+  /* line 73, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+  .picker__nav--prev,
+  .picker__nav--next {
+    top: -0.33em;
+  }
+}
+/* line 78, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__nav--prev {
+  left: -1em;
+  padding-right: 1.25em;
+}
+
+@media (min-width: 24.5em) {
+  /* line 83, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+  .picker__nav--prev {
+    padding-right: 1.5em;
+  }
+}
+/* line 87, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__nav--next {
+  right: -1em;
+  padding-left: 1.25em;
+}
+
+@media (min-width: 24.5em) {
+  /* line 92, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+  .picker__nav--next {
+    padding-left: 1.5em;
+  }
+}
+/* line 96, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__nav--prev:before,
+.picker__nav--next:before {
+  content: " ";
+  border-top: .5em solid transparent;
+  border-bottom: .5em solid transparent;
+  border-right: 0.75em solid #000000;
+  width: 0;
+  height: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 107, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__nav--next:before {
+  border-right: 0;
+  border-left: 0.75em solid #000000;
+}
+
+/* line 111, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__nav--prev:hover,
+.picker__nav--next:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+
+/* line 117, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__nav--disabled,
+.picker__nav--disabled:hover,
+.picker__nav--disabled:before,
+.picker__nav--disabled:before:hover {
+  cursor: default;
+  background: none;
+  border-right-color: #f5f5f5;
+  border-left-color: #f5f5f5;
+}
+
+/**
+ * The calendar table of dates
+ */
+/* line 129, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__table {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: inherit;
+  width: 100%;
+  margin-top: .75em;
+  margin-bottom: .5em;
+}
+
+@media (min-height: 33.875em) {
+  /* line 140, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+  .picker__table {
+    margin-bottom: .75em;
+  }
+}
+/* line 144, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__table td {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * The weekday labels
+ */
+/* line 151, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__weekday {
+  width: 14.285714286%;
+  font-size: .75em;
+  padding-bottom: .25em;
+  color: #999999;
+  font-weight: 500;
+  /* Increase the spacing a tad */
+}
+
+@media (min-height: 33.875em) {
+  /* line 160, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+  .picker__weekday {
+    padding-bottom: .5em;
+  }
+}
+/**
+ * The days on the calendar
+ */
+/* line 167, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day {
+  padding: .3125em 0;
+  font-weight: 200;
+  border: 1px solid transparent;
+}
+
+/* line 172, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--today {
+  position: relative;
+}
+
+/* line 175, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--today:before {
+  content: " ";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 0;
+  height: 0;
+  border-top: 0.5em solid #0059bc;
+  border-left: .5em solid transparent;
+}
+
+/* line 185, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--disabled:before {
+  border-top-color: #aaaaaa;
+}
+
+/* line 188, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--outfocus {
+  color: #dddddd;
+}
+
+/* line 191, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--infocus:hover,
+.picker__day--outfocus:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+
+/* line 197, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--highlighted {
+  border-color: #0089ec;
+}
+
+/* line 200, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--highlighted:hover,
+.picker--focused .picker__day--highlighted {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+
+/* line 206, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+  background: #0089ec;
+  color: #ffffff;
+}
+
+/* line 212, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--disabled,
+.picker__day--disabled:hover,
+.picker--focused .picker__day--disabled {
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #dddddd;
+  cursor: default;
+}
+
+/* line 220, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__day--highlighted.picker__day--disabled,
+.picker__day--highlighted.picker__day--disabled:hover {
+  background: #bbbbbb;
+}
+
+/**
+ * The footer containing the "today", "clear", and "close" buttons.
+ */
+/* line 227, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__footer {
+  text-align: center;
+}
+
+/* line 230, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today,
+.picker__button--clear,
+.picker__button--close {
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  font-size: .8em;
+  padding: .66em 0;
+  font-weight: bold;
+  width: 33%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* line 242, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today:hover,
+.picker__button--clear:hover,
+.picker__button--close:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+  border-bottom-color: #b1dcfb;
+}
+
+/* line 250, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today:focus,
+.picker__button--clear:focus,
+.picker__button--close:focus {
+  background: #b1dcfb;
+  border-color: #0089ec;
+  outline: none;
+}
+
+/* line 257, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today:before,
+.picker__button--clear:before,
+.picker__button--close:before {
+  position: relative;
+  display: inline-block;
+  height: 0;
+}
+
+/* line 264, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today:before,
+.picker__button--clear:before {
+  content: " ";
+  margin-right: .45em;
+}
+
+/* line 269, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today:before {
+  top: -0.05em;
+  width: 0;
+  border-top: 0.66em solid #0059bc;
+  border-left: .66em solid transparent;
+}
+
+/* line 275, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--clear:before {
+  top: -0.25em;
+  width: .66em;
+  border-top: 3px solid #ee2200;
+}
+
+/* line 280, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--close:before {
+  content: "\D7";
+  top: -0.1em;
+  vertical-align: top;
+  font-size: 1.1em;
+  margin-right: .35em;
+  color: #777777;
+}
+
+/* line 288, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today[disabled],
+.picker__button--today[disabled]:hover {
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #dddddd;
+  cursor: default;
+}
+
+/* line 295, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.date.css */
+.picker__button--today[disabled]:before {
+  border-top-color: #aaaaaa;
+}
+
+/* ==========================================================================
+   $DEFAULT-DATE-PICKER
+   ========================================================================== */
+/* ==========================================================================
+   $BASE-TIME-PICKER
+   ========================================================================== */
+/**
+ * The list of times.
+ */
+/* line 7, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker__list {
+  list-style: none;
+  padding: 0.75em 0 4.2em;
+  margin: 0;
+}
+
+/**
+ * The times on the clock.
+ */
+/* line 15, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker__list-item {
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+  margin-bottom: -1px;
+  position: relative;
+  background: #ffffff;
+  padding: .75em 1.25em;
+}
+
+@media (min-height: 46.75em) {
+  /* line 24, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+  .picker__list-item {
+    padding: .5em 1em;
+  }
+}
+/* Hovered time */
+/* line 29, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker__list-item:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+  border-color: #0089ec;
+  z-index: 10;
+}
+
+/* Highlighted and hovered/focused time */
+/* line 37, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker__list-item--highlighted {
+  border-color: #0089ec;
+  z-index: 10;
+}
+
+/* line 41, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker__list-item--highlighted:hover,
+.picker--focused .picker__list-item--highlighted {
+  cursor: pointer;
+  color: #000000;
+  background: #b1dcfb;
+}
+
+/* Selected and hovered/focused time */
+/* line 48, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker__list-item--selected,
+.picker__list-item--selected:hover,
+.picker--focused .picker__list-item--selected {
+  background: #0089ec;
+  color: #ffffff;
+  z-index: 10;
+}
+
+/* Disabled time */
+/* line 56, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker__list-item--disabled,
+.picker__list-item--disabled:hover,
+.picker--focused .picker__list-item--disabled {
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #dddddd;
+  cursor: default;
+  border-color: #dddddd;
+  z-index: auto;
+}
+
+/**
+ * The clear button
+ */
+/* line 69, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker--time .picker__button--clear {
+  display: block;
+  width: 80%;
+  margin: 1em auto 0;
+  padding: 1em 1.25em;
+  background: none;
+  border: 0;
+  font-weight: 500;
+  font-size: .67em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* line 82, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker--time .picker__button--clear:hover,
+.picker--time .picker__button--clear:focus {
+  color: #000000;
+  background: #b1dcfb;
+  background: #ee2200;
+  border-color: #ee2200;
+  cursor: pointer;
+  color: #ffffff;
+  outline: none;
+}
+
+/* line 92, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker--time .picker__button--clear:before {
+  top: -0.25em;
+  color: #666;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+/* line 98, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker--time .picker__button--clear:hover:before,
+.picker--time .picker__button--clear:focus:before {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   $DEFAULT-TIME-PICKER
+   ========================================================================== */
+/**
+ * The frame the bounds the time picker.
+ */
+/* line 110, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker--time .picker__frame {
+  min-width: 256px;
+  max-width: 320px;
+}
+
+/**
+ * The picker box.
+ */
+/* line 117, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+.picker--time .picker__box {
+  font-size: 1em;
+  background: #f2f2f2;
+  padding: 0;
+}
+
+@media (min-height: 40.125em) {
+  /* line 123, /Volumes/CJY-HDD-DATA/jchen/.rvm/gems/ruby-2.1.1/gems/pickadate-rails-3.5.6.0/vendor/assets/stylesheets/pickadate/default.time.css */
+  .picker--time .picker__box {
+    margin-bottom: 5em;
+  }
+}
+/* line 9, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.error_message {
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  color: #F86469;
+  margin-bottom: 10px;
+}
+
+/* line 17, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.login {
+  margin: 0px;
+  background-color: #F5F3F3;
+  margin-bottom: 40px;
+}
+
+/* line 23, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pins {
+  text-align: center;
+}
+
+/* line 27, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pins a:visited {
+  color: black;
+}
+
+/* line 31, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pins a {
+  color: black;
+}
+
+/* line 35, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.filter {
+  font-family: arial;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 41, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.sort_link {
+  display: inline-block;
+  font-family: arial;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  margin: -2.5px;
+  margin-top: 2px;
+  border: 2px solid black;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* line 56, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.sort_link.asc, .sort_link.desc {
+  background-color: #585c80;
+  color: white;
+}
+
+/* line 61, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.sort_link:hover {
+  background-color: #3B3D55;
+  color: white;
+}
+
+/* line 66, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.Advanced-Search {
+  text-align: center;
+  display: inline-block;
+  font-family: arial;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  margin: -2.5px;
+  margin-top: 2px;
+  border: 2px solid black;
+  padding-left: 25.5px;
+  padding-right: 25.5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+
+/* line 83, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.Advanced-Search:hover {
+  background-color: #3B3D55;
+  color: white;
+}
+
+/* line 88, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.advanced-search-wrapper {
+  position: fixed;
+}
+
+/* line 92, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.row {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* line 97, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.search-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* line 103, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pin {
+  display: inline-block;
+  width: 180px;
+  max-height: 300px;
+  height: 270px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px #D4D4D4;
+  font-family: arial;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 120, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.individual-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: .6;
+  z-index: -1;
+}
+
+/* line 131, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.individual-pin {
+  z-index: 1;
+  font-family: 'arial';
+  width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* line 142, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.individual-logo {
+  width: 150px;
+  border-radius: 10px;
+}
+
+/* line 147, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.title-container-company {
+  font-size: 40px;
+}
+
+/* line 151, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-logo {
+  margin-top: 8px;
+  width: 140px;
+  height: 140px;
+  border-radius: 5px 5px 5px 5px;
+  background-image: url("https://placeimg.com/140/140/tech");
+  color: transparent;
+}
+
+/* line 160, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.profile-wrapper {
+  margin: 0px;
+  margin-top: -30px;
+  margin-bottom: 200px;
+  height: 90px;
+  background-color: #D4D4D4;
+  text-align: center;
+}
+
+/* line 169, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.avatar {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 130px;
+  background-color: white;
+  border-radius: 150px;
+}
+
+/* line 177, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.profile-name {
+  font-size: 30px;
+  font-family: 'arial';
+}
+
+/* line 182, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.profile-email {
+  margin-top: -20px;
+  font-size: 15px;
+  font-family: 'arial';
+}
+
+/* line 188, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.profile-major {
+  display: inline;
+  font-size: 15px;
+  font-family: 'arial';
+}
+
+/* line 194, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.profile-grad {
+  display: inline;
+  font-size: 15px;
+  font-family: 'arial';
+}
+
+/* line 200, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.my-pins1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* line 205, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.my-pins2 {
+  text-align: center;
+}
+
+/* line 209, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pin-header {
+  font-family: 'arial';
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* line 220, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 224, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pin .title-container {
+  margin-top: 3px;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* line 231, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pin .company-container {
+  margin-top: 0px;
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+/* line 238, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.pin .company-like {
+  margin-top: -6px;
+  font-family: arial;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+/* line 245, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+body > div.mainbody > div > a:nth-child(1).pin a:visited {
+  color: black;
+  background-color: green;
+}
+
+/* line 250, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.spacer {
+  width: 100%;
+  height: 90px;
+}
+
+/* line 255, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.count {
+  float: right;
+}
+
+/* line 259, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#pin-container {
+  padding: 10px;
+}
+
+/* line 263, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#title-container div {
+  display: inline;
+}
+
+/* line 267, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+/* line 273, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#question-row div {
+  display: inline;
+}
+
+/* line 277, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.interview-info {
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 284, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.interview-info div {
+  display: inline;
+}
+
+/* line 288, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.story-col {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* line 293, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.like-row div {
+  display: inline;
+}
+
+/* line 297, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.timestamp {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+/* line 303, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.main-page-header {
+  width: 100%;
+  height: 30px;
+  background-color: #3B3D55;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  position: fixed;
+  z-index: 1000;
+}
+
+/* line 316, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#header-buttons > .my-button {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-family: 'arial';
+  font-size: 80%;
+  border: 1px solid transparent;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* line 329, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#back-button-wrapper {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 335, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.back-button {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-family: 'arial';
+  font-size: 150%;
+  border: 3px solid #F47F7F;
+  padding-left: 260px;
+  padding-right: 260px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: transparent;
+}
+
+/* line 349, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.back-button:hover {
+  background-color: #F47F7F;
+}
+
+/* line 354, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.useful-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 70%;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+/* line 368, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.useful-button:hover {
+  background-color: green;
+  color: white;
+}
+
+/* line 373, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.not-useful-button {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-family: 'arial';
+  font-size: 10%;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: green;
+}
+
+/* line 387, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.not-useful-button:hover {
+  color: black;
+  background-color: white;
+}
+
+/* line 392, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#header-buttons > .my-button:hover {
+  border: 1px solid white;
+}
+
+/* line 396, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#header-buttons {
+  float: right;
+  display: inline-block;
+  margin-top: 11px;
+  padding-right: 14px;
+}
+
+/* line 403, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#logo-container {
+  float: left;
+  display: inline-block;
+  margin-top: -18px;
+}
+
+/* line 409, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#activity-logo {
+  padding-left: 10px;
+  width: 14px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* line 416, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#activity-pinterview {
+  color: white;
+  font-family: arial;
+  font-size: 26px;
+  display: inline-block;
+  margin-left: -5px;
+  margin-top: 12%;
+}
+
+/* --- New Pin style --- */
+/* line 426, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.create-header {
+  font-family: 'arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 433, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.create {
+  text-align: center;
+}
+
+/* line 437, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.create-label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: 'arial';
+  font-size: 14px;
+}
+
+/* line 444, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+select {
+  cursor: pointer;
+}
+
+/* line 448, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+select option {
+  font-size: 'arial';
+  font-size: 100px;
+}
+
+/* line 453, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#pin_position_type, #pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 0 none;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* line 464, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#pin_position, #pin_company, #pin_date {
+  height: 30px;
+  width: 350px;
+  padding-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* line 472, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#pin_description, #pin_questions {
+  height: 70px;
+  width: 350px;
+  resize: both;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+/* line 480, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.btn-submit {
+  margin-bottom: 100px;
+}
+
+/* --- Company Page Style --- */
+/* line 485, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-header {
+  text-align: center;
+  font-family: 'arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 493, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-search {
+  text-align: center;
+  font-family: 'arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 501, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.not-pop {
+  text-align: center;
+  font-family: 'arial';
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: red;
+}
+
+/* line 510, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-search-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 12px;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+  display: inline;
+}
+
+/* line 526, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-search-button:hover {
+  background-color: green;
+  color: white;
+}
+
+/* line 531, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-select {
+  width: 150px;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 12px;
+  line-height: 1;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png) 96%/15% no-repeat #eee;
+  background-color: white;
+}
+
+/* line 546, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.photo-grid {
+  margin: 40px;
+  float: left;
+}
+
+/* line 553, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-random {
+  float: right;
+  margin: 10px;
+}
+
+/* line 558, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-random img {
+  margin: 10px;
+  border: 1px solid black;
+}
+
+/* --- Individual Company Page Style --- */
+/* line 566, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.return-to-companies {
+  position: absolute;
+  float: left;
+  margin-left: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 12px;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+/* line 584, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.return-to-companies:hover {
+  background-color: green;
+  color: white;
+}
+
+/* line 589, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-wrapper {
+  margin: 0px;
+  margin-top: -30px;
+  margin-bottom: 200px;
+  height: 90px;
+  background-color: #D4D4D4;
+  text-align: center;
+  font-family: 'arial';
+}
+
+/* line 599, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-links {
+  text-align: center;
+  font-style: italic;
+  margin: 5px;
+  font-size: 12px;
+}
+
+/* line 606, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-location {
+  margin: 10px;
+  font-family: 'arial';
+  font-size: 15px;
+}
+
+/* line 612, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+.company-description {
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  font-family: 'arial';
+  font-size: 14px;
+}
+
+/* --- Chen tab and calender --- */
+/* line 623, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+ul.tabs {
+  padding: 7px 0;
+  font-size: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: center;
+  /*set to left, center, or right to align the tabs as desired*/
+}
+
+/* line 632, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+ul.tabs li {
+  display: inline;
+  margin: 0;
+  margin-right: 3px;
+  /*distance between tabs*/
+}
+
+/* line 639, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+ul.tabs li a {
+  font: normal 12px Verdana;
+  text-decoration: none;
+  position: relative;
+  padding: 7px 16px;
+  border: 1px solid #CCC;
+  border-bottom-color: #B7B7B7;
+  color: #000;
+  border-radius: 3px 3px 0 0;
+  outline: none;
+}
+
+/* line 652, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+ul.tabs li a:visited {
+  color: #000;
+}
+
+/* line 657, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+ul.tabs li a:hover {
+  border: 1px solid #B7B7B7;
+}
+
+/* line 662, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+ul.tabs li.selected a, ul.tabs li.selected a:hover {
+  position: relative;
+  top: 0px;
+  font-weight: bold;
+  background: #faf8f8;
+  border: 1px solid black;
+  border-bottom-color: #faf8f8;
+}
+
+/* line 673, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+ul.tabs li.selected a:hover {
+  text-decoration: none;
+}
+
+/* line 680, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+div.tabcontents {
+  border: 1px solid #B7B7B7;
+  padding: 30px;
+  background-color: #faf8f8;
+  border-radius: 0 3px 3px 3px;
+}
+
+/* line 687, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* line 695, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#edit-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 70%;
+  border: 1px solid #F47F7F;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+/* line 711, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#edit-button:hover {
+  background-color: #F47F7F;
+  color: white;
+}
+
+/* line 716, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#delete-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 70%;
+  border: 1px solid #F47F7F;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+/* line 732, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#delete-button:hover {
+  background-color: #F47F7F;
+  color: white;
+}
+
+/* line 737, /Volumes/CJY-HDD-DATA/jchen/Desktop/PINterview/app/assets/stylesheets/static_pages.scss */
+#edit-delete-wrapper .button_to {
+  display: inline-block;
+}
