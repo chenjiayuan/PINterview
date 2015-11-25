@@ -1,4 +1,22 @@
-<%= stylesheet_link_tag "static_pages" %>
+<html>
+<head>
+  <%= stylesheet_link_tag "static_pages" %>
+</head>
+
+<script>
+$(document).ready(function() {
+    if ($('.pagination').length) {
+        $(window).scroll(function() {
+            var url = $('.pagination .next_page').attr('href');
+            if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
+                $('.pagination').text("Loading more Pins...");
+                return $.getScript(url);
+            }
+        });
+        return $(window).scroll();
+    }
+});
+</script>
 
 <body class ="dashboard-body">
 
@@ -6,14 +24,15 @@
       <%= render "layouts/search" %>
     </div>
 
-	<div class="mainbody">
-		<div class="pins">
-			<%= render @pins %>
-		</div>
-	</div>
+  <div class="mainbody">
+    <div class="pins">
+      <%= render @pins %>
+    </div>
+  </div>
 
     <div id="infinite-scrolling">
       <%= will_paginate(@pins) %>
     </div>
 
 </body>
+</html>
