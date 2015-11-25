@@ -23,7 +23,7 @@ describe User do
   end
 
   it "invalid email" do    
-    FactoryGirl.create(:user).should_not be_valid
+    FactoryGirl.build(:user).should_not be_valid
   end
   
   it "duplicate email" do    
@@ -53,7 +53,7 @@ describe User do
   end
 
   it "invalid lenght for username 51 char" do 
-  	str = "a" * 31 
+  	str = "a" * 51 
     FactoryGirl.build(:user, email: "ki.ey.kouch@berkeley.edu", username: str).should_not be_valid
   end
 
