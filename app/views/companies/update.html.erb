@@ -1,92 +1,78 @@
 <%= stylesheet_link_tag "static_pages" %>
 <%= javascript_include_tag "calendar_chen.js" %>
-
-
-	<%= link_to "< Return to Companies", companies_path, html_options = {:class => "return-to-companies"} %>
-
+<%= link_to "< Return to Companies", companies_path, html_options = {:class => "return-to-companies"} %>
 
 <div class = "company-wrapper"> 
-
 	<%= image_tag "http://logo.clearbit.com/#{@company_name.downcase}.com", :class => "avatar" %> 
-
 	<div class="profile-name"> 
 		<%= @company['name'].upcase %> 
 	</div>
-
 	<div class="company-location">
 		<div> <%= @company['city'] %>, <%= @company['state'] %> </div>
 	</div>
+	<br>
+  
+  <div style="margin: 0 auto; padding: 0 0 40px;">
+      <ul class="tabs" data-persist="true">
+          <li><a href="#view1">Basic Info</a></li>
+          <li><a href="#view2">Interview Statistics</a></li>
+          <li><a href="#view3">Calendar</a></li>
+          <li><a href="#view4">Processes and Questions</a></li>
+          
+      </ul>
+      <div class="tabcontents">
+          <div id="view1">
+        		<div class="profile-major"> -- Company Links -- </div>
+						<div class="company-links">
+							<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
+							<a href = <%= @company['facebook'] %> > Find this company on Facebook </a> |
+							<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
+						</div>
+						<div class="company-description"> <%= @company['description'] %> </div>
+          </div>
 
-	<div class="profile-major"> 
-		-- Company Links --
-	</div>
+          <div id="view2">
+					  <div>---</div>
+						<div> Average interview Length: </div>
+						<div> 
+							- <%= @length %> Minutes -
+						</div>
+						<div>---</div>
+						<div> Most common interview month: </div>
+						<div> 
+							- <%= @month %> -
+						</div>
+						<div>---</div>
+						<div> Most common interview question type, e.g. Dynamic Programming, Probabilty, Search Algorithm, etc (not yet implemented)</div>
+						<div>---</div>
+						<div> Percentage moved on to next round: </div>
+						<div> 
+							- <%= @next_round %>% -
+						</div>
+						<div>---</div>
+						<div> Percentage recieved offer: </div>
+						<div> 
+							- <%= @offers %>% -
+						</div>
+						<div>---</div>
+					</div>
+          
+					<div id="view3"><div id='calendar'></div></div>
 
-	<div class="company-links">
-		<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
-		<a href = <%= @company['facebook'] %> > Find this company on Facebook </a> |
-		<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
-	</div>
-
-	<div class="company-description"> <%= @company['description'] %> </div>
-
-
-
-	<div>---</div>
-
-	<div> Average interview Length: </div>
-	<div> 
-		- <%= @length %> Minutes -
-	</div>
-
-	<div>---</div>
-
-	<div> Most common interview month: </div>
-	<div> 
-		- <%= @month %> -
-	</div>
-
-	<div>---</div>
-
-	<div> Most common interview question type, e.g. Dynamic Programming, Probabilty, Search Algorithm, etc (not yet implemented)</div>
-
-	<div>---</div>
-
-	<div> Percentage moved on to next round: </div>
-	<div> 
-		- <%= @next_round %>% -
-	</div>
-
-	<div>---</div>
-
-	<div> Percentage recieved offer: </div>
-	<div> 
-		- <%= @offers %>% -
-	</div>
-
-	<div>---</div>
-
-	<div> Company Interview Questions </div>
-	<div>
-		<% @questions.each do |question| -%>
-			<div>
-
-				<%= question.description %>
-
-				<%= link_to "Go to this PIN", question  %>
-
-				<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
-
-			<div>
-		<% end -%>
-	</div>
-
-
-
+          <div id="view4">
+						<div> Company Interview Questions </div>
+							<div>
+								<% @questions.each do |question| -%>
+									<div>
+										<%= question.description %>
+										<%= link_to "Go to this PIN", question  %>
+										<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
+									<div>
+								<% end -%>
+							</div>
+          	</div>
+          </div>
+      </div>
+  </div>
 </div>
 
-
-
-
-<br>
-<!--<div id='calendar'></div>-->
-<div id='calendar'></div>

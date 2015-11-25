@@ -3,33 +3,33 @@
 
 <div class = "profile-wrapper">
 	<%= image_tag @user.avatar, :class => "avatar" %>
-	<div class = "profile-name"><%= @user.username %></div><br>
+	<div class = "profile-name"><%= @user.username %></div><br><br>
 	<div class = "profile-email"><%= @user.email %></div>
 	<div class = "profile-major"><%= @user.major %></div> | 
 	<div class = "profile-grad"><%= @user.grad_class %></div><br>
 
-    <br>
-    <div style="margin: 0 auto; padding: 0 0 40px;">
-        <ul class="tabs" data-persist="true">
-            <li><a href="#view3">My Interview Calendar</a></li>
-            <li><a href="#view1">Pins I created</a></li>
-            <li><a href="#view2">Pins I Marked as Useful</a></li>
-        </ul>
-        <div class="tabcontents">
-            <div id="view3"><div id='calendar'></div></div>
-            <div class = "my-pins1" id="view1">
-              <div class = "pin-header">Pins I Created</div>
-              <div class="pin-display">  
-                <%= render "layouts/more_pins", object: @pins %>
-              </div>
+  <br>
+  <div style="margin: 0 auto; padding: 0 0 40px;">
+      <ul class="tabs" data-persist="true">
+          <li><a href="#view3">My Interview Calendar</a></li>
+          <li><a href="#view1">Pins I created</a></li>
+          <li><a href="#view2">Pins I Marked as Useful</a></li>
+      </ul>
+      <div class="tabcontents">
+          <div id="view3"><div id='calendar'></div></div>
+          <div class = "my-pins1" id="view1">
+            <div class = "pin-header">Pins I Created</div>
+            <div class="pin-display">  
+              <%= render "layouts/more_pins", object: @pins %>
             </div>
-            <div class = "my-pins2" id="view2">
-              <div class = "pin-header">Pins I Marked as Useful</div>
-              <div class = "pin-display">
-                <%= render "layouts/more_pins", object: @favorite %>
-              </div>
+          </div>
+          <div class = "my-pins2" id="view2">
+            <div class = "pin-header">Pins I Marked as Useful</div>
+            <div class = "pin-display">
+              <%= render "layouts/more_pins", object: @favorite %>
             </div>
-        </div>
-    </div>
+          </div>
+      </div>
+  </div>
 
 </div>
