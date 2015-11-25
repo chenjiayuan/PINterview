@@ -490,6 +490,136 @@ select option{
   margin-bottom: 10px;
 }
 
+.company-search{
+  text-align: center;
+  font-family: 'arial';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.not-pop{
+  text-align: center;
+  font-family: 'arial';
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.company-search-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 12px;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+
+  display: inline;
+}
+
+.company-search-button:hover {
+ background-color: green;
+ color: white;
+}
+
+.company-select {
+  width: 150px;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 12px;
+  line-height: 1;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png) 
+    96% / 15% no-repeat #eee;
+  background-color: white;
+}
+
+.photo-grid{
+
+  margin: 40px;
+  float: left;
+  
+}
+
+.company-random {
+  float: right;
+  margin: 10px;
+}
+
+.company-random img{
+  margin: 10px;
+  border: 1px solid black;
+}
+
+
+/* --- Individual Company Page Style --- */
+
+.return-to-companies {
+  position:absolute;
+  float:left;
+  margin-left: 20px;
+
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 12px;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+.return-to-companies:hover {
+ background-color: green;
+ color: white;
+}
+
+.company-wrapper{
+  margin: 0px;
+  margin-top: -30px;
+  margin-bottom: 200px;
+  height: 90px; 
+  background-color: #D4D4D4;
+  text-align: center;
+  font-family: 'arial'; 
+}
+
+.company-links{
+ text-align: center;
+  font-style: italic;
+  margin: 5px;
+  font-size: 12px;
+}
+
+.company-location{
+  margin: 10px;
+  font-family: 'arial';
+  font-size: 12px;
+}
+
+.company-description{
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  font-family: 'arial'; 
+  font-size: 14px;
+}
+
+/* --- Chen tab and calender --- */
+
 ul.tabs
 {
     padding: 7px 0;
@@ -559,7 +689,6 @@ div.tabcontents
     max-width: 900px;
     margin: 0 auto;
 }
-
 
 //Individual pin style
 

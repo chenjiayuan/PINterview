@@ -2,22 +2,16 @@ class CompaniesController < ApplicationController
   before_action :require_user, only: [:show, :edit]
   
   def show
-	@pin = Pin.all
+  	@pin = Pin.all
+    @random = @pin.pluck(:company).uniq.shuffle.first(5)
+    
+  	@not_populated = ""
 
-	@not_populated = ""
+  	if @pin.count == 0
+  		@not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
+  	end
 
-	if @pin.count == 0
-		@not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
-	end
-
-    @calendar = [] 
-    @pin.each do |p|
-    @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay" => "1"})
-    end
-    respond_to do |format|
-      format.html
-      format.json { render json:@calendar.to_json }
-    end
+   
   end
 
   def update
@@ -50,6 +44,16 @@ class CompaniesController < ApplicationController
 
   	  # GET MOST COMMON POSITIONS
   	  @common_positions = get_common_positions(params[:category_id])
+
+      @pin = Pin.where(company: params[:category_id])
+      @calendar = [] 
+      @pin.each do |p|
+      @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay" => "1"})
+      end
+      respond_to do |format|
+        format.html {}
+        format.json { render json:@calendar.to_json }
+      end
 
     else
       @pin = Pin.all
