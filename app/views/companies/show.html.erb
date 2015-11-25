@@ -1,14 +1,25 @@
 <%= stylesheet_link_tag "static_pages" %>
-<h2>Companies</h2>
 
-<%= form_tag("/companies", method: "post") do %>
+<div class = "company-header">
+	<h2>Companies</h2>
+</div>
+
+<div class = "company-search">
+	<%= form_tag("/companies/company", method: "get") do %>
  
-  <%= select_tag "category_id", options_from_collection_for_select(@pin.select(:company).uniq, "company", "company") %>
-  <%= submit_tag("Search") %>
+	  <%= select_tag "category_id", options_from_collection_for_select(@pin.select(:company).uniq.order("company ASC"), "company", "company"), html_options = {:class => "company-select"} %>
+	  <%= submit_tag "Go To Company Page",  html_options = {:class => "company-search-button"} %>
+	  
+	<% end %>
+</div>
 
-<% end %>
+<div class="not_pop"> <%= @not_populated %> </div>
 
-
-<div>---</div>
-
-<div> <%= @not_populated %> </div>
+<div class="photo-grid">
+	Check out out information on companies people have interviewed with! Here is a small selection
+	<div class = "company-random">
+		<% @random.each do |r| -%>
+				<%= image_tag "http://logo.clearbit.com/#{r.downcase}.com" %>
+		<% end -%>
+	</div>
+</div>

@@ -4,8 +4,8 @@
         <%= button_to "Unmark Helpful", favorite_pin_path(@pin, type: "Unmark"), method: :put %>
     <% else %>
         <%= button_to "Mark Helpful",   favorite_pin_path(@pin, type: "Mark"), method: :put %>
-    <% end %>  
-    <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase}.com", :class => "individual-logo" %>
+    <% end %>
+    <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
     <div class= "title-container-company"><%= @pin.company %></div>
     <div class= "title-container-title"><%= @pin.position %></div>
     <div class= "interview-info-date"> <b>Date Interviewed:</b> <%= @pin.date %></div>
