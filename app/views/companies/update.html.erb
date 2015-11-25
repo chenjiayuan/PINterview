@@ -13,14 +13,22 @@
   
   <div style="margin: 0 auto; padding: 0 0 40px;">
       <ul class="tabs" data-persist="true">
-          <li><a href="#view1">Basic Info</a></li>
-          <li><a href="#view2">Interview Statistics</a></li>
-          <li><a href="#view3">Calendar</a></li>
+          <li><a href="#view1">Calendar</a></li>
+          <li><a href="#view2">Basic Info</a></li>
+          <li><a href="#view3">Interview Statistics</a></li>
           <li><a href="#view4">Processes and Questions</a></li>
           
       </ul>
       <div class="tabcontents">
           <div id="view1">
+              <div class="calendar-text"> This calendar shows the date and type of <%= @company_name %> interviews, click on an interview to view its PIN!</div>
+              
+              <div id='calendar'>
+        
+              </div>
+          </div>
+
+          <div id="view2">
         		<div class="profile-major"> -- Company Links -- </div>
 						<div class="company-links">
 							<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
@@ -30,7 +38,7 @@
 						<div class="company-description"> <%= @company['description'] %> </div>
           </div>
 
-          <div id="view2">
+          <div id="view3">
 					  <div>---</div>
 						<div> Average interview Length: </div>
 						<div> 
@@ -55,14 +63,6 @@
 						</div>
 						<div>---</div>
 					</div>
-          
-			<div id="view3">
-					<div class="calendar-text"> This calendar shows the date and type of <%= @company_name %> interviews, click on an interview to view its PIN!</div>
-					
-					<div id='calendar'>
-		
-					</div>
-			</div>
 
           <div id="view4">
 						<div> Company Interview Questions </div>
