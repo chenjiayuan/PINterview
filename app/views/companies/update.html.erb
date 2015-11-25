@@ -13,29 +13,46 @@
 
 <%= stylesheet_link_tag "static_pages" %>
 
-<div>
-	<%= link_to "Return to Companies", companies_path, html_options = {:class => "insert_class_here_JIHERN"} %>
+
+	<%= link_to "< Return to Companies", companies_path, html_options = {:class => "return-to-companies"} %>
+
+
+<div class = "company-wrapper"> 
+
+	<%= image_tag "http://logo.clearbit.com/#{@company_name.downcase}.com", :class => "avatar" %> 
+
+	<div class="profile-name"> 
+		<%= @company['name'].upcase %> 
+	</div>
+
+	<div class="company-location">
+		<div> <%= @company['city'] %> </div>
+		<div> <%= @company['state'] %> </div>
+	</div>
+
+	<div class="profile-major"> 
+		-- Company Links --
+	</div>
+
+	<div class="company-links">
+
+		<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
+		<a href = <%= @company['facebook'] %> > Find this company on Facebook </a> |
+		<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
+
+	</div>
+
+	<div> Location (maybe use google maps here?) </div>
+	
+
+	<div> Description </div>
+	<div> <%= @company['description'] %> </div>
+
 </div>
 
-<div>---</div>
 
-<div> <%= image_tag "https://logo.clearbit.com/#{@company_name.downcase}.com" %> </div>
 
-<div> <%= @company['name'] %> </div>
 
-<div>---</div>
-
-<div> Company Links </div>
-<a href=<%= @company['url'] %>><%= @company['url'] %></a>
-<a href = <%= @company['facebook'] %> > Find this company on Facebook </a>
-<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
-
-<div> Location (maybe use google maps here?) </div>
-<div> <%= @company['city'] %> </div>
-<div> <%= @company['state'] %> </div>
-
-<div> Description </div>
-<div> <%= @company['description'] %> </div>
 
 <div>---</div>
 

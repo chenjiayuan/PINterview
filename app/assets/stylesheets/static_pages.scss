@@ -520,7 +520,49 @@ select option{
 
 /* --- Individual Company Page Style --- */
 
+.return-to-companies {
+  position:absolute;
+  float:left;
+  margin-left: 20px;
 
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 12px;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+.return-to-companies:hover {
+ background-color: green;
+ color: white;
+}
+
+.company-wrapper{
+  margin: 0px;
+  margin-top: -30px;
+  margin-bottom: 200px;
+  height: 90px; 
+  background-color: #D4D4D4;
+  text-align: center;
+}
+
+.company-links{
+ text-align: center;
+}
+
+.company-location{
+  margin: 10px;
+  font-family: 'arial';
+  font-size: 12px;
+}
+
+/* --- Chen tab and calender --- */
 
 ul.tabs
 {
