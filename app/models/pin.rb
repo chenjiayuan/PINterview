@@ -31,9 +31,9 @@ class Pin < ActiveRecord::Base
     validates :position_type, presence: true, length: {maximum: 30}
     validates :type_interview, presence: true, length: {maximum: 30}
     validates :attire, presence: true, length: {maximum: 30}
-    validates :questions, presence: true, length: {maximum: 240}
+    validates :questions, presence: true, length: {maximum: 1000}
     validates :length, presence: true, length: {maximum: 40}
-    validates :description, length: {maximum: 320} 
+    validates :description, length: {maximum: 1000} 
 
     UNRANSACKABLE_ATTRIBUTES = ["date", "account_id", "attire", "length", "user_id"]
 

@@ -16,10 +16,11 @@ class PinsController < ApplicationController
 	def create
     @pin = Pin.new(pin_params)
     current_user.pins << @pin
+    @pin.company = @pin.company.capitalize
     if @pin.save    	
-      	redirect_to @pin
+      	redirect_to current_user
     else
-        flash[:error] = "Invalid Input"
+        flash[:error] = "Invalid Inputs"
       	redirect_to new_pin_path
     end
 	end 
