@@ -1,29 +1,38 @@
+<script>
+$(document).ready(function() {
+  $(".advanced-search-wrapper").hide();
+  $(".Advanced-Search").click(function(){
+    $(".advanced-search-wrapper").toggle(400); 
+  });
+});
+</script>
+
 <div class = "search-wrapper">
   <div class="row">
-    <%= sort_link @search, :id, "Most Recent" %>
-    <%= sort_link @search, :like_count, "Most Popular" %>
-    <%= sort_link @search, :difficulty, "Difficulty Level" %>
-    <%= sort_link @search, :position, "Job Title" %>
-    <%= sort_link @search, :company, "Company Name" %>
-    <div class = "Advanced-Search">Advanced Search (UI not completed)</div>
-  </div>
+      <%= sort_link @search, :id, "Most Recent" %> 
+      <%= sort_link @search, :like_count, "Most Popular" %> 
+      <%= sort_link @search, :difficulty, "Difficulty Level" %> 
+      <%= sort_link @search, :position, "Job Tittle" %>
+      <%= sort_link @search, :company, "Company Name" %>
+      <div class = "Advanced-Search">Advanced Search</div> 
+  </div>   
 
-<div class = "advanced-search-wrapper">
-  <%= search_form_for @search do |f| %>
-      <%= f.condition_fields do |c| %>
+  <div class = "advanced-search-wrapper">
+        <%= search_form_for @search do |f| %>
+          <%= f.condition_fields do |c| %>
           <div class= "field">
             <%= c.attribute_fields do |a| %>
-                <%= a.attribute_select %>
+              <%= a.attribute_select %>
             <% end %>
-            <%= c.predicate_select({only: [:cont]}) %>
+            <%= c.predicate_select %>
             <%= c.value_fields do |v| %>
-                <%= v.text_field :value %>
+              <%= v.text_field :value %>
             <% end %>
           </div>
-      <% end %>
-      <div class = "action">
-        <%= f.submit "Search", class: "btn-submit" %>
-      </div>
-  <% end %>
+          <% end %> 
+          <div class = "action">
+            <%= f.submit "Search", class: "btn-submit" %>
+          </div>
+    <% end %>  
   </div>
 </div>
