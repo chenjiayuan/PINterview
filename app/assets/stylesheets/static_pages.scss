@@ -43,15 +43,24 @@
   font-family: arial;
   font-size: 14px;
   text-decoration: none;
-  color: white;
-  background-color: #3B3D55;
+  color: black;
   margin: -2.5px;
   margin-top: 2px;
-  border: 2px solid white;
+  border: 2px solid black;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+.sort_link.asc, .sort_link.desc {
+  background-color: #585c80;
+  color: white;
+}
+
+.sort_link:hover{
+  background-color: #3B3D55;
+  color: white;
 }
 
 .Advanced-Search{
@@ -60,16 +69,20 @@
   font-family: arial;
   font-size: 14px;
   text-decoration: none;
-  color: white;
-  background-color: #3B3D55;
+  color: black;
   margin: -2.5px;
   margin-top: 2px;
-  border: 2px solid white;
+  border: 2px solid black;
   padding-left: 25.5px;
   padding-right: 25.5px;
   padding-top: 8px;
   padding-bottom: 8px;
   cursor: pointer;
+}
+
+.Advanced-Search:hover{
+  background-color: #3B3D55;
+  color: white;
 }
 
 .advanced-search-wrapper{
@@ -84,7 +97,7 @@
 .search-wrapper{
   //margin-left: 40px;
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 .pin {
@@ -234,7 +247,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 
 .spacer{
     width: 100%;
-    height: 90px;
+    height: 70px;
 }
 
 .count{ 
