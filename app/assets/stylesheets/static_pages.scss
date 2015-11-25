@@ -6,6 +6,14 @@
 @import "pickadate/default.date";
 @import "pickadate/default.time";   
 
+.error_message{
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  color: #F86469;
+  margin-bottom: 10px;
+}
+
 .login {
   margin: 0px;
   background-color: #F5F3F3;
