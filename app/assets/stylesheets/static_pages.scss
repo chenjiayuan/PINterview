@@ -356,7 +356,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   text-align: center;
   color: black;
   font-family: 'arial';
-  font-size: 10%;
+  font-size: 70%;
   border: 1px solid black;
   padding-left: 8px;
   padding-right: 8px;
@@ -688,4 +688,53 @@ div.tabcontents
 {
     max-width: 900px;
     margin: 0 auto;
+}
+
+//Individual pin style
+
+#edit-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 70%;
+  border: 1px solid #F47F7F;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+#edit-button:hover {
+  background-color: #F47F7F;
+  color: white;
+}
+
+#delete-button {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: 'arial';
+  font-size: 70%;
+  border: 1px solid #F47F7F;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: white;
+}
+
+#delete-button:hover {
+  background-color: #F47F7F;
+  color: white;
+}
+
+#edit-delete-wrapper .button_to {
+  display: inline-block;
+
 }

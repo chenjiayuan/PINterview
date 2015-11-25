@@ -1,10 +1,6 @@
 <div class = "content">
   <div class="individual-pin">
-    <% if current_user.favorites.exists?(id: @pin.id) %>
-        <%= button_to "Unmark Helpful", favorite_pin_path(@pin, type: "Unmark"), method: :put %>
-    <% else %>
-        <%= button_to "Mark Helpful",   favorite_pin_path(@pin, type: "Mark"), method: :put %>
-    <% end %>
+
     <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
     <div class= "title-container-company"><%= @pin.company %></div>
     <div class= "title-container-title"><%= @pin.position %></div>
@@ -19,11 +15,17 @@
 
     <br>
 
+    <% if current_user.favorites.exists?(id: @pin.id) %>
+        <%= button_to "Unmark Helpful", favorite_pin_path(@pin, type: "Unmark"), method: :put %>
+    <% else %>
+        <%= button_to "Mark Helpful",   favorite_pin_path(@pin, type: "Mark"), method: :put %>
+    <% end %>
+
     <% if current_user == @pin.user%>
-     <p>
-        <%= button_to 'Edit', edit_pin_path(@pin) %>
-        <%= button_to 'Delete', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
+     <div id="edit-delete-wrapper">
+        <%= button_to 'Edit', edit_pin_path(@pin), id: "edit-button" %>
+        <%= button_to 'Delete', @pin, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-button" %>
+     </div>
     <% end %>      
   <div class = "individual-backdrop"></div>     
 </div>
