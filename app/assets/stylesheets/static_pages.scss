@@ -6,6 +6,14 @@
 @import "pickadate/default.date";
 @import "pickadate/default.time";   
 
+.error_message{
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  color: #F86469;
+  margin-bottom: 10px;
+}
+
 .login {
   margin: 0px;
   background-color: #F5F3F3;
@@ -33,12 +41,13 @@
 .sort_link{
   display: inline-block;
   font-family: arial;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
-  color: black;
+  color: white;
+  background-color: #3B3D55;
   margin: -2.5px;
   margin-top: 2px;
-  border: 1px solid black;
+  border: 2px solid white;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 8px;
@@ -49,12 +58,13 @@
   text-align: center;
   display: inline-block;
   font-family: arial;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
-  color: black;
+  color: white;
+  background-color: #3B3D55;
   margin: -2.5px;
   margin-top: 2px;
-  border: 1px solid black;
+  border: 2px solid white;
   padding-left: 25.5px;
   padding-right: 25.5px;
   padding-top: 8px;
@@ -72,7 +82,8 @@
 }
 
 .search-wrapper{
-  margin-left: 40px;
+  //margin-left: 40px;
+  text-align: center;
   margin-bottom: 80px;
 }
 
@@ -299,6 +310,31 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   padding-top: 6px;
   padding-bottom: 6px;
 }
+
+#back-button-wrapper {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.back-button {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-family: 'arial';
+  font-size: 150%;
+  border: 3px solid #F47F7F;
+  padding-left: 260px;
+  padding-right: 260px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: transparent;
+}
+
+.back-button:hover {
+  background-color: #F47F7F;
+}
+
 
 .useful-button {
   text-decoration: none;

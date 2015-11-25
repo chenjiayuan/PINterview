@@ -20,10 +20,6 @@ year = ', 2015'
 month = ["September", "October", "November", "December"]
 days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 difficulties = [0,1,2,3,4]
-# dates = ['24 November, 2015', '15 November, 2015', '20 November, 2015', '21 October, 2015',
-# 	'27 October, 2015', '2 October, 2015','5 October, 2015','14 October, 2015',
-# 	'3 September, 2015', '4 September, 2015','5 September, 2015','6 September, 2015', '15 September, 2015',
-# 	'4 August, 2015', '10 August, 2015', '15 August, 2015', '21 August, 2015', '26 August, 2015']
 
 positions = ['CEO','CFO','COO','Software Developer','Tester','Manager','Mechanician']
 

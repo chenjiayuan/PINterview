@@ -8,14 +8,14 @@
     <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase}.com", :class => "individual-logo" %>
     <div class= "title-container-company"><%= @pin.company %></div>
     <div class= "title-container-title"><%= @pin.position %></div>
-    <div class= "interview-info-date"> Date Interviewed: <%= @pin.date %></div>
-    <div class= "interview-info-type"> Type of Interview: <%= @pin.type_interview %></div>
-    <div class= "interview-info-attire"> Offer: <%= @pin.attire %></div>
-    <div class= "interview-info-job-type"> Position Type: <%= @pin.position_type %></div>
-    <div class= "interview-info-type"> Difficulty: <%= @pin.difficulty %></div>
-    <div class= "interview-info-length"> Length: <%= @pin.length %></div>
-    <div class= "story-col-question-row-questions"> Question: <%= @pin.questions %></div>
-    <div class= "story-col-story-row-description"> <%= @pin.description %></div>      
+    <div class= "interview-info-date"> <b>Date Interviewed:</b> <%= @pin.date %></div>
+    <div class= "interview-info-type"> <b>Type of Interview:</b> <%= @pin.type_interview %></div>
+    <div class= "interview-info-attire"> <b>Offer:</b> <%= @pin.attire %></div>
+    <div class= "interview-info-job-type"> <b>Position Type:</b> <%= @pin.position_type %></div>
+    <div class= "interview-info-type"> <b>Difficulty:</b> <%= @pin.difficulty %></div>
+    <div class= "interview-info-length"> <b>Length:</b> <%= @pin.length %></div>
+    <div class= "story-col-question-row-questions"> <b>Interview Process:</b> <%= @pin.questions %></div>
+    <div class= "story-col-story-row-description"> <b>Questions Asked:</b> <%= @pin.description %></div>      
 
     <br>
 
@@ -28,7 +28,9 @@
   <div class = "individual-backdrop"></div>     
 </div>
 
-
+<div id="back-button-wrapper">
+    <%= link_to 'Back', 'javascript:history.go(-1);', class: "back-button" %>
+</div>
 <!-- 
 <%= @pin.get_upvotes.size %>
 <%= button_to "like pin", like_pin_path(@pin), method: :put %>

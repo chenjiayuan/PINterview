@@ -19,10 +19,12 @@ class PinsController < ApplicationController
     if @pin.save    	
       	redirect_to @pin
     else
-        flash[:error] = "what"
-      	redirect_to "new_pin"
+        flash[:error] = "Invalid Input"
+      	redirect_to new_pin_path
     end
 	end 
+
+
 
   def show
     @pin = Pin.find(params[:id])
