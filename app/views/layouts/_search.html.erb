@@ -1,5 +1,3 @@
-<%= javascript_include_tag "search.js" %>
-
 <div class = "search-wrapper">
   <div class="row">
     <%= sort_link @search, :id, "Most Recent" %>
@@ -10,22 +8,22 @@
     <div class = "Advanced-Search">Advanced Search (UI not completed)</div>
   </div>
 
-  <div class = "advanced-search-wrapper">
-    <%= search_form_for @search do |f| %>
-        <%= f.condition_fields do |c| %>
-            <div class= "field">
-              <%= c.attribute_fields do |a| %>
-                  <%= a.attribute_select %>
-              <% end %>
-              <%= c.predicate_select({only: [:cont]}) %>
-              <%= c.value_fields do |v| %>
-                  <%= v.text_field :value %>
-              <% end %>
-            </div>
-        <% end %>
-        <div class = "action">
-          <%= f.submit "Search", class: "btn-submit" %>
-        </div>
-    <% end %>
-    </div>
-    </div>
+<div class = "advanced-search-wrapper">
+  <%= search_form_for @search do |f| %>
+      <%= f.condition_fields do |c| %>
+          <div class= "field">
+            <%= c.attribute_fields do |a| %>
+                <%= a.attribute_select %>
+            <% end %>
+            <%= c.predicate_select({only: [:cont]}) %>
+            <%= c.value_fields do |v| %>
+                <%= v.text_field :value %>
+            <% end %>
+          </div>
+      <% end %>
+      <div class = "action">
+        <%= f.submit "Search", class: "btn-submit" %>
+      </div>
+  <% end %>
+  </div>
+</div>
