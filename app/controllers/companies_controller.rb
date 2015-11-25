@@ -22,6 +22,7 @@ class CompaniesController < ApplicationController
       @company = get_company(params[:category_id])
       @questions = Pin.where(company: params[:category_id])
       @company_name = @company['name']
+      @company_number = @questions.count
 
       # EDGE CASE - Yahoo!
       if @company_name =='Yahoo!'
@@ -157,7 +158,12 @@ class CompaniesController < ApplicationController
   	all_outcomes = Pin.where(company: company).pluck(:attire)
   	nexts = all_outcomes.count("Offer") + all_outcomes.count("Next Round")
   	rejects = all_outcomes.count - all_outcomes.count("Unknown")
-  	percentage_next_round = (nexts/rejects) * 100
+      if rejects == 0
+        return 0
+      end
+  	percentage_next_round = ((nexts.to_f/rejects.to_f) * 100).round
+
+    temp = [all_outcomes, nexts, rejects, percentage_next_round]
   	
   	return percentage_next_round
   end
@@ -167,8 +173,13 @@ class CompaniesController < ApplicationController
   	all_outcomes = Pin.where(company: company).pluck(:attire)
   	nexts = all_outcomes.count("Offer")
   	rejects = all_outcomes.count - all_outcomes.count("Unknown")
-  	percentage_next_round = (nexts/rejects) * 100
+      if rejects == 0
+        return 0
+      end
+  	percentage_next_round = ((nexts.to_f/rejects.to_f) * 100).round
   	
+    temp = [all_outcomes, nexts, rejects, percentage_next_round]
+
   	return percentage_next_round
   end
 
