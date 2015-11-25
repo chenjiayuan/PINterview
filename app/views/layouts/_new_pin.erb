@@ -1,3 +1,13 @@
+<script>
+$(document).ready(function() {
+  $(".datepicker").pickadate({
+    selectYears: true,
+    selectMonths: true,
+    max: true
+  });
+});
+</script>
+
 <div class="form">
         <%= form_for(@pin) do |f| %>  
 
