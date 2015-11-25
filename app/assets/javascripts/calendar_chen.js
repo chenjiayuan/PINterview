@@ -7,7 +7,8 @@ $(document).ready(function() {
     },
     editable: true,
     eventLimit: true,// for all non-agenda views
-    events: window.location.href + '.json'
+    events: window.location.href + '.json',
+    contentHeight: 600
   });
 });
     

@@ -11,11 +11,9 @@ class CompaniesController < ApplicationController
   		@not_populated = "There are currently no PINS or companies on PINTERVIEW, click +PIN to contribute!"
   	end
 
-   
   end
 
   def update
-
   	@not_populated = ""
 
   	if params[:category_id] !=nil
@@ -48,7 +46,8 @@ class CompaniesController < ApplicationController
       @pin = Pin.where(company: params[:category_id])
       @calendar = [] 
       @pin.each do |p|
-      @calendar.push({'title' => "#{p.company}", 'start' => "#{p.date}", "allDay" => "1"})
+      @calendar.push({'title' => "#{p.type_interview}", 'start' => "#{p.date}", "allDay" => "1",
+        "url" => pin_url(p)})
       end
       respond_to do |format|
         format.html {}
@@ -172,8 +171,4 @@ class CompaniesController < ApplicationController
   	most_common_positions = all_positions.uniq.sort_by{ |v| freq[v] }.reverse.first(5)
   	return most_common_positions
   end
-
 end
-
-
-
