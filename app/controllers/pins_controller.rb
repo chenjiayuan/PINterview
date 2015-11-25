@@ -76,10 +76,12 @@ class PinsController < ApplicationController
     if type == "Mark" # If user selects 'favorite' on post
       current_user.favorites << @pin
       redirect_to :back, notice: "You mark #{@pin.id}"
+      @pin.update_attribute(:like_count, @pin.like_count+1)
 
     elsif type == "Unmark" # Else user selects 'unfavorite' on post
       current_user.favorites.delete(@pin)
       redirect_to :back, notice: "Unmark #{@pin.id}"
+      @pin.update_attribute(:like_count, @pin.like_count-1)
 
     else # Type missing, nothing happens
       redirect_to :back, notice: "Nothing happened."
