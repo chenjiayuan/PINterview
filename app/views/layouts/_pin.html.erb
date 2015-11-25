@@ -28,7 +28,9 @@
   <div class = "individual-backdrop"></div>     
 </div>
 
-
+<div id="back-button">
+    <%= link_to 'Back', 'javascript:history.go(-1);', class: "useful-button" %>
+</div>
 <!-- 
 <%= @pin.get_upvotes.size %>
 <%= button_to "like pin", like_pin_path(@pin), method: :put %>
