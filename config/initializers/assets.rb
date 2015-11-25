@@ -9,10 +9,5 @@ Rails.application.config.assets.precompile += %w( static_pages.css )
 Rails.application.config.assets.precompile += %w( fullcalendar.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( moment.min.js )
 Rails.application.config.assets.precompile += %w( fullcalendar.min.js )
-Rails.application.config.assets.precompile += %w( calendar_chen.js )
-Rails.application.config.assets.precompile += %w( datepicker_ki.js )
-Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( pagination.js )
