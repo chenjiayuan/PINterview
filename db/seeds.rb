@@ -29,7 +29,7 @@ positions = ['CEO','CFO','COO','Software Developer','Tester','Manager','Mechanic
 
 1000.times { |i|
 Pin.create(position: positions.sample, company: companies.sample, date: days.sample.to_s + ' ' + month.sample + year,
-	difficulty: "Easy", type_interview: "Technical", attire: "Onsite", 
+	difficulty: "0 - Easy", type_interview: "Technical", attire: "Onsite", 
 	questions: "How to make string double its size",like_count: 0, 
 	length: "30 Min", description: "I found the bug!", user_id: 1, position_type: "full-time")
 }
