@@ -1,17 +1,5 @@
-<script>
-  $(document).ready(function() {
-    $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
-      events: window.location.href + '.json'
-    });
-  });
-</script>
-
 <%= stylesheet_link_tag "static_pages" %>
+<%= javascript_include_tag "calendar_chen.js" %>
 
 <div>
 	<%= link_to "Return to Companies", companies_path, html_options = {:class => "insert_class_here_JIHERN"} %>
@@ -98,12 +86,4 @@
 </div>
 
 <br>
-<br>
-<style type="text/css" scoped>
-    #calendar
-    {
-      max-width: 1200px;
-	  margin: 0 auto;
-    }
-  </style>
 <div id='calendar'></div>

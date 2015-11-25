@@ -1,11 +1,10 @@
 <script>
-    $(document).ready(function() {
-        $(".advanced-search-wrapper").hide();
-        $(".Advanced-Search").click(function(){
-            $(".advanced-search-wrapper").toggle(400);
-        });
-    });
-
+$(document).ready(function() {
+  $(".advanced-search-wrapper").hide();
+  $(".Advanced-Search").click(function(){
+    $(".advanced-search-wrapper").toggle(400); 
+  });
+});
 </script>
 
 <div class = "search-wrapper">
@@ -33,7 +32,7 @@
         <% end %>
         <div class = "action">
           <%= f.submit "Search", class: "btn-submit" %>
-              </div>
-          <% end %>
-          </div>
-          </div>
+        </div>
+    <% end %>
+    </div>
+    </div>
