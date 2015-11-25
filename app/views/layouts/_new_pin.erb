@@ -1,12 +1,4 @@
-<script>
-$(document).ready(function() {
-    $(".datepicker").pickadate({
-      selectYears: true,
-      selectMonths: true,
-      max: true
-    });
-});
-</script>
+<%= javascript_include_tag "datepicker_ki.js" %>
 
 <div class="form">
         <%= form_for(@pin) do |f| %>  

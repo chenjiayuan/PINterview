@@ -6,6 +6,14 @@
 @import "pickadate/default.date";
 @import "pickadate/default.time";   
 
+.error_message{
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  color: #F86469;
+  margin-bottom: 10px;
+}
+
 .login {
   margin: 0px;
   background-color: #F5F3F3;
@@ -33,12 +41,13 @@
 .sort_link{
   display: inline-block;
   font-family: arial;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
-  color: black;
+  color: white;
+  background-color: #3B3D55;
   margin: -2.5px;
   margin-top: 2px;
-  border: 1px solid black;
+  border: 2px solid white;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 8px;
@@ -49,12 +58,13 @@
   text-align: center;
   display: inline-block;
   font-family: arial;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
-  color: black;
+  color: white;
+  background-color: #3B3D55;
   margin: -2.5px;
   margin-top: 2px;
-  border: 1px solid black;
+  border: 2px solid white;
   padding-left: 25.5px;
   padding-right: 25.5px;
   padding-top: 8px;
@@ -72,7 +82,8 @@
 }
 
 .search-wrapper{
-  margin-left: 40px;
+  //margin-left: 40px;
+  text-align: center;
   margin-bottom: 80px;
 }
 
@@ -462,4 +473,75 @@ select option{
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+ul.tabs
+{
+    padding: 7px 0;
+    font-size: 0;
+    margin:0;
+    list-style-type: none;
+    text-align: center; /*set to left, center, or right to align the tabs as desired*/
+}
+        
+ul.tabs li
+{
+    display: inline;
+    margin: 0;
+    margin-right:3px; /*distance between tabs*/
+}
+        
+ul.tabs li a
+{
+    font: normal 12px Verdana;
+    text-decoration: none;
+    position: relative;
+    padding: 7px 16px;
+    border: 1px solid #CCC;
+    border-bottom-color:#B7B7B7;
+    color: #000;
+    background: #F0F0F0 url(tabbg.gif) 0 0 repeat-x;
+    border-radius: 3px 3px 0 0;
+    outline:none;
+}
+        
+ul.tabs li a:visited
+{
+    color: #000;
+}
+        
+ul.tabs li a:hover
+{
+    border: 1px solid #B7B7B7;
+    background:#F0F0F0 url(tabbg.gif) 0 -36px repeat-x;
+}
+        
+ul.tabs li.selected a, ul.tabs li.selected a:hover
+{
+    position: relative;
+    top: 0px;
+    font-weight:bold;
+    background: white;
+    border: 1px solid #B7B7B7;
+    border-bottom-color: white;
+}
+        
+        
+ul.tabs li.selected a:hover
+{
+    text-decoration: none;
+}
+     
+
+div.tabcontents
+{
+    border: 1px solid #B7B7B7; padding: 30px;
+    background-color:#FFF;
+    border-radius: 0 3px 3px 3px;
+}
+
+#calendar
+{
+    max-width: 900px;
+    margin: 0 auto;
 }
