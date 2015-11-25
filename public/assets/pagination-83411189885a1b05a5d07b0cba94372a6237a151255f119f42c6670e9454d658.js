@@ -1,0 +1,1 @@
+$(document).ready(function(){return $(".pagination").length?($(window).scroll(function(){var n=$(".pagination .next_page").attr("href");return n&&$(window).scrollTop()>$(document).height()-$(window).height()-60?($(".pagination").text("Loading more Pins..."),$.getScript(n)):void 0}),$(window).scroll()):void 0});
