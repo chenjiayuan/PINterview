@@ -16,7 +16,13 @@
 <div class="not_pop"> <%= @not_populated %> </div>
 
 <div class="photo-grid">
-	Check out out information on companies people have interviewed with! Here is a small selection
+	<div>
+		Choose an option from the dropdown to check out out information on companies people have interviewed with!
+	</div>
+	<div class="random-text">
+		~ Some companies people have PIN'd interviews about ~
+	</div>
+	
 	<div class = "company-random">
 		<% @random.each do |r| -%>
 				<%= image_tag "http://logo.clearbit.com/#{r.downcase}.com", :class => "company-logo" %>

@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   
   def show
   	@pin = Pin.all
-    @random = @pin.pluck(:company).uniq.shuffle.first(5)
+    @random = @pin.pluck(:company).uniq.shuffle.first(15)
     
   	@not_populated = ""
 

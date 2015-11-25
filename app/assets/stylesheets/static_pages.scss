@@ -547,14 +547,20 @@ select option{
 }
 
 .photo-grid{
+  font-family: arial;
+  margin: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
+  text-align: center;  
+}
 
-  margin: 40px;
-  float: left;
-  
+.random-text{
+  margin-top: 40px;
+  font-style: italic;;
 }
 
 .company-random {
-  float: right;
+  
   margin: 10px;
 }
 
