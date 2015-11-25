@@ -30,6 +30,11 @@ class CompaniesController < ApplicationController
       	@company_name = 'Yahoo'
       end
 
+      # EDGE CASE - Yahoo!
+      if @company_name =='Hewlett-Packard'
+        @company_name = 'HP'
+      end
+
       # GET AVERAGE INTERVIEW TIME
   	  @length = get_average_time(params[:category_id])
 
@@ -69,9 +74,14 @@ class CompaniesController < ApplicationController
     require 'csv'
     company = Hash.new
 
-	# EDGE CASE - Yahoo!
+	  # EDGE CASE - Yahoo!
     if name == 'Yahoo'
       name = 'Yahoo!'
+    end
+
+    # EDGE CASE - HP
+    if name == 'HP' or name == 'Hewlett Packard'
+      name = 'Hewlett-Packard'
     end
 
     company['name'] = name
