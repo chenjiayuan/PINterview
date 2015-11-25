@@ -389,7 +389,8 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 }
 
 .useful-button:hover {
-  background-color: green;
+  background-color: #f37f7f;
+  border-color: #f37f7f;
   color: white;
 }
 
@@ -399,16 +400,17 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   color: white;
   font-family: 'arial';
   font-size: 70%;
-  border: 1px solid black;
+  border: 1px solid #f37f7f;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 6px;
   padding-bottom: 6px;
-  background-color: green;
+  background-color: #f37f7f;
 }
 
 .not-useful-button:hover {
   color: black;
+  border-color: black;
   background-color: white;
 }
 

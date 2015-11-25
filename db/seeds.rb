@@ -16,7 +16,7 @@ companies = ['Google','Yahoo','Uber','Oracle','Amazon',
   'Qualcomm','EMC','Xerox','eBay','Paypal','Bloomberg','NetApp','Symantec','SanDisk',
   'Samsung','Sony','Panasonic','Dell','Slack', 'Stackoverflow', 'Piazza', 'Android', 'Bing',
   'Clashofclans', 'About', 'Tumblr', 'Reddit', 'CNN', 'Snapchat', 'Yikyakapp',
-  'Tubemogul', 'Arista', 'Juniper Networks', 'Capital One', 'tumblr', 'soundcloud', 'reddit',
+  'Tubemogul', 'Arista', 'Juniper', 'Capital One', 'tumblr', 'soundcloud', 'reddit',
   'GAP', 'netflix',"dropbox", "gmail",  "BlackRock", "Groupon", "Coupon","box"]
 
 year = ', 2015'
