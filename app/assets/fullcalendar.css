@@ -575,8 +575,10 @@ a.fc-more:hover {
 	
 /* title text */
 
-.fc-toolbar h2 {
+.fc-toolbar .fc-center h2 {
 	margin: 0;
+	font-family: 'arial' !important;
+	font-size: 111px !important;
 }
 
 /* button layering (for border precedence) */
