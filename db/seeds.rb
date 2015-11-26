@@ -13,11 +13,12 @@ User.create(username: "CJYseed", password: "111111", email: "1@berkeley.edu",
 companies = ['Google','Yahoo','Uber','Oracle','Amazon',
   'Airbnb','Twitter','Microsoft','HP','IBM','Costco','Github',
   'Pivotal','Linkedin','Apple','Quora','Pinterest','Zazzle','Gusto', 
-  'Qualcomm','EMC','Xerox','eBay','Paypal','Bloomberg','NetApp','Symantec','SanDisk',
-  'Samsung','Sony','Panasonic','Dell','Slack', 'Stackoverflow', 'Piazza',
+  'Qualcomm','EMC','Xerox','Ebay','Paypal','Bloomberg','NetApp','Symantec','SanDisk',
+  'Samsung','Sony','Symantec','Dell','Slack', 'Stackoverflow', 'Piazza',
   'Clashofclans', 'Tumblr', 'Reddit', 'CNN', 'Snapchat', 'Yikyakapp',
   'Tubemogul', 'Arista', 'Juniper', 'Capital One', 'Tumblr', 'Soundcloud', 'Reddit',
-  'GAP', 'Netflix',"Dropbox", "BlackRock", "Groupon", "Coupon", "Box"]
+  'GAP', 'Netflix',"Dropbox", "BlackRock", "Groupon", "Box", "Lockheed Martin", "ADP", "Accenture",
+  'Nvidia', 'Salesforce', 'Mckinsey', 'Bcg', 'Deloitte']
 
 year = ', 2015'
 month = ["September", "October", "November", "December"]

@@ -2,7 +2,7 @@
   <div class="individual-pin">
 
     <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
-    <div class= "title-container-company"><%= @pin.company %></div>
+    <div class= "title-container-company"><%= link_to( @pin.company, get_company_url(@pin.company)) %></div>
     <div class= "title-container-title"><%= @pin.position %></div>
     <div class= "interview-info-date"> <b>Date Interviewed:</b> <%= @pin.date %></div>
     <div class= "interview-info-type"> <b>Type of Interview:</b> <%= @pin.type_interview %></div>

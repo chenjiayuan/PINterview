@@ -3,7 +3,7 @@
 <%= link_to "< Return to Companies", companies_path, html_options = {:class => "return-to-companies"} %>
 
 <div class = "company-wrapper"> 
-	<%= image_tag "http://logo.clearbit.com/#{@company_name.downcase}.com", :class => "avatar" %> 
+	<%= image_tag "https://logo.clearbit.com/#{@company['name'].downcase.delete(' ')}.com", :class => "company-logo" %>
 	<div class="profile-name"> 
 		<%= @company['name'].upcase %> 
 	</div>
