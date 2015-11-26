@@ -423,19 +423,22 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 .back-button {
   text-decoration: none;
   text-align: center;
-  color: white;
+  color: black;
   font-family: 'arial';
-  font-size: 150%;
-  border: 3px solid #F47F7F;
-  padding-left: 260px;
-  padding-right: 260px;
+  font-size: 120%;
+  border: 2px solid white;
+  padding-left: 278px;
+  padding-right: 278px;
   padding-top: 4px;
   padding-bottom: 4px;
-  background-color: transparent;
+  background-color: white;
+  border-radius: 8px;
 }
 
 .back-button:hover {
   background-color: #F47F7F;
+  border-color: #F47F7F;
+  color: white;
 }
 
 
