@@ -9,24 +9,24 @@ $(document).ready(function() {
 </script>
 
 <div class="individual-pin">
-<div class="form">
+  <div class="form">
         <%= form_for(@pin) do |f| %>  
          <div class = "error_message"><%= flash[:error] %></div>
-          <%= f.label :Job_Type, :class => "create-label" %>
-          <%= f.select :position_type, ['Full-time', 'Part-time', "Internship"]%>
-          <%= f.label :Interview_Type, :class => "create-label" %>
-          <%= f.select :type_interview, ['On Site', 'On Campus', "Phone", "Video", "Online Assessment"]%><br>
-          <%= f.label :Length, :class => "create-label" %>
-          <%= f.select :length, ["Less Than 30 Min", '30 Min', '1 Hr', "1.5 Hrs", "2+ Hrs"]%>
-          <%= f.label :Difficulty, :class => "create-label" %>
-          <%= f.select :difficulty, ['0 - Very Easy', '1 - Easy', "2 - Medium", "3 - Hard", "4 - Very Hard"]%><br>
           <%= f.text_field :position, :placeholder => "Position Name" %><br>
           <%= f.text_field :company, :placeholder => "Company" %><br>
-          <%= f.text_field :date, class: "datepicker", placeholder: "Interview Date" %><br>
+          <%= f.text_field :date, class: "datepicker", placeholder: "Interview Date" %><br><br>        
+          <%= f.label :Job_Type, :class => "create-label" %>
+          <%= f.select :position_type, ['Full-time', 'Part-time', "Internship"], :prompt => "Select One"%>
+          <%= f.label :Interview_Type, :class => "create-label" %>
+          <%= f.select :type_interview, ['On Site', 'On Campus', "Phone", "Video", "Online Assessment"], :prompt => "Select One"%><br>
+          <%= f.label :Length, :class => "create-label" %>
+          <%= f.select :length, ["Less Than 30 Min", '30 Min', '1 Hr', "1.5 Hrs", "2+ Hrs"], :prompt => "Select One"%>
+          <%= f.label :Difficulty, :class => "create-label" %>
+          <%= f.select :difficulty, ['0 - Very Easy', '1 - Easy', "2 - Medium", "3 - Hard", "4 - Very Hard"], :prompt => "Select One"%><br><br>
           <%= f.text_field :questions, :placeholder => "Interview Process (max 1000 characters)" %><br>
           <%= f.text_field :description, :placeholder => "Questions Asked (max 1000 characters)" %><br>
           <%= f.label :Result, :class => "create-label" %>
-          <%= f.select :attire, ['Offer', 'Rejected', 'Next Round', 'Unknown']%><br>
+          <%= f.select :attire, ['Offer', 'Rejected', 'Next Round', 'Unknown'], :prompt => "Select One"%><br>
           <%= f.submit "Submit", class: "btn-submit" %>
         <% end %>
       </div>
