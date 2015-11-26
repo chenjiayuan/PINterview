@@ -37,30 +37,30 @@
           <div id="view2">
         		<div class="profile-major"> -- Company Links -- </div>
 						<div class="company-links">
-							<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
-							<a href = <%= @company['facebook'] %> > Find this company on Facebook </a> |
-							<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
+							<a target="_blank" href=<%= @company['url'] %>> Company Website </a><br><br>
+							<a target="_blank" href = <%= @company['facebook'] %> > <img class = "info-link" src = <%= asset_path( 'facebook.png' ) %> > </a>
+							<a target="_blank" href = <%= @company['linkedin'] %> > <img class = "info-link" src = <%= asset_path( 'linkedin.png' ) %> > </a>
 						</div>
 						<div class="company-description"> <%= @company['description'] %> </div>
           </div>
 
           <div id="view3">
 				
-				<div> Average interview Length: <%= @length %> Minutes </div>
+				<div> <b>Average interview Length:</b> <%= @length %> Minutes </div>
 				<div class="pie-div"> 
 					<%= pie_chart @pie, library: {backgroundColor: "#f7f7f7"} %>
 				</div>
-
-				<div> Most common interview month:  <%= @month2 %> </div>
+				<br><br><br>
+				<div> <b>Most common interview month:</b>  <%= @month2 %> </div>
 				<div class="pie-dive"> 
 					
 					<%= column_chart @month1, library: {backgroundColor: "#f7f7f7"}, height: "500px" %>
 				</div>
 				
-				<div> Percentage moved on to next round: <%= @next_round %>%
+				<div> <b>Percentage moved on to next round:</b> <%= @next_round %>%
 				</div>
 				
-				<div> Percentage recieved offer: <%= @offers %>%
+				<div> <b>Percentage recieved offer:</b> <%= @offers %>%
 				</div>
 				
 				<div class="pie-div"> 
@@ -70,7 +70,7 @@
 			</div>
 
           <div id="view4">
-				<div> Company Interview Questions </div>
+				<div> <b>Company Interview Questions</b> </div>
 					<div class="company-questions">
 
 						<% if @questions.size > 0 %>
@@ -85,7 +85,6 @@
 									There are currently no questions from this company
 								<div>         
 						<% end %>
-
 					</div>
           		</div>
           </div>
