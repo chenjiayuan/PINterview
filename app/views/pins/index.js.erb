@@ -1,2 +1,6 @@
 $('.pins').append('<%= escape_javascript render(@pins) %>');
-$('.pagination').replaceWith('<%= escape_javascript will_paginate(@pins) %>');
+<% if @pins.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@pins) %>');
+<% else %>
+    $('.pagination').remove();
+<% end %>
