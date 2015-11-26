@@ -14,10 +14,10 @@ companies = ['Google','Yahoo','Uber','Oracle','Amazon',
   'Airbnb','Twitter','Microsoft','HP','IBM','Costco','Github',
   'Pivotal','Linkedin','Apple','Quora','Pinterest','Zazzle','Gusto', 
   'Qualcomm','EMC','Xerox','eBay','Paypal','Bloomberg','NetApp','Symantec','SanDisk',
-  'Samsung','Sony','Panasonic','Dell','Slack', 'Stackoverflow', 'Piazza', 'Android', 'Bing',
-  'Clashofclans', 'About', 'Tumblr', 'Reddit', 'CNN', 'Snapchat', 'Yikyakapp',
-  'Tubemogul', 'Arista', 'Juniper', 'Capital One', 'tumblr', 'soundcloud', 'reddit',
-  'GAP', 'netflix',"dropbox", "gmail",  "BlackRock", "Groupon", "Coupon","box"]
+  'Samsung','Sony','Panasonic','Dell','Slack', 'Stackoverflow', 'Piazza',
+  'Clashofclans', 'Tumblr', 'Reddit', 'CNN', 'Snapchat', 'Yikyakapp',
+  'Tubemogul', 'Arista', 'Juniper', 'Capital One', 'Tumblr', 'Soundcloud', 'Reddit',
+  'GAP', 'Netflix',"Dropbox", "BlackRock", "Groupon", "Coupon", "Box"]
 
 year = ', 2015'
 month = ["September", "October", "November", "December"]

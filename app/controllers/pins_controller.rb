@@ -25,8 +25,6 @@ class PinsController < ApplicationController
     end
 	end 
 
-
-
   def show
     @pin = Pin.find(params[:id])
     if Pin.count > 1 
@@ -46,8 +44,8 @@ class PinsController < ApplicationController
     if @pin.update_attributes(pin_params)
       redirect_to @pin
     else
-      flash[:error] = @pin.errors.full_messages.to_sentence 
-      redirect_to @pin
+      flash[:error] = "Invalid Inputs"
+      redirect_to edit_pin_path
     end
 
   end

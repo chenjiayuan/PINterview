@@ -16,9 +16,9 @@
     <br>
 
     <% if current_user.favorites.exists?(id: @pin.id) %>
-        <%= button_to "Unmark Helpful", favorite_pin_path(@pin, type: "Unmark"), method: :put %>
+        <%= button_to "Unmark Helpful", favorite_pin_path(@pin, type: "Unmark"), method: :put, remote: true %>
     <% else %>
-        <%= button_to "Mark Helpful",   favorite_pin_path(@pin, type: "Mark"), method: :put %>
+        <%= button_to "Mark Helpful",   favorite_pin_path(@pin, type: "Mark"), method: :put, remote: true %>
     <% end %>
 
     <% if current_user == @pin.user%>
