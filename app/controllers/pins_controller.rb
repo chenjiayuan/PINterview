@@ -55,19 +55,19 @@ class PinsController < ApplicationController
     redirect_to '/'
   end
 
-  def upvote
-    @pin = Pin.find_by_id(params[:id])
-    @pin.upvote_by current_user 
-    updatelike
-    redirect_to :back
-  end
+  # def upvote
+  #   @pin = Pin.find_by_id(params[:id])
+  #   @pin.upvote_by current_user 
+  #   updatelike
+  #   redirect_to :back
+  # end
 
-  def downvote
-    @pin = Pin.find_by_id(params[:id])
-    @pin.downvote_by current_user 
-    updatelike
-    redirect_to :back
-  end
+  # def downvote
+  #   @pin = Pin.find_by_id(params[:id])
+  #   @pin.downvote_by current_user 
+  #   updatelike
+  #   redirect_to :back
+  # end
 
   def favorite
     type = params[:type] # See posts/show
@@ -93,7 +93,7 @@ class PinsController < ApplicationController
       :attire, :questions, :like_count, :length, :description, :user_id, :position_type)
 	end 
 
-  def updatelike
-    @pin.update_attribute(:like_count, @pin.get_upvotes.size - @pin.get_downvotes.size)
-  end
+  # def updatelike
+  #   @pin.update_attribute(:like_count, @pin.get_upvotes.size - @pin.get_downvotes.size)
+  # end
 end
