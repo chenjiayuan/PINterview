@@ -79,12 +79,12 @@ describe Pin do
     FactoryGirl.build(:pin, attire: "a"*31 ).should_not be_valid
   end
 
-  it "length 241 questions" do    
-    FactoryGirl.build(:pin, questions: "a"*241 ).should_not be_valid
+  it "length 10001 questions" do    
+    FactoryGirl.build(:pin, questions: "a"*1001 ).should_not be_valid
   end
 
-  it "length 321 questions" do    
-    FactoryGirl.build(:pin, description: "a"*321 ).should_not be_valid
+  it "length 10001 description" do    
+    FactoryGirl.build(:pin, description: "a"*1001 ).should_not be_valid
   end
 
   it "difficulty lenght to much 31" do    

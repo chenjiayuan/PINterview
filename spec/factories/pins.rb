@@ -23,7 +23,7 @@ FactoryGirl.define do
   factory :pin do |f|
     position {Faker::Commerce.product_name}
     company {"Airbnb"}
-    date  {"10/20/2015"}
+    date  {"1" + ' ' + "September, " + "2015"}
     difficulty {"1 - Easy"}
     type_interview {"Onsite"}
     attire "Offer"
