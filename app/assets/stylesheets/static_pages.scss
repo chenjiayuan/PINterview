@@ -112,12 +112,14 @@
   left: 0;
 }
 
+
 .row{
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
 .search-wrapper{
+  position: fixed;
   width: 100%;
   text-align: center;
   margin-top: -30px;
