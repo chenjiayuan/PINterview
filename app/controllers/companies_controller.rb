@@ -24,6 +24,8 @@ class CompaniesController < ApplicationController
       @company_name = @company['name']
       @company_number = @questions.count
 
+      @pie = Pin.where(company: params[:category_id]).group(:length).count
+
       # EDGE CASE - Yahoo!
       if @company_name =='Yahoo!'
       	@company_name = 'Yahoo'

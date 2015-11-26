@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "static_pages" %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <%= link_to "< Return to Companies", companies_path, html_options = {:class => "return-to-companies"} %>
 
 <div class = "company-wrapper"> 
@@ -44,30 +45,32 @@
           </div>
 
           <div id="view3">
-					  <div>---</div>
-						<div> Average interview Length: </div>
-						<div> 
-							- <%= @length %> Minutes -
-						</div>
-						<div>---</div>
-						<div> Most common interview month: </div>
-						<div> 
-							- <%= @month %> -
-						</div>
-						<div>---</div>
-						<div> Most common interview question type, e.g. Dynamic Programming, Probabilty, Search Algorithm, etc (not yet implemented)</div>
-						<div>---</div>
-						<div> Percentage moved on to next round: </div>
-						<div> 
-							- <%= @next_round %>% -
-						</div>
-						<div>---</div>
-						<div> Percentage recieved offer: </div>
-						<div> 
-							- <%= @offers %>% -
-						</div>
-						<div>---</div>
-					</div>
+				
+				<div> Average interview Length: <%= @length %> Minutes </div>
+				<div class="pie-div"> 
+					<%= pie_chart @pie, library: {backgroundColor: "#f7f7f7"} %>
+				</div>
+
+				
+
+				<div>---</div>
+				<div> Most common interview month: </div>
+				<div> 
+					- <%= @month %> -
+				</div>
+				<div>---</div>
+				
+				<div> Percentage moved on to next round: </div>
+				<div> 
+					- <%= @next_round %>% -
+				</div>
+				<div>---</div>
+				<div> Percentage recieved offer: </div>
+				<div> 
+					- <%= @offers %>% -
+				</div>
+				<div>---</div>
+			</div>
 
           <div id="view4">
 						<div> Company Interview Questions </div>
