@@ -1,8 +1,10 @@
 <div class = "content">
   <div class="individual-pin">
+    <div id="individual-pin-title">
+      <div class= "title-container-company"><%= link_to( @pin.company, get_company_url(@pin.company)) %></div>
+    </div>
     <div id="info-row">
         <div id="pin-column-1">
-          <div class= "title-container-company"><%= link_to( @pin.company, get_company_url(@pin.company)) %></div>
           <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
         </div>
 
@@ -16,6 +18,7 @@
             <div class= "interview-info-length"> <b>Length: </b> <%= @pin.length %></div>
             <div class= "story-col-question-row-questions"> <b>Interview Process: </b> <%= @pin.questions %></div>
             <div class= "story-col-story-row-description"> <b>Questions Asked: </b> <%= @pin.description %></div>
+            <br>
             <% if current_user.favorites.exists?(id: @pin.id) %>
                 <%= button_to "Unmark Useful", favorite_pin_path(@pin, type: "Unmark"), method: :put, class: "useful-button" %>
             <% else %>
