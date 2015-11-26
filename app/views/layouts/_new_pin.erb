@@ -27,6 +27,7 @@ $(document).ready(function() {
           <%= f.text_field :description, :placeholder => "Questions Asked (max 1000 characters)" %><br>
           <%= f.label :Result, :class => "create-label" %>
           <%= f.select :attire, ['Offer', 'Rejected', 'Next Round', 'Unknown'], :prompt => "Select One"%><br>
+          <%= link_to 'Back', 'javascript:history.go(-1);', class: "btn-submit" %>
           <%= f.submit "Submit", class: "btn-submit" %>
         <% end %>
       </div>
