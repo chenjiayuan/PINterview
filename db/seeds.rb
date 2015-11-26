@@ -18,7 +18,7 @@ companies = ['Google','Yahoo','Uber','Oracle','Amazon',
   'Clashofclans', 'Tumblr', 'Reddit', 'CNN', 'Snapchat', 'Yikyakapp',
   'Tubemogul', 'Arista', 'Juniper', 'Capital One', 'Tumblr', 'Soundcloud', 'Reddit',
   'GAP', 'Netflix',"Dropbox", "BlackRock", "Groupon", "Box", "Lockheed Martin", "ADP", "Accenture",
-  'Nvidia', 'Salesforce', 'Mckinsey', 'Bcg', 'Deloitte']
+  'Nvidia', 'Salesforce', 'Mckinsey', 'Bcg', 'Deloitte', 'Angrybirds']
 
 year = ', 2015'
 month = ["September", "October", "November", "December"]
