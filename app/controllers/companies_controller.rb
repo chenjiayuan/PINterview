@@ -95,8 +95,8 @@ class CompaniesController < ApplicationController
     company['url'] = ""
     company['facebook'] = ""
     company['linkedin'] = ""
-    company['city'] = "Unknown"
-    company['state'] = "Unknown"
+    company['city'] = "City Unknown"
+    company['state'] = "State Unknown"
     company['description'] = "We currently have no information about this company's online presence"
  
     CSV.foreach(File.join(Rails.root, 'app','csv','organizations.csv')) do |row|
@@ -164,7 +164,7 @@ class CompaniesController < ApplicationController
   def get_next_round(company)
   	all_outcomes = Pin.where(company: company).pluck(:attire)
   	nexts = all_outcomes.count("Offer") + all_outcomes.count("Next Round")
-  	rejects = all_outcomes.count - all_outcomes.count("Unknown")
+  	rejects = all_outcomes.count
       if rejects == 0
         return 0
       end
@@ -179,7 +179,7 @@ class CompaniesController < ApplicationController
   def get_offers(company)
   	all_outcomes = Pin.where(company: company).pluck(:attire)
   	nexts = all_outcomes.count("Offer")
-  	rejects = all_outcomes.count - all_outcomes.count("Unknown")
+  	rejects = all_outcomes.count
       if rejects == 0
         return 0
       end
