@@ -8,28 +8,29 @@ $(document).ready(function() {
 });
 </script>
 
-<div class="form">
+<div class="individual-pin">
+  <div class="form">
         <%= form_for(@pin) do |f| %>  
-
          <div class = "error_message"><%= flash[:error] %></div>
-
-          <%= f.text_field :position, :placeholder => "Position" %><br>
+          <%= f.text_field :position, :placeholder => "Position Name" %><br>
           <%= f.text_field :company, :placeholder => "Company" %><br>
-          <%= f.text_field :date, class: "datepicker", placeholder: "Interview Date" %><br><br>
-          <%= f.label :Type, :class => "create-label" %>
-          <%= f.select :position_type, ['Full-time', 'Part-time', "Internship"] %>&nbsp;&nbsp;&nbsp;
-          <%= f.label :Difficulty, :class => "create-label" %>
-          <%= f.select :difficulty, ['0 - Very Easy', '1 - Easy', "2 - Medium", "3 - Hard", "4 - Very Hard"]%><br> 
+          <%= f.text_field :date, class: "datepicker", placeholder: "Interview Date" %><br><br>        
+          <%= f.label :Job_Type, :class => "create-label" %>
+          <%= f.select :position_type, ['Full-time', 'Part-time', "Internship"]%>
           <%= f.label :Interview_Type, :class => "create-label" %>
           <%= f.select :type_interview, ['On Site', 'On Campus', "Phone", "Video", "Online Assessment"]%><br>
-          <%= f.label :Result, :class => "create-label" %>
-          <%= f.select :attire, ['Offer', 'Rejected', 'Next Round', 'Unknown']%>&nbsp;&nbsp;&nbsp;
           <%= f.label :Length, :class => "create-label" %>
-          <%= f.select :length, ["Less Than 30 Min", '30 Min', '1 Hr', "1.5 Hrs", "2+ Hrs"]%><br><br>
-
+          <%= f.select :length, ["Less Than 30 Min", '30 Min', '1 Hr', "1.5 Hrs", "2+ Hrs"]%>
+          <%= f.label :Difficulty, :class => "create-label" %>
+          <%= f.select :difficulty, ['0 - Very Easy', '1 - Easy', "2 - Medium", "3 - Hard", "4 - Very Hard"]%><br><br>
           <%= f.text_field :questions, :placeholder => "Interview Process (max 1000 characters)" %><br>
-          <%= f.text_field :description, :placeholder => "Questions Asked (max 1000 characters)" %><br><br>
-          <%= f.submit "Submit", class: "btn-submit" %>
+          <%= f.text_field :description, :placeholder => "Questions Asked (max 1000 characters)" %><br>
+          <%= f.label :Result, :class => "create-label" %>
+          <%= f.select :attire, ['Offer', 'Rejected', 'Next Round', 'Unknown']%><br>
+          <%= link_to 'Cancel', 'javascript:history.go(-1);', class: "btn-submit" %>
+          <%= f.submit "Submit and View Profile", class: "btn-submit" %>
         <% end %>
       </div>
+</div>
+<div class = "individual-backdrop"></div>
 </div>

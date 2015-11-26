@@ -68,6 +68,14 @@
   color: white;
 }
 
+.field{
+  display: inline-block;
+}
+
+.action{
+  display: inline-block;
+}
+
 .Advanced-Search{
   text-align: center;
   display: inline-block;
@@ -104,20 +112,37 @@
   left: 0;
 }
 
+
 .row{
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
 .search-wrapper{
+  position: fixed;
   width: 100%;
   text-align: center;
   margin-top: -30px;
   background-color: #ecedec;
   padding-top: 10px;
-  padding-bottom: 48px;
+  padding-bottom: 36px;
   margin-bottom: 30px;
   box-shadow: inset 0 0px #fff, 0 1px 3px rgba(34,25,25,0.4);  
+}
+
+#infinite-scrolling{
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'arial';
+  font-size: 15px;
+  color: #585c80;
+}
+
+#infinite-scrolling a {
+    color: black !important;
+}
+#infinite-scrolling a:hover {
+    color: #585c80 !important;
 }
 
 .pin {
@@ -426,7 +451,8 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
 }
 
 .useful-button:hover {
-  background-color: green;
+  background-color: #f37f7f;
+  border-color: #f37f7f;
   color: white;
 }
 
@@ -436,16 +462,17 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   color: white;
   font-family: 'arial';
   font-size: 70%;
-  border: 1px solid black;
+  border: 1px solid #f37f7f;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 6px;
   padding-bottom: 6px;
-  background-color: green;
+  background-color: #f37f7f;
 }
 
 .not-useful-button:hover {
   color: black;
+  border-color: black;
   background-color: white;
 }
 
@@ -487,6 +514,7 @@ body > div.mainbody > div > a:nth-child(1).pin a:visited {
   font-family: 'arial';
   font-size: 20px;
   font-weight: bold;
+  color: white;
   margin-bottom: 10px;
 }
 
@@ -505,20 +533,49 @@ select{
   cursor:pointer;
 }
 
-select option{
-  font-size: 'arial';
-  font-size: 100px;
+#q_c_0_a_0_name, #q_c_0_p{
+  width: 100px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 12px;
+  line-height: 1;
+  height: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png)96% / 10% no-repeat #eee;
+  background-color: white;
 }
 
+#q_c_0_v_0_value{
+  height: 17px;
+}
+
+
 #pin_position_type, #pin_difficulty, #pin_type_interview, #pin_attire, #pin_length {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-left: 10px;  
-  background:rgba(255,255,255,0.8);
-  border: 0 none;
-  border-radius: 10px;
-  box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5);
-  text-align: center;
+  width: 100px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 12px;
+  line-height: 1;
+  height: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png)96% / 10% no-repeat #eee;
+  background-color: white;
+}
+
+#pin_length {
+  width: 135px !important;
+}
+#pin_attire {
+  margin-top: 5px !important;
+  width: 250px !important;
 }
 
 #pin_position, #pin_company, #pin_date {
@@ -537,8 +594,40 @@ select option{
   padding-left: 10px;  
 }
 
+.form .btn-submit{
+  margin-top: 15px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'arial';
+  font-size: 11px;
+  border: 1px solid black;
+  background-color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline;
+  color: black;
+}
+
 .btn-submit {
-  margin-bottom: 100px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'arial';
+  font-size: 10px;
+  border: 1px solid black;
+  background-color: white;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: inline;
+}
+
+.btn-submit:hover {
+ background-color: #f37f7f;
+ border-color: #f37f7f;
+ color: white;
 }
 
 /* --- Company Page Style --- */
@@ -563,7 +652,7 @@ select option{
   font-family: 'arial';
   font-size: 10px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: red;
 }
 
@@ -584,7 +673,8 @@ select option{
 }
 
 .company-search-button:hover {
- background-color: green;
+ background-color: #f37f7f;
+ border-color: #f37f7f;
  color: white;
 }
 
@@ -598,8 +688,7 @@ select option{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png) 
-    96% / 15% no-repeat #eee;
+  background: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png)96% / 15% no-repeat #eee;
   background-color: white;
 }
 
@@ -633,7 +722,6 @@ select option{
   position:absolute;
   float:left;
   margin-left: 20px;
-
   text-decoration: none;
   text-align: center;
   color: black;
@@ -648,7 +736,8 @@ select option{
 }
 
 .return-to-companies:hover {
- background-color: green;
+ background-color: #f37f7f;
+ border-color: #f37f7f;
  color: white;
 }
 
@@ -667,6 +756,10 @@ select option{
   font-style: italic;
   margin: 5px;
   font-size: 12px;
+}
+
+.info-link{
+  width: 25px;
 }
 
 .company-location{
@@ -694,6 +787,26 @@ select option{
 .calendar-text{
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+.pie-div{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.company-questions{
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+}
+
+.pin-link{
+  color: #F86469;
+}
+
+.ind-question{
+
+  margin-top: 24px;
 }
 
 /* --- Chen tab and calender --- */

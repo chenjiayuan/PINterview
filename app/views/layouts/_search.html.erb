@@ -18,6 +18,7 @@ $(document).ready(function() {
   </div>   
 
   <div class = "advanced-search-wrapper">
+    <div class = "fix-advanced-search">
         <%= search_form_for @search do |f| %>
           <%= f.condition_fields do |c| %>
           <div class= "field">
@@ -33,6 +34,7 @@ $(document).ready(function() {
           <div class = "action">
             <%= f.submit "Search", class: "btn-submit" %>
           </div>
-    <% end %>  
+    <% end %> 
+    </div> 
   </div>
-</div>
+</div><br><br><br><br><br>

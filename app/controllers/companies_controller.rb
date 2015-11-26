@@ -34,17 +34,25 @@ class CompaniesController < ApplicationController
         @company_name = 'HP'
       end
 
+      @company_name = @company_name.downcase.delete(" ")
+
       # GET AVERAGE INTERVIEW TIME
   	  @length = get_average_time(params[:category_id])
+      @pie = Pin.where(company: params[:category_id]).group(:length).count
 
   	  # GET MOST COMMON INTERVIEW MONTH
   	  @month = get_common_month(params[:category_id])
+      @month1 = @month[0]
+      @month2 = @month[1]
 
   	  # GET PERCENTAGE NEXT ROUND
   	  @next_round = get_next_round(params[:category_id])
 
   	  # GET PERCENTAGE OFFERS
   	  @offers = get_offers(params[:category_id])
+
+      # PIE CHART FOR RESULTS
+      @pie_results = Pin.where(company: params[:category_id]).group(:attire).count
 
   	  # GET MOST COMMON POSITIONS
   	  @common_positions = get_common_positions(params[:category_id])
@@ -89,8 +97,8 @@ class CompaniesController < ApplicationController
     company['url'] = ""
     company['facebook'] = ""
     company['linkedin'] = ""
-    company['city'] = "Unknown"
-    company['state'] = "Unknown"
+    company['city'] = "City Unknown"
+    company['state'] = "State Unknown"
     company['description'] = "We currently have no information about this company's online presence"
  
     CSV.foreach(File.join(Rails.root, 'app','csv','organizations.csv')) do |row|
@@ -135,7 +143,7 @@ class CompaniesController < ApplicationController
   	end
 
   	average = list_nums.inject{ |sum, num| sum + num }.to_f / list_nums.size
-  	return average
+  	return average.round
   end
 
   private
@@ -150,14 +158,15 @@ class CompaniesController < ApplicationController
   	end
   	freq = new_dates.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
   	most_common_month = new_dates.max_by { |v| freq[v] }
-  	return most_common_month
+    ret = [freq, most_common_month]
+  	return ret
   end
 
   private
   def get_next_round(company)
   	all_outcomes = Pin.where(company: company).pluck(:attire)
   	nexts = all_outcomes.count("Offer") + all_outcomes.count("Next Round")
-  	rejects = all_outcomes.count - all_outcomes.count("Unknown")
+  	rejects = all_outcomes.count
       if rejects == 0
         return 0
       end
@@ -172,7 +181,7 @@ class CompaniesController < ApplicationController
   def get_offers(company)
   	all_outcomes = Pin.where(company: company).pluck(:attire)
   	nexts = all_outcomes.count("Offer")
-  	rejects = all_outcomes.count - all_outcomes.count("Unknown")
+  	rejects = all_outcomes.count
       if rejects == 0
         return 0
       end

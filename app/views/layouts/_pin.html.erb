@@ -1,12 +1,10 @@
 <div class = "content">
   <div class="individual-pin">
-
     <div id="info-row">
-
-    <div id="pin-column-1">
-        <div class= "title-container-company"><%= @pin.company %></div>
-        <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
-    </div>
+        <div id="pin-column-1">
+            <div class= "title-container-company"><%= @pin.company %></div>
+            <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
+        </div>
 
         <div id="pin-column-2">
             <div class= "title-container-title"><%= @pin.position %></div>
@@ -33,6 +31,7 @@
             </div>
         <% end %>
     </div>
+
   <div class = "individual-backdrop"></div>     
 </div>
 

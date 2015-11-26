@@ -1,8 +1,9 @@
 <%= stylesheet_link_tag "static_pages" %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <%= link_to "< Return to Companies", companies_path, html_options = {:class => "return-to-companies"} %>
 
 <div class = "company-wrapper"> 
-	<%= image_tag "http://logo.clearbit.com/#{@company_name.downcase}.com", :class => "avatar" %> 
+	<%= image_tag "https://logo.clearbit.com/#{@company_name}.com", :class => "company-logo" %>
 	<div class="profile-name"> 
 		<%= @company['name'].upcase %> 
 	</div>
@@ -17,7 +18,7 @@
 	<br>
   
   <div style="margin: 0 auto; padding: 0 0 40px;">
-      <ul class="tabs" data-persist="true">
+      <ul class="tabs">
           <li><a href="#view1">Calendar</a></li>
           <li><a href="#view2">Basic Info</a></li>
           <li><a href="#view3">Interview Statistics</a></li>
@@ -36,51 +37,56 @@
           <div id="view2">
         		<div class="profile-major"> -- Company Links -- </div>
 						<div class="company-links">
-							<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
-							<a href = <%= @company['facebook'] %> > Find this company on Facebook </a> |
-							<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
+							<a class = "pin-link" target="_blank" href=<%= @company['url'] %>> Company Website </a><br><br>
+							<a target="_blank" href = <%= @company['facebook'] %> > <img class = "info-link" src = <%= asset_path( 'facebook.png' ) %> > </a>
+							<a target="_blank" href = <%= @company['linkedin'] %> > <img class = "info-link" src = <%= asset_path( 'linkedin.png' ) %> > </a>
 						</div>
 						<div class="company-description"> <%= @company['description'] %> </div>
           </div>
 
           <div id="view3">
-					  <div>---</div>
-						<div> Average interview Length: </div>
-						<div> 
-							- <%= @length %> Minutes -
-						</div>
-						<div>---</div>
-						<div> Most common interview month: </div>
-						<div> 
-							- <%= @month %> -
-						</div>
-						<div>---</div>
-						<div> Most common interview question type, e.g. Dynamic Programming, Probabilty, Search Algorithm, etc (not yet implemented)</div>
-						<div>---</div>
-						<div> Percentage moved on to next round: </div>
-						<div> 
-							- <%= @next_round %>% -
-						</div>
-						<div>---</div>
-						<div> Percentage recieved offer: </div>
-						<div> 
-							- <%= @offers %>% -
-						</div>
-						<div>---</div>
-					</div>
+				
+				<div> <b>Average interview Length:</b> <%= @length %> Minutes </div>
+				<div class="pie-div"> 
+					<%= pie_chart @pie, library: {backgroundColor: "#f7f7f7"} %>
+				</div>
+				<br><br><br>
+				<div> <b>Most common interview month:</b>  <%= @month2 %> </div>
+				<div class="pie-dive"> 
+					
+					<%= column_chart @month1, library: {backgroundColor: "#f7f7f7"}, height: "500px" %>
+				</div>
+				
+				<div> <b>Percentage moved on to next round:</b> <%= @next_round %>%
+				</div>
+				
+				<div> <b>Percentage recieved offer:</b> <%= @offers %>%
+				</div>
+				
+				<div class="pie-div"> 
+					<%= pie_chart @pie_results, library: {backgroundColor: "#f7f7f7"}%>
+				</div>
+
+			</div>
 
           <div id="view4">
-						<div> Company Interview Questions </div>
-							<div>
-								<% @questions.each do |question| -%>
-									<div>
-										<%= question.description %>
-										<%= link_to "Go to this PIN", question  %>
-										<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
-									<div>
-								<% end -%>
-							</div>
-          	</div>
+				<div> <b>Company Interview Questions</b> </div>
+					<div class="company-questions">
+
+						<% if @questions.size > 0 %>
+							<% @questions.each do |question| -%>
+								<div class="ind-question">
+									<%= question.description %><br><%= link_to "Go to this PIN", question, :class => "pin-link"  %>
+									<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
+								<div>
+							<% end -%>
+						<% else %>
+							    <div class="ind-question">
+									There are currently no questions from this company
+								<div>         
+						<% end %>
+					</div>
+          		</div>
           </div>
       </div>
   </div>
