@@ -71,11 +71,10 @@
 
           <div id="view4">
 						<div> Company Interview Questions </div>
-							<div>
+							<div class="company-questions">
 								<% @questions.each do |question| -%>
-									<div>
-										<%= question.description %>
-										<%= link_to "Go to this PIN", question  %>
+									<div class="ind-question">
+										<%= question.description %> - <%= link_to "Go to this PIN", question  %>
 										<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
 									<div>
 								<% end -%>
