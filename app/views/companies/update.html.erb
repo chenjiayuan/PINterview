@@ -70,16 +70,24 @@
 			</div>
 
           <div id="view4">
-						<div> Company Interview Questions </div>
-							<div class="company-questions">
-								<% @questions.each do |question| -%>
-									<div class="ind-question">
-										<%= question.description %> - <%= link_to "Go to this PIN", question  %>
-										<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
-									<div>
-								<% end -%>
-							</div>
-          	</div>
+				<div> Company Interview Questions </div>
+					<div class="company-questions">
+
+						<% if @questions.size > 0 %>
+							<% @questions.each do |question| -%>
+								<div class="ind-question">
+									<%= question.description %> - <%= link_to "Go to this PIN", question  %>
+									<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
+								<div>
+							<% end -%>
+						<% else %>
+							    <div class="ind-question">
+									There are currently no questions from this company
+								<div>         
+						<% end %>
+						
+					</div>
+          		</div>
           </div>
       </div>
   </div>
