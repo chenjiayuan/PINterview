@@ -37,9 +37,9 @@
           <div id="view2">
         		<div class="profile-major"> -- Company Links -- </div>
 						<div class="company-links">
-							<a href=<%= @company['url'] %>><%= @company['url'] %></a> |
-							<a href = <%= @company['facebook'] %> > Find this company on Facebook </a> |
-							<a href = <%= @company['linkedin'] %> > Find this company on LinkedIn </a>
+							<a target="_blank" href=<%= @company['url'] %>> Company Website </a><br><br>
+							<a target="_blank" href = <%= @company['facebook'] %> > <img class = "info-link" src = <%= asset_path( 'facebook.png' ) %> > </a>
+							<a target="_blank" href = <%= @company['linkedin'] %> > <img class = "info-link" src = <%= asset_path( 'linkedin.png' ) %> > </a>
 						</div>
 						<div class="company-description"> <%= @company['description'] %> </div>
           </div>
@@ -85,7 +85,6 @@
 									There are currently no questions from this company
 								<div>         
 						<% end %>
-						
 					</div>
           		</div>
           </div>
