@@ -51,25 +51,22 @@
 					<%= pie_chart @pie, library: {backgroundColor: "#f7f7f7"} %>
 				</div>
 
+				<div> Most common interview month:  <%= @month2 %> </div>
+				<div class="pie-dive"> 
+					
+					<%= column_chart @month1, library: {backgroundColor: "#f7f7f7"}, height: "500px" %>
+				</div>
 				
+				<div> Percentage moved on to next round: <%= @next_round %>%
+				</div>
+				
+				<div> Percentage recieved offer: <%= @offers %>%
+				</div>
+				
+				<div class="pie-div"> 
+					<%= pie_chart @pie_results, library: {backgroundColor: "#f7f7f7"}%>
+				</div>
 
-				<div>---</div>
-				<div> Most common interview month: </div>
-				<div> 
-					- <%= @month %> -
-				</div>
-				<div>---</div>
-				
-				<div> Percentage moved on to next round: </div>
-				<div> 
-					- <%= @next_round %>% -
-				</div>
-				<div>---</div>
-				<div> Percentage recieved offer: </div>
-				<div> 
-					- <%= @offers %>% -
-				</div>
-				<div>---</div>
 			</div>
 
           <div id="view4">
