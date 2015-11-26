@@ -16,7 +16,7 @@ companies = ['Google','Yahoo','Uber','Oracle','Amazon',
   'Qualcomm','EMC','Xerox','Ebay','Paypal','Bloomberg','NetApp','Symantec','SanDisk',
   'Samsung','Sony','Symantec','Dell','Slack', 'Stackoverflow', 'Piazza',
   'Clashofclans', 'Tumblr', 'Reddit', 'CNN', 'Snapchat', 'Yikyakapp',
-  'Tubemogul', 'Arista', 'Juniper', 'Capital One', 'Tumblr', 'Soundcloud', 'Reddit',
+  'Tubemogul', 'Arista', 'Capital One', 'Tumblr', 'Soundcloud', 'Reddit',
   'GAP', 'Netflix',"Dropbox", "BlackRock", "Groupon", "Box", "Lockheed Martin", "ADP", "Accenture",
   'Nvidia', 'Salesforce', 'Mckinsey', 'Bcg', 'Deloitte', 'Angrybirds']
 
