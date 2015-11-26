@@ -128,6 +128,21 @@
   box-shadow: inset 0 0px #fff, 0 1px 3px rgba(34,25,25,0.4);  
 }
 
+#infinite-scrolling{
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'arial';
+  font-size: 15px;
+  color: #585c80;
+}
+
+#infinite-scrolling a {
+    color: black !important;
+}
+#infinite-scrolling a:hover {
+    color: #585c80 !important;
+}
+
 .pin {
   display: inline-block;
   width: 180px;
