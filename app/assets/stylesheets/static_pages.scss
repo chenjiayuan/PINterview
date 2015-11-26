@@ -152,11 +152,39 @@
   z-index: 1;
   font-family: 'arial';
   width: 600px;
+  height: auto;
   background-color: white;
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  overflow: hidden;
+  zoom: 1;
+}
+
+#pin-column-1 {
+  display: block;
+  float: left;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#pin-column-2 {
+  display: block;
+  float: left;
+  text-align: left;
+  border-left: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 400px;
+}
+
+#pin-column-2 > div {
+  padding-bottom: 2px;
 }
 
 .individual-logo{
@@ -165,10 +193,19 @@
   height: 140px;
   color: transparent;
   background-image: url("https://placeimg.com/140/140/tech");
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .title-container-company{
+  padding-left: 10px;
+  text-align: center;
   font-size: 40px;
+}
+
+.title-container-title {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .company-logo{
@@ -741,12 +778,12 @@ div.tabcontents
   font-size: 70%;
   border: 1px solid #F47F7F;
   margin-top: 5px;
-  margin-bottom: 5px;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin-bottom: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
   padding-top: 6px;
   padding-bottom: 6px;
-  background-color: white;
+  background-color: transparent;
 }
 
 #edit-button:hover {
@@ -762,12 +799,12 @@ div.tabcontents
   font-size: 70%;
   border: 1px solid #F47F7F;
   margin-top: 5px;
-  margin-bottom: 5px;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin-bottom: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
   padding-top: 6px;
   padding-bottom: 6px;
-  background-color: white;
+  background-color: transparent;
 }
 
 #delete-button:hover {
@@ -775,7 +812,11 @@ div.tabcontents
   color: white;
 }
 
+#edit-delete-wrapper {
+  text-align: center;
+}
+
 #edit-delete-wrapper .button_to {
   display: inline-block;
-
 }
+
