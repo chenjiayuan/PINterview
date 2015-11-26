@@ -37,7 +37,7 @@
           <div id="view2">
         		<div class="profile-major"> -- Company Links -- </div>
 						<div class="company-links">
-							<a target="_blank" href=<%= @company['url'] %>> Company Website </a><br><br>
+							<a class = "pin-link" target="_blank" href=<%= @company['url'] %>> Company Website </a><br><br>
 							<a target="_blank" href = <%= @company['facebook'] %> > <img class = "info-link" src = <%= asset_path( 'facebook.png' ) %> > </a>
 							<a target="_blank" href = <%= @company['linkedin'] %> > <img class = "info-link" src = <%= asset_path( 'linkedin.png' ) %> > </a>
 						</div>
@@ -76,7 +76,7 @@
 						<% if @questions.size > 0 %>
 							<% @questions.each do |question| -%>
 								<div class="ind-question">
-									<%= question.description %> - <%= link_to "Go to this PIN", question  %>
+									<%= question.description %><br><%= link_to "Go to this PIN", question, :class => "pin-link"  %>
 									<!-- <a href="/pins/<%=question.id%>">Go to this PIN</a> -->
 								<div>
 							<% end -%>
