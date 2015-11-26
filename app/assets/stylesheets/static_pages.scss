@@ -222,10 +222,12 @@
   margin-left: 10px;
 }
 
-.title-container-company{
+.title-container-company > a {
   padding-left: 10px;
   text-align: center;
   font-size: 40px;
+  text-decoration: none;
+  color: black;
 }
 
 .title-container-title {

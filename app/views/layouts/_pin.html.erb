@@ -2,8 +2,8 @@
   <div class="individual-pin">
     <div id="info-row">
         <div id="pin-column-1">
-            <div class= "title-container-company"><%= @pin.company %></div>
-            <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
+          <div class= "title-container-company"><%= link_to( @pin.company, get_company_url(@pin.company)) %></div>
+          <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
         </div>
 
         <div id="pin-column-2">
