@@ -34,6 +34,8 @@ class CompaniesController < ApplicationController
         @company_name = 'HP'
       end
 
+      @company_name = @company_name.downcase.delete(" ")
+
       # GET AVERAGE INTERVIEW TIME
   	  @length = get_average_time(params[:category_id])
       @pie = Pin.where(company: params[:category_id]).group(:length).count
