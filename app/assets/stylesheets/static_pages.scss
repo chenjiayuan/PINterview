@@ -182,6 +182,8 @@
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
   text-align: center;
   overflow: hidden;
   zoom: 1;
@@ -224,7 +226,7 @@
 }
 
 .title-container-company > a {
-  padding-left: 10px;
+  padding-left: 10px; 
   text-align: center;
   font-size: 40px;
   text-decoration: none;

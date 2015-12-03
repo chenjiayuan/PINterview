@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: "CJYseed", password: "111111", email: "1@berkeley.edu",
+User.create(username: "CJYseed", password: "111111", email: "a@berkeley.edu",
   grad_class: "2016", major: "EECS")
 
 
@@ -18,7 +18,7 @@ companies = ['Google','Yahoo','Uber','Oracle','Amazon',
   'Clashofclans', 'Tumblr', 'Reddit', 'CNN', 'Snapchat', 'Yikyakapp',
   'Tubemogul', 'Arista', 'Capital One', 'Tumblr', 'Soundcloud', 'Reddit',
   'GAP', 'Netflix',"Dropbox", "BlackRock", "Groupon", "Box", "Lockheed Martin", "ADP", "Accenture",
-  'Nvidia', 'Salesforce', 'Mckinsey', 'Bcg', 'Deloitte', 'Angrybirds']
+  'Nvidia', 'Salesforce', 'Mckinsey', 'Bcg', 'Deloitte', 'Angrybirds', 'Facebook']
 
 year = ', 2015'
 month = ["September", "October", "November", "December"]
@@ -100,7 +100,7 @@ descriptions = ["Write a program that prints ‘Hello World’ to the screen.",
   "Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.",
   "Write a program that plays Battle Ship against human opponents. It takes coordinates as input and outputs whether that was a hit or not and its own shot’s coordinates."]
 
-1000.times { |i|
+1500.times { |i|
 Pin.create(position: positions.sample, company: companies.sample, date: days.sample.to_s + ' ' + month.sample + year,
 	difficulty: difficulties.sample, type_interview: types.sample, attire: attirs.sample, 
 	questions: questions.sample, like_count: 0, 

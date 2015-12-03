@@ -5,7 +5,7 @@
     </div>
     <div id="info-row">
         <div id="pin-column-1">
-          <%= image_tag "https://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "individual-logo" %>
+          <%= link_to image_tag("http://logo.clearbit.com/#{@pin.company.downcase.delete(' ')}.com", :class => "company-logo"), get_company_url(@pin.company) %>
         </div>
 
         <div id="pin-column-2">
