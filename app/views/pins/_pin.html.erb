@@ -3,7 +3,11 @@
         <%= image_tag "https://logo.clearbit.com/#{pin.company.downcase.delete(' ')}.com", :class => "company-logo" %>
 
       <h3 class= "title-container"><%= pin.company %></h3>
-      <h3 class= "company-container "><%= pin.position%><br><%=pin.position_type%><br></h3> 
+      <% if (pin.position.length > 25) %>
+          <h3 class="company-container"> <%= pin.position[0, 23] %>... <br> <%= pin.position_type %> </h3>
+      <% else %>
+          <h3 class="company-container"> <%= pin.position %> <br> <%= pin.position_type %> </h3>
+      <% end %>
 <% end %>
   <% if current_user.favorites.exists?(id: pin.id) %>
       <%= button_to "- Unmark Useful", favorite_pin_path(pin, type: "Unmark"), method: :put, class: "not-useful-button" %>
