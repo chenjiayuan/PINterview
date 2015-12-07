@@ -12,7 +12,8 @@ class CreatePins < ActiveRecord::Migration
       t.string :length
       t.string :description 
       t.integer :user_id 
-      t.string :position_type     
+      t.string :position_type
+      t.string :genre     
     end
   end
 end
