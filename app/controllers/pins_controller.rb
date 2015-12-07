@@ -90,7 +90,7 @@ class PinsController < ApplicationController
   private
 	def pin_params
     params.require(:pin).permit(:position, :company, :date, :difficulty, :type_interview, 
-      :attire, :questions, :like_count, :length, :description, :user_id, :position_type)
+      :attire, :questions, :like_count, :length, :description, :user_id, :position_type, :genre)
 	end 
 
   # def updatelike
