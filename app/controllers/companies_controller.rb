@@ -40,10 +40,19 @@ class CompaniesController < ApplicationController
   	  @length = get_average_time(params[:category_id])
       @pie = Pin.where(company: params[:category_id]).group(:length).count
 
+      # GET AVERAGE INTERVIEW DIFFICULTY
+      @difficulty = get_average_difficulty(params[:category_id])
+      @pie_diff = Pin.where(company: params[:category_id]).group(:difficulty).count
+
   	  # GET MOST COMMON INTERVIEW MONTH
   	  @month = get_common_month(params[:category_id])
       @month1 = @month[0]
       @month2 = @month[1]
+
+      # GET MOST COMMON INTERVIEW TYPE
+      @type = get_common_type(params[:category_id])
+      @type1 = @type[0]
+      @type2 = @type[1]
 
   	  # GET PERCENTAGE NEXT ROUND
   	  @next_round = get_next_round(params[:category_id])
@@ -147,6 +156,34 @@ class CompaniesController < ApplicationController
   end
 
   private
+  def get_average_difficulty(company)
+
+    list_nums = []
+    all_lengths = Pin.where(company: company).pluck(:difficulty)
+
+    all_lengths.each do |a_l|
+    if a_l == "0 - Very Easy"
+      list_nums.push(0)
+    end
+    if a_l == "1 - Easy"
+      list_nums.push(1)
+    end
+    if a_l == "2 - Medium"
+      list_nums.push(2)
+    end
+    if a_l == "3 - Hard"
+      list_nums.push(3)
+    end
+    if a_l == "4 - Very Hard"
+      list_nums.push(4)
+    end
+    end
+
+    average = list_nums.inject{ |sum, num| sum + num }.to_f / list_nums.size
+    return average.round(2)
+  end
+
+  private
   def get_common_month(company)
   	new_dates = []
   	all_dates = Pin.where(company: company).pluck(:date)
@@ -160,6 +197,16 @@ class CompaniesController < ApplicationController
   	most_common_month = new_dates.max_by { |v| freq[v] }
     ret = [freq, most_common_month]
   	return ret
+  end
+
+  private
+  def get_common_type(company)
+    new_types = []
+    all_types = Pin.where(company: company).pluck(:type_interview)
+    freq = all_types.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
+    most_common_type = all_types.max_by { |v| freq[v] }
+    ret = [freq, most_common_type]
+    return ret
   end
 
   private
