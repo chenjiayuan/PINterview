@@ -278,9 +278,9 @@ feature "All Features Test" do
   expect(company_names).to eq ["Aloha", "Google", "Yahoo"].reverse
 
   click_link "Job Tittle"
-  job_names = page.all(".company-container").map(&:text)
-  expect(job_names).to eq ["Archicture" + pin2.position_type, "Software" + pin1.position_type, 
-    "Testing"+ pin3.position_type]
+  job_names = page.all(".company-container").map(&:text)  
+  expect(job_names).to eq ["Archicture " + pin2.position_type, "Software " + pin1.position_type, 
+    "Testing "+ pin3.position_type]
  end
 
  scenario "search by company name" do
