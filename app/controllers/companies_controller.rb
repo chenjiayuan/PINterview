@@ -54,6 +54,11 @@ class CompaniesController < ApplicationController
       @type1 = @type[0]
       @type2 = @type[1]
 
+      # GET MOST COMMON GENRE
+      @genre = get_common_genre(params[:category_id])
+      @genre1 = @genre[0]
+      @genre2 = @genre[1]
+
   	  # GET PERCENTAGE NEXT ROUND
   	  @next_round = get_next_round(params[:category_id])
 
@@ -249,3 +254,13 @@ class CompaniesController < ApplicationController
   	return most_common_positions
   end
 end
+
+private
+  def get_common_genre(company)
+
+    all_genres = Pin.where(company: company).pluck(:genre)
+    freq = all_genres.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
+    most_common_genre = all_genres.max_by { |v| freq[v] }
+    ret = [freq, most_common_genre]
+    return ret
+  end

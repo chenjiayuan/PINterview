@@ -80,7 +80,15 @@
 			</div>
 
           <div id="view4">
+				
+
+				<div> <b>Most common question genre:</b>  <%= @genre2 %> </div>
+				<div class="pie-div"> 
+					<%= column_chart @genre1.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7", :colors => ["green"]}, height: "500px" %>
+				</div>
+
 				<div> <b>Company Interview Questions</b> </div>
+
 					<div class="company-questions">
 
 						<% if @questions.size > 0 %>
