@@ -45,8 +45,9 @@
           </div>
 
           <div id="view3">
-				
+				<br><br><br>
 				<div> <b>Average interview length:</b> <%= @length %> Minutes </div>
+				<br><br>
 				<div class="pie-div"> 
 					<%= pie_chart @pie.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7"} %>
 				</div>
@@ -57,13 +58,13 @@
 				</div>
 				
 				<div> <b>Most common interview month:</b>  <%= @month2 %> </div>
-				<div class="pie-dive"> 
-					<%= column_chart @month1.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7"}, height: "500px" %>
+				<div class="pie-div"> 
+					<%= column_chart @month1.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7", :colors => ["green"]}, height: "500px" %>
 				</div>
 
 				<div> <b>Most common interview type:</b>  <%= @type2 %> </div>
-				<div class="pie-dive"> 
-					<%= bar_chart @type1.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7"}, height: "500px" %>
+				<div class="pie-div"> 
+					<%= bar_chart @type1.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7", :colors => ["purple"]}, height: "500px" %>
 				</div>
 				
 				<div> <b>Percentage moved on to next round:</b> <%= @next_round %>%
@@ -71,7 +72,7 @@
 				
 				<div> <b>Percentage recieved offer:</b> <%= @offers %>%
 				</div>
-				
+				<br><br>
 				<div class="pie-div"> 
 					<%= pie_chart @pie_results.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7"}%>
 				</div>
