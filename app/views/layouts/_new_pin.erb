@@ -21,6 +21,10 @@ $(document).ready(function() {
           <%= f.select :type_interview, ['On Site', 'On Campus', "Phone", "Video", "Online Assessment"]%><br>
           <%= f.label :Length, :class => "create-label" %>
           <%= f.select :length, ["Less Than 30 Min", '30 Min', '1 Hr', "1.5 Hrs", "2+ Hrs"]%>
+
+          <%= f.label :Genre_Type, :class => "create-label" %>
+          <%= f.select :genre, ["Behavioral", "Data Structures", "Math and Probability", "Dynamic Programming", "Sorting and Searching", "Language Specific", "Threading", "Databases", "Testing", "Object Oriented Design", "Networking", "Brain Teaser"]%> <br>
+          
           <%= f.label :Difficulty, :class => "create-label" %>
           <%= f.select :difficulty, ['0 - Very Easy', '1 - Easy', "2 - Medium", "3 - Hard", "4 - Very Hard"]%><br><br>
           <%= f.text_field :questions, :placeholder => "Interview Process (max 1000 characters)", :onkeydown => "return !(event.keyCode==13)" %><br>

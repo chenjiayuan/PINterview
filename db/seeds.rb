@@ -100,9 +100,11 @@ descriptions = ["Write a program that prints ‘Hello World’ to the screen.",
   "Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.",
   "Write a program that plays Battle Ship against human opponents. It takes coordinates as input and outputs whether that was a hit or not and its own shot’s coordinates."]
 
+genres = ["Behavioral", "Data Structures", "Math and Probability", "Dynamic Programming", "Sorting and Searching", "Language Specific", "Threading", "Databases", "Testing", "Object Oriented Design", "Networking", "Brain Teaser"]
+
 1000.times { |i|
 Pin.create(position: positions.sample, company: companies.sample, date: days.sample.to_s + ' ' + month.sample + year,
 	difficulty: difficulties.sample, type_interview: types.sample, attire: attirs.sample, 
 	questions: questions.sample, like_count: 0, 
-	length: lengths.sample, description: descriptions.sample, user_id: -1, position_type: position_types.sample)
+	length: lengths.sample, description: descriptions.sample, user_id: -1, position_type: position_types.sample, genre: genres.sample)
 }
