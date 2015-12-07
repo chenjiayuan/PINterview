@@ -53,8 +53,7 @@
 				<br><br><br>
 				<div> <b>Most common interview month:</b>  <%= @month2 %> </div>
 				<div class="pie-dive"> 
-					
-					<%= column_chart @month1, library: {backgroundColor: "#f7f7f7"}, height: "500px" %>
+					<%= column_chart @month1.sort_by {|_key, value| value}.reverse, library: {backgroundColor: "#f7f7f7"}, height: "500px" %>
 				</div>
 				
 				<div> <b>Percentage moved on to next round:</b> <%= @next_round %>%
