@@ -1,12 +1,12 @@
 == README
-<p><img src="readme_screenshot/1.png" height="400" alt="Screenshot"/></p>
-<p><img src="readme_screenshot/2.png" height="400" alt="Screenshot"/></p>
-<p><img src="readme_screenshot/3.png" height="400" alt="Screenshot"/></p>
-<p><img src="readme_screenshot/4.png" height="400" alt="Screenshot"/></p>
-<p><img src="readme_screenshot/5.png" height="400" alt="Screenshot"/></p>
-<p><img src="readme_screenshot/6.png" height="400" alt="Screenshot"/></p>
-<p><img src="readme_screenshot/7.png" height="400" alt="Screenshot"/></p>
-<p><img src="readme_screenshot/8.png" height="400" alt="Screenshot"/></p>
+<img src=readme_screenshot/1.png>
+<img src=readme_screenshot/2.png>
+<img src=readme_screenshot/3.png>
+<img src=readme_screenshot/4.png>
+<img src=readme_screenshot/5.png>
+<img src=readme_screenshot/6.png>
+<img src=readme_screenshot/7.png>
+<img src=readme_screenshot/8.png>
 
 
 == Run Application
